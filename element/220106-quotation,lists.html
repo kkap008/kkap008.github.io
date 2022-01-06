@@ -5,16 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      :root {
+        --left-padding: 20px;
+      }
       body > article {
         margin: 30px 0;
         border: 1px dashed black;
-        padding-left: 20px;
+        padding-left: var(--left-padding);
       }
       #quotation__content {
         margin: 40px 0;
       }
       #quotation__content > article {
         margin-top: 50px;
+      }
+
+      .lists__content {
+        padding-left: var(--left-padding);
       }
     </style>
     <title>quotation,lists</title>
@@ -55,12 +62,24 @@
     </article>
     <article id="lists">
       <h2 id="lists__title">lists</h2>
-      <ol>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
+      <ol class="lists__content">
+        <li>
+          <section>
+            <h3>정의목록</h3>
+          </section>
+        </li>
+        <li>
+          <section>
+            <h3>순차목록</h3>
+          </section>
+        </li>
+        <li>
+          <section>
+            <h3>비순차목록</h3>
+          </section>
+        </li>
       </ol>
-      <article>
+      <article class="lists__uses">
         <h3>목록안에 또 다른 목록을 삽입하기 (하위목록 = 다중목록)</h3>
       </article>
     </article>
