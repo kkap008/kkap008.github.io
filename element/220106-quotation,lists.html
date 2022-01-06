@@ -20,8 +20,15 @@
         margin-top: 50px;
       }
 
-      .lists__content {
+      ul,
+      ol {
         padding-left: var(--left-padding);
+      }
+      .lists__unorder-list > ul > li:nth-child(1) {
+        list-style-type: disc;
+      }
+      .lists__unorder-list > ul > li:nth-child(2) {
+        list-style-type: square;
       }
     </style>
     <title>quotation,lists</title>
@@ -64,23 +71,70 @@
       <h2 id="lists__title">lists</h2>
       <ol class="lists__content">
         <li>
-          <section>
+          <section class="lists__description">
             <h3>정의목록</h3>
+            <p>
+              용어에 대한 정의를 내릴 때 사용하며 dl(description list),
+              dt(defines a term), dd(defines description)태그로 작성한다.
+            </p>
+            <dl>
+              <dt>dl 태그</dt>
+              <dd>"dl>dt+dd"로 구성</dd>
+              <dd>dl : 영역을 선언</dd>
+              <dd>
+                dt : "defines a term"으로 용어를 정의하다. 쉽게 생각하면
+                주제이다.
+              </dd>
+              <dd>dd : "defines description"는 주제에 대한 설명이다.</dd>
+            </dl>
           </section>
         </li>
         <li>
-          <section>
+          <section class="lists__order-list">
             <h3>순차목록</h3>
+            <p>
+              ol (order list) : "list type"의 특징은 순서가 있는 것을 사용한다.
+              <br />
+              ex) 1,2,3,4,5 ... / a,b,c,d,e ... / 그 외 순서가 있는 것들
+            </p>
+            <ol>
+              <li>"ol>li"로 구성</li>
+              <li>ol (order list) = 부모</li>
+              <li>li (list item) = 자식</li>
+            </ol>
           </section>
         </li>
         <li>
-          <section>
+          <section class="lists__unorder-list">
             <h3>비순차목록</h3>
+            <p>
+              ul (unorder list) : "list type"의 특징은 심볼,이미지를 사용한다.
+              <br />
+              ex) 기본 심볼 ● / 이미지
+            </p>
+            <ul>
+              <li>"ul>li"로 구성</li>
+              <li>ul (unorder list) = 부모</li>
+              <li>li (list item) = 자식</li>
+            </ul>
           </section>
         </li>
       </ol>
       <article class="lists__uses">
         <h3>목록안에 또 다른 목록을 삽입하기 (하위목록 = 다중목록)</h3>
+        <ul>
+          <li>
+            <span>할아버지,할머니</span>
+            <ul>
+              <li>
+                아버지,어머니
+                <ul>
+                  <li>자식</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </article>
     </article>
   </body>
