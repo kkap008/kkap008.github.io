@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body > article {
+        margin: 30px 0;
+        border: 1px dashed black;
+        padding-left: 20px;
+      }
+      #quotation__content {
+        margin: 40px 0;
+      }
+      #quotation__content > article {
+        margin-top: 50px;
+      }
+    </style>
+    <title>quotation,lists</title>
+  </head>
+  <body id="body">
+    <h1 id="body__title">quotation, lists</h1>
+    <article id="quotation">
+      <h2 id="quotation__title">quotation</h2>
+      <p>
+        인용문태그는 <q>다른 사람의 말이나 글을 대신하여 인용</q>할 때 사용된다.
+      </p>
+      <div id="quotation__content">
+        <article class="quotation__blockquote">
+          <h3>blockquote 태그</h3>
+          <p>blockquote</p>
+          <blockquote>
+            "blockquote" 태그는 자동줄바꿈이 일어나며, 인용부호가 붙지 않는다.
+          </blockquote>
+          <p>
+            blockquote = block 레벨 요소 = 너비 100%, 높이 콘텐츠 크기 만큼 =
+            자동 줄바꿈
+          </p>
+        </article>
+        <article class="quotation__q">
+          <h3>q 태그</h3>
+          <p><q> q 태그는 줄바꿈이 일어나지 않으며, 인용부호가 붙는다.</q></p>
+          <p>
+            q = inline 레벨 요소 = 콘텐츠 너비,높이만큼 영역 차지 = 자동 줄바꿈
+            X
+          </p>
+        </article>
+        <article class="quotation__other">
+          <h3>그 외 여태까지 사용한 요소 중에는?</h3>
+          <p>p = block 레벨 요소 = 예외사항: 내부에 다른 블록요소 사용불가</p>
+          <p>br = 인라인 레벨 요소</p>
+        </article>
+      </div>
+    </article>
+    <article id="lists">
+      <h2 id="lists__title"></h2>
+    </article>
+  </body>
+</html>
