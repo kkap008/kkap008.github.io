@@ -1,33 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>img</title>
-</head>
-<body>
-  <h1 class="img-tag">img 태그</h1>
-  <div class="img-tag-wrap">
-    <section class="img-tag__insert">
-      <h2 class="insert__title">1.이미지 삽입하기</h2>
-      <article class="insert__absolute-path">
-        <h3 class="absolute-path__title">절대경로</h3>
-        <figure class="absolute-path__img">
-          <img src="https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="구글 사이트 로고 이미지" class="absolute-path__img">
-          <figcaption class="absolute-path__define"></figcaption>
-        </figure>
-      </article>
-      <article class="insert__relative-path">
-        <h3 class="relative-path">상대경로</h3>
-        <figure class="relative-path__img">
-          <img src="images/google_logo.png" alt="구글 로고 이미지" class="relative-path__img">
-          <figcaption class="absolute-path__define"></figcaption>
-        </figure>
-      </article>
-    </section>
-    <section class="img-tag__alt"></section>
-    <section class="img-tag__semantics"></section>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>img 태그</title>
+  </head>
+  <body class="img-tag">
+    <h1 class="img-tag__title">img 태그</h1>
+    <dl class="img-tag__define">
+      <dt class="img-tag__define-img">img 태그란?</dt>
+      <dd>
+        HTML 문서에 "image"를 삽입하기 위한
+        <strong>빈 태그(empty tag)</strong>이다.
+      </dd>
+      <dd>대표 속성 : src / alt / title</dd>
+      <dd>
+        <dl class="img-tag__define-src">
+          <dt><strong>src (필수!!)</strong></dt>
+          <dd><strong>이미지의 경로</strong>를 지정할 때 사용한다.</dd>
+          <dt>alt (권장)</dt>
+          <dd>
+            이미지의 텍스트 설명이며 <strong>필수는 아니지만</strong>,<br />
+            <strong
+              >스크린 리더가 alt의 값을 읽어 사용자에게 이미지를 설명</strong
+            >
+            하므로, <strong>접근성 차원에서 매우 유용합니다.</strong> <br />또한
+            네트워크 오류, 콘텐츠 차단, 죽은 링크 등
+            <strong
+              >이미지를 표시할 수 없는 경우에도 이 속성의 값을 대신
+              보여줍니다.</strong
+            >
+          </dd>
+          <dt>title</dt>
+          <dd>
+            요소에 대한 추가 정보를 제공하는 텍스트입니다. <br />
+            <strong>사용자에게는 보통 툴팁으로서 보여집니다.</strong>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr />
+    <div class="img-tag__path">
+      <section class="img-tag__insert">
+        <h2 class="insert__title">1.이미지 삽입하기</h2>
+        <article class="insert__absolute-path">
+          <h3 class="absolute-path__title">절대경로</h3>
+          <figure class="absolute-path__img">
+            <img
+              src="https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+              alt="구글 사이트 로고 이미지"
+              class="absolute-path__img"
+            />
+            <figcaption class="absolute-path__define">
+              절대경로로 위치 설명 : 서울 강남구 테헤란로 152 강남파이낸스센터
+            </figcaption>
+          </figure>
+        </article>
+        <article class="insert__relative-path">
+          <h3 class="relative-path">상대경로</h3>
+          <figure class="relative-path__img">
+            <img
+              src="images/google_logo.png"
+              alt="구글 로고 이미지"
+              class="relative-path__img"
+            />
+            <figcaption class="relative-path__define">
+              상대경로로 위치 설명 : 내 위치는 역삼역이다. 그러므로 역삼역 1번
+              출구에서 85m 이동
+            </figcaption>
+          </figure>
+        </article>
+      </section>
+      <hr />
+      <section class="img-tag__property">
+        <h2 class="property__title">2. alt / title 속성</h2>
+        <article class="property__alt">
+          <h3 class="property__alt-title">"alt" 속성 설명</h3>
+          <figure class="property__img--no-alt">
+            <img src="images/google_logo.pn" />
+            <figcaption>
+              현재 고의로 <strong>파일 경로에 잘못된 값을 작성</strong>하였다.
+              <br />
+              <strong
+                >"alt" 속성이 없으므로 대체 텍스트가 표시가 안된다.</strong
+              >
+              <br />
+              대체 텍스트가 없어서
+              <strong>스크린 리더가 읽어줄 값이 없다.</strong>
+            </figcaption>
+          </figure>
+          <figure class="property__img--alt">
+            <img src="images/google_logo.pn" alt="구글 로고 이미지" />
+            <figcaption>
+              현재 고의로 파일 경로에 <strong>잘못된 값을 작성</strong>하였다.
+              <br />
+              <strong>"alt" 속성이 있어서 대체 텍스트가 표시 된다.</strong>
+              <br />
+              대체 텍스트가 있어서
+              <strong>스크린 리더가 대신 읽어줄 수 있다.</strong>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="property__title">
+          <h3 class="property__title-title">"title" 속성 설명</h3>
+          <figure class="property__img--title">
+            <img
+              src="images/google_logo.png"
+              title="구글 로고 이미지"
+              alt="구글 로고 이미지"
+            />
+            <figcaption>
+              사용이미지 위에 마우스를 올려놓고 기다리면
+              <strong>툴팁으로 텍스트가 표시</strong>된다.
+            </figcaption>
+          </figure>
+        </article>
+      </section>
+      <hr />
+      <section class="img-tag__semantics"></section>
+    </div>
+  </body>
 </html>
