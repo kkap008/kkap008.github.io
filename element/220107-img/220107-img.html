@@ -61,7 +61,7 @@
           <h3 class="relative-path">상대경로</h3>
           <figure class="relative-path__img">
             <img
-              src="images/google_logo.png"
+              src="./images/google_logo.png"
               alt="구글 로고 이미지"
               class="relative-path__img"
             />
@@ -119,7 +119,28 @@
         </article>
       </section>
       <hr />
-      <section class="img-tag__semantics"></section>
+      <section class="img-tag__semantics">
+        <h2 class="semantics__title">
+          3. 의미론적 태그 "figure"---"figcaption"
+        </h2>
+        <figure class="semantics__img">
+          <img src="images/chart.png" alt="막대 그래프" />
+          <figcaption>값 축, 범주 축이 나와있는 막대 그래프</figcaption>
+        </figure>
+        <dl class="semantics__figure-define">
+          <dt><strong>"figure"</strong> 태그란?</dt>
+          <dd>
+            <strong
+              >사진, 그림, 다이어그램, 코드 목록 등과 같은 독립적인 콘텐츠를
+              담을 수 있는 의미있는 박스 태그</strong
+            >이다.
+          </dd>
+          <dd>인라인 요소만 자식으로 둘 수 있다.</dd>
+          <dt><strong>"figcaption"</strong> 태그란?</dt>
+          <dd><strong>"figure" 요소의 캡션(설명)</strong>을 나타낸다.</dd>
+          <dd>"figure"의 자식 요소이다.</dd>
+        </dl>
+      </section>
     </div>
   </body>
 </html>
