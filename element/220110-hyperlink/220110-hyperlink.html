@@ -149,6 +149,7 @@
           <h3 class="ex__img-map__title">이미지 맵을 이요한 링크</h3>
           <img src="imgs/map.jpg" usemap="#map" title="전체 식품 상품 목록" />
           <map name="map">
+            <!-- 정사각형 (x1,y1),(x2,y2) -->
             <area
               shape="rect"
               coords="42,11,141,192"
@@ -157,6 +158,7 @@
               title="마스코바도 설탕 상품"
               rel="external"
             />
+            <!-- 원형 x1,y1,r -->
             <area
               shape="circle"
               coords="247,86,50"
@@ -165,7 +167,7 @@
               title="함초소금 상품"
               rel="external"
             />
-            <!-- 삼각형 -->
+            <!-- 삼각형 (x1,y1),(x2,y2),(x3,y3) -->
             <area
               shape="poly"
               coords="402,18,468,141,344,141"
@@ -174,7 +176,7 @@
               title="무말랭이 상품"
               rel="external"
             />
-            <!-- 육각형 -->
+            <!-- 육각형 (x1,y1),(x2,y2),(x3,y3),(x4,y4),(x5,y5),(x6,y6) -->
             <area
               shape="poly"
               coords="490,30,460,60,460,90,490,120,610,120,640,90,640,60,610,30"
@@ -184,6 +186,10 @@
               rel="external"
             />
           </map>
+          <p>
+            기준 좌표 하나만 알고 있으면, 계산을 통해 원하는 크기로 만들 수
+            있다.
+          </p>
         </article>
       </section>
     </div>
