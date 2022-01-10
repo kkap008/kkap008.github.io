@@ -21,10 +21,10 @@
         (스크린 리더가 줄바꿈은 공백으로 해석하지 않아 띄어쓰기가 되지 않은 하나의 긴 단어처럼 읽어준다고 한다. */
         white-space: nowrap;
         /* top과 left에 각각 -1px를 넣어주지 않고 margin:-1px를 사용하는 이유?
-position:absolute는 top과 left, bottom이런값들을 지정해주지 않으면 원래 있던 자리에 있게 됨.
-만약 top과 left에 -1로 넣어주게 되면 relative 부모가 어디에 있느냐에 따라서 그 부모 위치를 쫓아가게 된다.
-그러면 text_indent로 처리한것처럼 요소 크기가 커지게됨
-그래서 원래 위치 기준으로 이동하도록 margin으로 처리 */
+        position:absolute는 top과 left, bottom이런값들을 지정해주지 않으면 원래 있던 자리에 있게 됨.
+        만약 top과 left에 -1로 넣어주게 되면 relative 부모가 어디에 있느냐에 따라서 그 부모 위치를 쫓아가게 된다.
+        그러면 text_indent로 처리한것처럼 요소 크기가 커지게됨
+        그래서 원래 위치 기준으로 이동하도록 margin으로 처리 */
         margin: -1px;
       }
     </style>
@@ -149,11 +149,13 @@ position:absolute는 top과 left, bottom이런값들을 지정해주지 않으�
     </main>
     <!-- 풋터 -->
     <footer class="footer">
-      <img
-        src="img/footer.jpg"
-        alt="페이지 정보 페이지"
-        title="페이지 정보 페이지"
-      />
+      <p>
+        <img
+          src="img/footer.jpg"
+          alt="페이지 정보 페이지"
+          title="페이지 정보 페이지"
+        />
+      </p>
     </footer>
   </body>
 </html>
