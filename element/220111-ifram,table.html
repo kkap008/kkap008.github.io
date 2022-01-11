@@ -115,17 +115,17 @@
           <tbody>
             <tr>
               <th scope="row" rowspan="2">이름</th>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
+              <td>값</td>
+              <td>값</td>
+              <td>값</td>
+              <td>값</td>
             </tr>
 
             <tr>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
+              <td>값</td>
+              <td>값</td>
+              <td>값</td>
+              <td>값</td>
             </tr>
           </tbody>
           <tfoot>
@@ -139,7 +139,7 @@
         <!-- 파일시스템 -->
         <table>
           <caption>
-            파일시스템 용어
+            파일(=테이블 전체)시스템 용어
           </caption>
           <colgroup>
             <col span="2" class="1-group" />
@@ -148,40 +148,36 @@
           <thead>
             <tr>
               <th scope="col"></th>
+              <th scope="col">속성1</th>
               <th scope="col">속성2</th>
               <th scope="col">속성3</th>
               <th scope="col">속성4</th>
-              <th scope="col">속성5</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row" rowspan="2">이름</th>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
+              <th scope="row">레코드</th>
+              <td>필드</td>
+              <td>필드</td>
+              <td>필드</td>
+              <td>필드</td>
             </tr>
 
             <tr>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
+              <th scope="row">레코드</th>
+
+              <td>필드</td>
+              <td>필드</td>
+              <td>필드</td>
+              <td>필드</td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2">속성 1,2 결과값</td>
-              <td colspan="3">속성 3,4,5 결과값</td>
-            </tr>
-          </tfoot>
         </table>
         <br />
-        <!-- 관계형 DB 용어 (데이터 관점) -->
+        <!-- 관계형 DB 용어 (실제 데이터) -->
         <table>
           <caption>
-            관계형 DB 용어 (데이터 관점)
+            관계형 DB 용어 (실제 데이터)
           </caption>
           <colgroup>
             <col span="2" class="1-group" />
@@ -190,77 +186,43 @@
           <thead>
             <tr>
               <th scope="col"></th>
-              <th scope="col">속성2</th>
-              <th scope="col">속성3</th>
-              <th scope="col">속성4</th>
-              <th scope="col">속성5</th>
+              <th scope="col">Atribute(=key)</th>
+              <th scope="col">Atribute</th>
+              <th scope="col">Atribute</th>
+              <th scope="col">Atribute</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row" rowspan="2">이름</th>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
+              <th scope="row">Tuple</th>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
             </tr>
 
             <tr>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
+              <th scope="row">Tuple</th>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2">속성 1,2 결과값</td>
-              <td colspan="3">속성 3,4,5 결과값</td>
-            </tr>
-          </tfoot>
         </table>
+        <p>※Tuple Count = Cardinality</p>
+        <p>※Atribute Count = Degree(=차수)</p>
+        <dl>
+          <dt>Domian</dt>
+          <dd>속성 타입(하나의 속성이 취할 수 있는 허가된 값의 집합)</dd>
+          <dd>ex) int(10), char(1) ....</dd>
+          <dt>도메인이 필요한 이유?</dt>
+          <dd>
+            테이블 내 저장되는 데이터 값들이 본래 의도했던 값들만 저장되고
+            관리하기 위함
+          </dd>
+        </dl>
         <br />
-        <!-- 관계형 DB 용어 (추상적) -->
-        <table>
-          <caption>
-            관계형 DB 용어 (추상적)
-          </caption>
-          <colgroup>
-            <col span="2" class="1-group" />
-            <col span="3" class="2-group" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">속성2</th>
-              <th scope="col">속성3</th>
-              <th scope="col">속성4</th>
-              <th scope="col">속성5</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" rowspan="2">이름</th>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-            </tr>
-
-            <tr>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-              <td>도메인(원자값)</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2">속성 1,2 결과값</td>
-              <td colspan="3">속성 3,4,5 결과값</td>
-            </tr>
-          </tfoot>
-        </table>
       </section>
     </section>
     <br />
