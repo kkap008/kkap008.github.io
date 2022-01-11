@@ -4,11 +4,297 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        /* 보더 겹침 방지 */
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+      table * {
+        border: 1px solid black;
+        text-align: center;
+      }
+    </style>
     <title>I-frame,Table</title>
   </head>
   <body>
     <h1 class="title">I-frame,Table</h1>
-    <section class="iframe"></section>
-    <section class="table"></section>
+    <hr />
+    <section class="table">
+      <h2 class="table__title">Table</h2>
+      <section class="table__define">
+        <dl>
+          <dt>"Table"이란?</dt>
+          <dd>행과 열로 이루어진 표</dd>
+          <dd>
+            <dl>
+              <dt>태그 흐름</dt>
+              <dd>
+                table >
+                caption+(colgroup>col)+(thead>tr>th)+(tbody>tr>td)+(tfoot>tr>td)
+              </dd>
+            </dl>
+          </dd>
+          <dd></dd>
+        </dl>
+      </section>
+      <section class="table__element">
+        <h2 class="element__title">Table Element</h2>
+        <ul>
+          <li>table : 태이블 범위</li>
+          <li>caption : 테이블 제목을 정의</li>
+          <hr />
+          <li>
+            <p>시멘틱(의미) 태그 - 구획</p>
+            <ul>
+              <li>thead : 행 - 속성 제목 영역</li>
+              <li>
+                <p>tbody : 행 - 중심 내용</p>
+                <blockquote>
+                  ※ "tr>td"로 구성 시 "tbody"는 브라우저마다 틀리지만 자동으로
+                  생성
+                </blockquote>
+              </li>
+              <li>tfoot : 행 - 중심 내용 도출(결과)</li>
+            </ul>
+            <hr />
+          </li>
+          <li>
+            <p>핵심 요소 - 내용</p>
+            <p>tr : 행을 만들 때 사용</p>
+            <ul>
+              <li>
+                <p>th : "thead"에서 사용 - 속성 제목 정의</p>
+                <p>
+                  요소에 scope="col"을 선언함으로써, 해당 칸이 열의 맨 위에
+                  위치함을 설명할 수 있습니다. <br />
+                  마찬가지로, scope="row"를 추가하면 해당 칸이 행의 맨 앞에
+                  위치함을 설명합니다.
+                </p>
+              </li>
+
+              <li>td : "tbody,tfoot"에서 사용 - 속성에 해당하는 내용 정의</li>
+            </ul>
+          </li>
+          <hr />
+          <li>
+            <p>관리 요소 - 합치기 및 백그라운드 컬러 지정</p>
+            <p>colgroup : 테이블 열 그룹</p>
+            <ul>
+              <li>col : 테이블의 각 열을 표현</li>
+              <li>
+                <p>특징</p>
+                <dl>
+                  <dt>"colgroup"의 특징은?</dt>
+                  <dd>
+                    colgroup은 모든 열에 한번에 공통된 css를 주고싶을 때 유용
+                  </dd>
+                  <dd>스타일은 ""width, background"만 사용 가능</dd>
+                  <dd>
+                    "span(폭[범위])"은 여기서 다르게 동작 - 스타일 지정 범위
+                  </dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="table__ex">
+        <h2>Table Ex</h2>
+        <table>
+          <caption>
+            테이블 제목(기본틀)
+          </caption>
+          <colgroup>
+            <col span="2" class="1-group" />
+            <col span="3" class="2-group" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">속성1</th>
+              <th scope="col">속성2</th>
+              <th scope="col">속성3</th>
+              <th scope="col">속성4</th>
+              <th scope="col">속성5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" rowspan="3">이름</th>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">속성 1,2 결과값</td>
+              <td colspan="3">속성 3,4,5 결과값</td>
+            </tr>
+          </tfoot>
+        </table>
+        <br />
+        <!-- 파일시스템 -->
+        <table>
+          <caption>
+            파일시스템 용어
+          </caption>
+          <colgroup>
+            <col span="2" class="1-group" />
+            <col span="3" class="2-group" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">속성1</th>
+              <th scope="col">속성2</th>
+              <th scope="col">속성3</th>
+              <th scope="col">속성4</th>
+              <th scope="col">속성5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" rowspan="3">이름</th>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">속성 1,2 결과값</td>
+              <td colspan="3">속성 3,4,5 결과값</td>
+            </tr>
+          </tfoot>
+        </table>
+        <br />
+        <!-- 관계형 DB 용어 (데이터 관점) -->
+        <table>
+          <caption>
+            관계형 DB 용어 (데이터 관점)
+          </caption>
+          <colgroup>
+            <col span="2" class="1-group" />
+            <col span="3" class="2-group" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">속성1</th>
+              <th scope="col">속성2</th>
+              <th scope="col">속성3</th>
+              <th scope="col">속성4</th>
+              <th scope="col">속성5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" rowspan="3">이름</th>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">속성 1,2 결과값</td>
+              <td colspan="3">속성 3,4,5 결과값</td>
+            </tr>
+          </tfoot>
+        </table>
+        <br />
+        <!-- 관계형 DB 용어 (추상적) -->
+        <table>
+          <caption>
+            관계형 DB 용어 (추상적)
+          </caption>
+          <colgroup>
+            <col span="2" class="1-group" />
+            <col span="3" class="2-group" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">속성1</th>
+              <th scope="col">속성2</th>
+              <th scope="col">속성3</th>
+              <th scope="col">속성4</th>
+              <th scope="col">속성5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" rowspan="3">이름</th>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+            <tr>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+              <td>도메인(원자값)</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">속성 1,2 결과값</td>
+              <td colspan="3">속성 3,4,5 결과값</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </section>
+    <br />
+    <hr />
+    <section class="iframe">
+      <h2 class="iframe__title">I-frame</h2>
+    </section>
+    <br />
+    <hr />
   </body>
 </html>
