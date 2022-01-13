@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1 class="main__title">Form</h1>
+    <hr />
+    <!-- form 정의 -->
+    <section class="form">
+      <h2 class="form__title">Form이란?</h2>
+      <blockquote
+        cite="https://developer.mozilla.org/ko/docs/Web/HTML/Element/form"
+        class="form__defined"
+      >
+        <p>
+          "form"요소는
+          <strong
+            >정보를 제출하기 위한 <a href="#control">대화형 컨트롤</a> 을
+            포함하는 문서 구획</strong
+          >을 나타냅니다.
+        </p>
+      </blockquote>
+      <hr />
+      <!-- form 속성 -->
+      <section class="from__attr">
+        <h3 class="attr__title">"form"의 속성들</h3>
+        <ul class="attr__list">
+          <li class="attr__item">
+            <dl>
+              <dt>accept-cahrset</dt>
+              <dd>
+                폼 데이터(form data)가 서버로 제출될 때 사용되는 문자
+                인코딩(character encoding) 방식을 명시함.
+              </dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>action</dt>
+              <dd>
+                폼 데이터가 서버로 제출될 때 해당 데이터가 도착할 URL을 명시함.
+              </dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>autocomplete</dt>
+              <dd>"form" 요소에서 자동 완성 기능을 사용할지 여부를 명시함.</dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>enctype</dt>
+              <dd>
+                폼 데이터가 서버로 제출될 때 해당 데이터가 인코딩되는 방법을
+                명시함. <br />
+
+                (단, "form" 요소의 method 속성값이 “post”인 경우에만 사용할 수
+                있음)
+              </dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>method</dt>
+              <dd>
+                <p>
+                  폼 데이터가 서버로 제출될 때 사용되는 HTTP 메소드를 명시함.
+                </p>
+                <dl>
+                  <dt>HTTP 메소드</dt>
+                  <dd>
+                    <dl>
+                      <dt>GET</dt>
+                      <dd>
+                        <ul>
+                          <li>
+                            <span
+                              ><strong
+                                >이름/값 쌍의 URL에 양식 데이터를
+                                추가합니다.</strong
+                              ></span
+                            >
+                          </li>
+                          <li>
+                            <span
+                              ><strong
+                                >중요한 데이터를 보낼 때 GET를 사용하지
+                                마십시오!<br />
+                                (URL에 표시됩니다.)</strong
+                              ></span
+                            >
+                          </li>
+                          <li>
+                            <span
+                              ><strong
+                                >URL의 길이는 약 3,000자로 제한됩니다.</strong
+                              ></span
+                            >
+                          </li>
+                          <li>
+                            <span
+                              >결과를 책갈피로 지정할 양식 제출에
+                              유용합니다.</span
+                            >
+                          </li>
+                          <li>
+                            <span
+                              >GET는 Google의 쿼리 문자열과 같은 비보안 데이터에
+                              더 좋습니다.</span
+                            >
+                          </li>
+                          <li>
+                            <span
+                              >HTTP 요청은 브라우저에 의해 캐시되어(cached)
+                              저장됩니다.</span
+                            >
+                          </li>
+                        </ul>
+                      </dd>
+                      <dt>POST</dt>
+                      <dd>
+                        <ul>
+                          <li>
+                            <span
+                              ><strong
+                                >HTTP 요청 본문 내부에 양식 데이터를
+                                추가합니다.<br />(URL에는 데이터가 표시되지
+                                않음)</strong
+                              ></span
+                            >
+                          </li>
+                          <li><span>크기 제한이 없습니다.</span></li>
+                          <li>
+                            <span
+                              >POST가 있는 양식 제출을 책갈피로 지정할 수
+                              없습니다.</span
+                            >
+                          </li>
+                          <li>
+                            <span
+                              >브라우저에 의해 캐시되지 않으므로, 브라우저
+                              히스토리에도 남지 않습니다.</span
+                            >
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dl>
+              </dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>name</dt>
+              <dd>"form" 요소의 이름을 명시함.</dd>
+              <dd>
+                <strong
+                  >name 속성은 서버로 제출된 폼 데이터(form data)를 참조</strong
+                >하기 위해 사용되거나, <br />
+                <strong>자바스크립트에서 요소를 참조</strong>하기 위해
+                사용됩니다.
+              </dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>novalidata</dt>
+              <dd>
+                폼 데이터(form data)를 서버로 제출할 때 해당 데이터의 유효성을
+                검사하지 않음을 명시합니다.
+              </dd>
+              <dd>
+                "이메일 주소에 '@'를 포함해 주세요...." 이런 애기 안하고 바로
+                데이터 전송
+              </dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>rel</dt>
+              <dd>연결된 리소스와 현재 문서 간의 관계를 지정합니다.</dd>
+            </dl>
+          </li>
+          <li class="attr__item">
+            <dl>
+              <dt>target</dt>
+              <dd>
+                폼 데이터를 서버로 제출한 후 받는 응답이 열릴 위치를 명시함.
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </section>
+      <hr />
+      <!-- form 구성 요소 -->
+      <section class="form__element">
+        <h3 class="element__title">"form"의 구성 요소들</h3>
+        <dl>
+          <dt id="control"><strong> 대화형 컨트롤 종류</strong></dt>
+          <dd>
+            <ul class="form__inter">
+              <li class="inter__item">button</li>
+              <li class="inter__item">label</li>
+              <li class="inter__item">output</li>
+              <li class="inter__item">select</li>
+              <li class="inter__item">textarea</li>
+              <li class="inter__item">datalist</li>
+              <li class="inter__item">
+                <span
+                  >input : "type" 속성이 "hidden"이 아닌 경우 <br />
+                  (속성이 많아서 뒤에 따로 설명)
+                </span>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </section>
+    </section>
+
+    <!-- input 종류 -->
+    <!-- input 속성 -->
+    <!-- input 요소의 다양한 양식 -->
+  </body>
+</html>
