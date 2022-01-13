@@ -201,30 +201,165 @@
       <!-- form 구성 요소 -->
       <section class="form__element">
         <h3 class="element__title">"form"의 구성 요소들</h3>
-        <dl>
-          <dt id="control"><strong> 대화형 컨트롤 종류</strong></dt>
-          <dd>
-            <ul class="form__inter">
-              <li class="inter__item">button</li>
-              <li class="inter__item">label</li>
-              <li class="inter__item">output</li>
-              <li class="inter__item">select</li>
-              <li class="inter__item">textarea</li>
-              <li class="inter__item">datalist</li>
-              <li class="inter__item">
+        <ul>
+          <li>
+            <p>구획</p>
+            <dl>
+              <dt>
+                <a
+                  href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/fieldset"
+                  alt="fieldset 설명"
+                  rel="external"
+                  hreflang="en-US"
+                  >"fieldset"</a
+                >
+                요소
+              </dt>
+              <dd>
                 <span
-                  >input : "type" 속성이 "hidden"이 아닌 경우 <br />
-                  (속성이 많아서 뒤에 따로 설명)
-                </span>
+                  >여러 대화형 컨트롤러와 여러 라벨을 각각 목적에 맞게 구획으로
+                  나눠 분류할 때 사용한다.</span
+                >
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <p>레이블링</p>
+            <dl>
+              <dt><a href="">"label" 요소</a></dt>
+              <dd>
+                <ul>
+                  <li>여러 폼 요소에 대한 레이블을 정의합니다.</li>
+                  <li>
+                    사용자가 입력 요소에 초점을 맞출 때 화면 판독기가 레이블을
+                    <br />
+                    크게 읽기 때문에 "label" 요소는 화면 판독기 사용자에게
+                    유용합니다.
+                  </li>
+                  <li>
+                    사용자가 "label" 요소 내의 텍스트를 클릭하면 라디오
+                    버튼/확인란이 전환되기 때문에 <br />
+                    라디오 버튼 또는 확인란과 같은 매우 작은 영역(예: 라디오
+                    버튼)을 클릭하는 데에도 도움이 됩니다.
+                  </li>
+                  <li>
+                    "input" 태그와 그룹화 시킬려면 "label" 태그 "for" 속성에
+                    "input" 태그 "ID" 작성
+                  </li>
+                  <li>"form" 태그와 연결 시킬 수 있다.</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <p id="control">입력</p>
+            <ul>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/button"
+                  rel="external"
+                  hreflang="en-US"
+                  >버튼 요소</a
+                ><br />
+                <span>"type" 속성에 "button"을 명시해주어야한다.</span>
+                <button type="button">클릭</button>
+              </li>
+              <li>
+                <span>리스트 요소</span> <br />
+                <span>공통사항 : 자식요소가 "option" 태그이다.</span>
+                <ul class="form__inter">
+                  <li class="inter__item">
+                    <a
+                      href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/select"
+                      rel="external"
+                      hreflang="en-US"
+                      >select</a
+                    >
+                    <br />
+                    <label for="cars">Choose a car:</label>
+                    <select id="cars" name="cars">
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="fiat">Fiat</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </li>
+                  <li class="inter__item">
+                    <a
+                      href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/datalist"
+                      rel="external"
+                      hreflang="en-US"
+                      >datalist</a
+                    >
+                    <br />
+                    <input list="browsers" />
+                    <datalist id="browsers">
+                      <option value="Internet Explorer"></option>
+                      <option value="Firefox"></option>
+                      <option value="Chrome"></option>
+                      <option value="Opera"></option>
+                      <option value="Safari"></option>
+                    </datalist>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                텍스트 요소
+                <ul>
+                  <li>
+                    <p>
+                      <a
+                        href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/textarea"
+                        rel="external"
+                        hreflang="en-US"
+                        >textarea</a
+                      >
+                    </p>
+                    <textarea
+                      name="message"
+                      rows="10"
+                      cols="30"
+                      placeholder="텍스트를 입력하세요"
+                    >
+                    </textarea>
+                  </li>
+                  <li>
+                    <p>
+                      <a
+                        href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input"
+                        rel="external"
+                        hreflang="en-US"
+                        >input : "type" 속성이 "hidden"이 아닌 경우</a
+                      >
+                    </p>
+                    <label for="fname">First name:</label>
+                    <input
+                      type="text"
+                      id="fname"
+                      name="fname"
+                      placeholder="이름을 입력하세요"
+                    />
+                  </li>
+                </ul>
               </li>
             </ul>
-          </dd>
-        </dl>
+          </li>
+          <li>
+            <span>출력 요소</span> <br />
+            <a
+              href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/output"
+              rel="external"
+              hreflang="en-US"
+              >"output" 요소</a
+            >
+            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+              <input type="range" id="b" name="b" value="50" /> +
+              <input type="number" id="a" name="a" value="10" /> =
+              <output name="result" for="a b">60</output>
+            </form>
+          </li>
+        </ul>
       </section>
     </section>
-
-    <!-- input 종류 -->
-    <!-- input 속성 -->
-    <!-- input 요소의 다양한 양식 -->
   </body>
 </html>
