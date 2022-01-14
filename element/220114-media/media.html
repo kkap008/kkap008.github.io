@@ -4,9 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      video {
+        max-width: 50vw;
+        max-height: 30vw;
+      }
+    </style>
     <title>media</title>
   </head>
   <body>
-    <body></body>
+    <body>
+      <!-- 멀티미디어 요소 정리 -->
+      <h1 class="title">멀티미디어 임베드 요소</h1>
+      <!-- 비디오 요소 설명 -->
+      <article class="vedio">
+        <h2 class="vedio__title">"Video" 요소 설명</h2>
+        <details class="vedio__list">
+          <summary>"control" 속성</summary>
+          <video muted controls poster="video/poster/cat.jpg">
+            <!-- 메인 영상입니다 -->
+            <source src="video/cat1.mp4" />
+            <!-- 대체 영상입니다 -->
+            <source src="video/cat2.mp4" />
+            <track
+              default
+              kind="captions"
+              srclang="kr"
+              src="video/vtt/cat.vtt"
+            />
+            <p>웹브라우저가 video를 지원하지 않습니다.</p>
+          </video>
+        </details>
+      </article>
+      <!-- 오디오 요소 설명 -->
+      <article class="audio">
+        <h2 class="audio__title">"Audio" 요소 설명</h2>
+      </article>
+    </body>
   </body>
 </html>
