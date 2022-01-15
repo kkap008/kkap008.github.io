@@ -33,7 +33,7 @@
         <video
           muted
           controls
-          preload="metadata"
+          preload="none"
           poster="video/poster/cat.jpg"
           class="js-video"
         >
@@ -77,10 +77,28 @@
               <li><span>loop : 반복 재생</span></li>
               <li><span>muted : 음소거</span></li>
               <li><span>poster : 썸네일</span></li>
-              <li><span></span></li>
-              <li><span></span></li>
-              <li><span></span></li>
-              <li><span></span></li>
+              <li>
+                <dl>
+                  <dt>preload</dt>
+                  <dd>
+                    auto : 페이지가 로드될 때 브라우저가 전체 비디오를 로드
+                    <br />
+                    (비디오 파일도 같이 로드된다.)
+                  </dd>
+                  <dd>
+                    metadata : 페이지가 로드될 때 브라우저가 메타데이터만 로드
+                    <br />
+                    (비디오 메타데이터만 로드)
+                  </dd>
+                  <dd>
+                    none : 페이지가 로드될 때 동영상을 로드하지 않음 <br />
+                    (비디오 파일을 로드하지 않음. 재생하기 전 비디오 시간 표시
+                    안됨)
+                  </dd>
+                  <dd>※ "autoplay" 속성 사용 시 "preload" 속성은 무시된다.</dd>
+                </dl>
+              </li>
+              <li><span>src : 비디오 경로</span></li>
             </ul>
           </details>
           <details class="vedio__source-tag">
