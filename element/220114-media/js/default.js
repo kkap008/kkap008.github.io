@@ -50,14 +50,14 @@ class CatVideo {
 
   //   비디오 로드
   load() {
-    setTimeout(() => {
-      this.video.load();
-    }, 500);
+    this.video.load();
   }
 
   //   비디오 변경 시 자동 재생
   play() {
-    this.video.play();
+    setTimeout(() => {
+      this.video.play();
+    }, 1000);
   }
   //   버튼 텍스트 변경
   btnText(_text) {
@@ -78,19 +78,17 @@ btn.addEventListener("click", (e) => {
 
   //   경로 검사
   if (catVideo.getSourceSrc()) {
-    //   자막 변경
-    catVideo.toggleTrack();
     // 대체 영상을 위한 경로 초기화
     catVideo.setSourceSrc("");
     // 현재 재생 중인 영상
     catVideo.infoChange("cat2.mp4");
     catVideo.btnText("메인 영상 보기");
   } else {
-    catVideo.toggleTrack();
     catVideo.setSourceSrc("video/cat1.mp4");
     catVideo.infoChange("cat1.mp4");
     catVideo.btnText("대체 영상 보기");
   }
   catVideo.load();
+  catVideo.toggleTrack();
   catVideo.play();
 });
