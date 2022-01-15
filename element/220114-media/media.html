@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/default.js"></script>
     <style>
+      details {
+        cursor: pointer;
+      }
       video {
-        max-width: 50vw;
-        max-height: 30vw;
+        max-height: 50vw;
       }
     </style>
     <title>media</title>
@@ -19,15 +22,29 @@
     <article class="vedio">
       <h2 class="vedio__title">"Video" 요소 설명</h2>
       <details class="vedio__list">
-        <summary>"control" 속성</summary>
-        <video muted controls poster="video/poster/cat.jpg">
+        <summary>"video" 태그</summary>
+        <video muted controls poster="video/poster/cat.jpg" class="js-video">
           <!-- 메인 영상입니다 -->
-          <source src="video/cat1.mp4" />
+          <source src="video/cat1.mp4" class="s1" />
           <!-- 대체 영상입니다 -->
-          <source src="video/cat2.mp4" />
-          <track default kind="captions" srclang="kr" src="video/vtt/cat.vtt" />
+          <source src="video/cat2.mp4" class="s2" />
+          <track
+            default
+            kind="captions"
+            srclang="cat1-kr"
+            src="video/vtt/cat1.vtt"
+            name="cat1-kr"
+          />
+          <track
+            kind="captions"
+            srclang="cat2-kr"
+            src="video/vtt/cat2.vtt"
+            name="cat2-kr"
+          />
           <p>웹브라우저가 video를 지원하지 않습니다.</p>
         </video>
+        <p class="vedio__info js-info">cat1.mp4</p>
+        <button type="button" class="btn js-btn">서브 비디오 보기</button>
       </details>
     </article>
     <!-- 오디오 요소 설명 -->
