@@ -34,12 +34,11 @@ class CatVideo {
     info.removeChild(info.childNodes.item("text"));
     info.appendChild(text);
   }
-
   //   자막 변경
-  toggleTrack(_srcLang) {
-    const track = this.video.getElementsByTagName("track");
-    const cat1_kr = track.namedItem("cat1-kr").track;
-    const cat2_kr = track.namedItem("cat2-kr").track;
+  toggleTrack() {
+    const track = this.video.textTracks;
+    const cat1_kr = track[0];
+    const cat2_kr = track[1];
     if (cat1_kr.mode == "showing") {
       cat1_kr.mode = "disabled";
       cat2_kr.mode = "showing";
