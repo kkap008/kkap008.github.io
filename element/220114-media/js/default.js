@@ -57,7 +57,7 @@ class CatVideo {
   play() {
     setTimeout(() => {
       this.video.play();
-    }, 500);
+    }, 1000);
   }
   //   버튼 텍스트 변경
   btnText(_text) {
