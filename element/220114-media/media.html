@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="js/default.js"></script>
     <style>
-      details {
+      summary {
         cursor: pointer;
+      }
+      details {
+        margin-bottom: 20px;
       }
       video {
         max-height: 20vw;
+      }
+      .vedio__explain-list-warp {
+        margin-left: 15px;
       }
     </style>
     <title>media</title>
@@ -18,12 +24,19 @@
   <body>
     <!-- 멀티미디어 요소 정리 -->
     <h1 class="title">멀티미디어 임베드 요소</h1>
+    <hr />
     <!-- 비디오 요소 설명 -->
     <article class="vedio">
       <h2 class="vedio__title">"Video" 요소 설명</h2>
-      <details class="vedio__list">
-        <summary>"video" 태그</summary>
-        <video muted controls poster="video/poster/cat.jpg" class="js-video">
+      <details class="vedio__example-list">
+        <summary>예시</summary>
+        <video
+          muted
+          controls
+          preload="metadata"
+          poster="video/poster/cat.jpg"
+          class="js-video"
+        >
           <!-- 메인 영상입니다 -->
           <source src="video/cat1.mp4" class="s1" />
           <!-- 대체 영상입니다 -->
@@ -46,7 +59,46 @@
         <p class="vedio__info js-info">cat1.mp4</p>
         <button type="button" class="btn js-btn">서브 비디오 보기</button>
       </details>
+
+      <!-- 비디오 자식 요소와 각 요소 속성들 -->
+      <details class="vedio__explain-list">
+        <summary>속성들</summary>
+        <div class="vedio__explain-list-warp">
+          <details class="vedio__vedio-tag">
+            <summary>&lt;video&gt; 태그</summary>
+            <ul class="vedio__attr">
+              <li><span>autoplay : 웹페이지 시작 시 자동재생</span></li>
+              <li>
+                <span
+                  >contrlos : 비디오 컨트롤을 표시하도록 지정합니다(예:
+                  재생/일시 중지 단추).
+                </span>
+              </li>
+              <li><span>loop : 반복 재생</span></li>
+              <li><span>muted : 음소거</span></li>
+              <li><span>poster : 썸네일</span></li>
+              <li><span></span></li>
+              <li><span></span></li>
+              <li><span></span></li>
+              <li><span></span></li>
+            </ul>
+          </details>
+          <details class="vedio__source-tag">
+            <summary>&lt;source&gt; 태그</summary>
+          </details>
+          <details class="vedio__track-tag">
+            <summary>&lt;track&gt; 태그</summary>
+          </details>
+        </div>
+      </details>
+
+      <!-- 비디오 포맷 요소 -->
+      <details class="vedio__format">
+        <summary>사용가능 비디오 포맷</summary>
+      </details>
     </article>
+
+    <hr />
     <!-- 오디오 요소 설명 -->
     <article class="audio">
       <h2 class="audio__title">"Audio" 요소 설명</h2>
