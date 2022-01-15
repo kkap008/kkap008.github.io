@@ -50,14 +50,14 @@ class CatVideo {
 
   //   비디오 로드
   load() {
-    this.video.load();
+    setTimeout(() => {
+      this.video.load();
+    }, 500);
   }
 
   //   비디오 변경 시 자동 재생
   play() {
-    setTimeout(() => {
-      this.video.play();
-    }, 1000);
+    this.video.play();
   }
   //   버튼 텍스트 변경
   btnText(_text) {
