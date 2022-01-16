@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="js/default.js"></script>
+    <script defer src="js/vedio.js"></script>
+    <script defer src="js/audio.js"></script>
     <style>
       summary {
         cursor: pointer;
@@ -59,11 +60,19 @@
       <details class="vedio__explain-list">
         <summary>관련 태그 및 속성들</summary>
         <div class="vedio__explain-list-warp">
+          <!-- 비디오 태그 -->
           <details class="vedio__vedio-tag">
-            <!-- 비디오 태그 -->
             <summary>&lt;video&gt; 태그</summary>
             <ul class="vedio__attr">
-              <li><span>autoplay : 웹페이지 시작 시 자동재생</span></li>
+              <li>
+                <span
+                  >autoplay : 웹페이지 시작 시 자동재생 <br />
+                  <a
+                    href="https://developer.mozilla.org/ko/docs/Web/Media/Autoplay_guide"
+                    >MDN - 자동 재생 가이드 참조</a
+                  >
+                </span>
+              </li>
               <li>
                 <span
                   >contrlos : 비디오 컨트롤을 표시하도록 지정합니다(예:
@@ -277,7 +286,7 @@
 
       <!-- 사용 가능한 비디오 파일 종류 -->
       <details class="vedio__format">
-        <summary>사용가능 비디오 포맷</summary>
+        <summary>사용 가능한 비디오 파일 종류</summary>
         <ul>
           <li>
             <span> <strong>★mp4</strong> - 가장 많은 브라우저 지원</span>
@@ -295,14 +304,62 @@
       <!-- 오디오 예시 -->
       <details class="audio__example">
         <summary>예시</summary>
+        <audio class="audio__player" controls muted preload="metadata">
+          <source src="music/Kalimba.mp3" type="audio/mpeg" />
+          <source src="music/Kalimba.ogg" type="audio/ogg" />
+          <p>브라우저가 오디오 재생을 지원하지 않습니다.</p>
+        </audio>
       </details>
       <!-- 관련 태그 및 속성들 -->
       <details class="audio__explain">
         <summary>관련 태그 및 속성들</summary>
+
+        <ul class="audio__attr-list">
+          <li><span>autoplay : 오디오 자동 실행</span></li>
+          <li><span>controls : 제어기가 표시됨</span></li>
+          <li><span>loop : 자동재생</span></li>
+          <li><span>muted : 페이지 로드 시 음소거 상태</span></li>
+          <li>
+            <dl>
+              <dt>preload (=비디오 태그 속성과 똑같다)</dt>
+              <dd>
+                <ul>
+                  <li>none</li>
+                  <li>metadata</li>
+                  <li>auto</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <span
+              >src : 오디오 파일 위치 명시 <br />
+              (※ &lt;audio&gt; 태그 와 함께 사용) <br />
+              (※ &lt;source&gt; 태그 와 함께 사용)
+            </span>
+          </li>
+        </ul>
       </details>
       <!-- 사용 가능한 오디오 파일 종류 -->
       <details class="audio__format">
-        <summary></summary>
+        <summary>사용 가능한 오디오 파일 종류</summary>
+        <dl class="audio__format-list">
+          <dt><strong>★mp3</strong></dt>
+          <dd>
+            Moving Picture Experts Group에 의해 개발되었으며, MPEG-1의 오디오
+            규격으로 개발된 손실 압축형 파일 형식
+          </dd>
+          <dt>wav</dt>
+          <dd>
+            IBM과 Microsoft에 의해 개발되었으며, 개인용 PC에서 오디오를 재생하기
+            위한 IBM과 Microsoft의 표준 오디오 파일 형식
+          </dd>
+          <dt>ogg</dt>
+          <dd>
+            Xiph 재단에 의해 개발되었으며, MP3의 대안으로 개발된 특허권으로
+            보호되지 않는 개방형 공개 멀티미디어 파일 형식
+          </dd>
+        </dl>
       </details>
     </article>
   </body>
