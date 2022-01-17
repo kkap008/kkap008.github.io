@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/vedio.js"></script>
+    <script defer src="js/audio.js"></script>
     <style>
+      summary {
+        cursor: pointer;
+      }
+      details {
+        margin-bottom: 20px;
+      }
       video {
-        max-width: 50vw;
-        max-height: 30vw;
+        max-height: 20vw;
+      }
+      .vedio__explain-list-warp {
+        margin-left: 15px;
       }
     </style>
     <title>media</title>
@@ -15,24 +25,342 @@
   <body>
     <!-- 멀티미디어 요소 정리 -->
     <h1 class="title">멀티미디어 임베드 요소</h1>
-    <!-- 비디오 요소 설명 -->
+    <hr />
+
     <article class="vedio">
+      <!-- 비디오 요소 설명 -->
       <h2 class="vedio__title">"Video" 요소 설명</h2>
-      <details class="vedio__list">
-        <summary>"control" 속성</summary>
-        <video muted controls poster="video/poster/cat.jpg">
+      <details class="vedio__example">
+        <summary>예시</summary>
+        <video
+          muted
+          controls
+          preload="metadata"
+          poster="video/poster/cat.jpg"
+          class="js-video"
+        >
           <!-- 메인 영상입니다 -->
-          <source src="video/cat1.mp4" />
+          <source src="video/cat1.mp4" type="video/mp4" class="s1" />
           <!-- 대체 영상입니다 -->
-          <source src="video/cat2.mp4" />
-          <track default kind="captions" srclang="kr" src="video/vtt/cat.vtt" />
+          <source src="video/cat2.mp4" type="video/mp4" class="s2" />
+          <track
+            default
+            kind="captions"
+            label="cat1"
+            src="video/vtt/cat1.vtt"
+          />
+          <track kind="captions" label="cat2" src="video/vtt/cat2.vtt" />
           <p>웹브라우저가 video를 지원하지 않습니다.</p>
         </video>
+        <p class="vedio__info js-info">cat1.mp4</p>
+        <button type="button" class="btn js-btn">서브 비디오 보기</button>
+      </details>
+
+      <!-- 비디오 자식 요소와 각 요소 속성들 -->
+      <details class="vedio__explain-list">
+        <summary>관련 태그 및 속성들</summary>
+        <div class="vedio__explain-list-warp">
+          <!-- 비디오 태그 -->
+          <details class="vedio__vedio-tag">
+            <summary>&lt;video&gt; 태그</summary>
+            <ul class="vedio__attr">
+              <li>
+                <span
+                  >autoplay : 웹페이지 시작 시 자동재생 <br />
+                  <a
+                    href="https://developer.mozilla.org/ko/docs/Web/Media/Autoplay_guide"
+                    >MDN - 자동 재생 가이드 참조</a
+                  >
+                </span>
+              </li>
+              <li>
+                <span
+                  >contrlos : 비디오 컨트롤을 표시하도록 지정합니다(예:
+                  재생/일시 중지 단추).
+                </span>
+              </li>
+              <li><span>loop : 반복 재생</span></li>
+              <li><span>muted : 음소거</span></li>
+              <li>
+                <span
+                  >poster : 썸네일 <br />
+                  (※ 비디오 로드 시 / 재생 버튼 클릭 전에 보여진다. "autoplay"
+                  속성 사용 시 로드 시간이 짧아져서 못볼 수 있다.)
+                </span>
+              </li>
+              <li>
+                <dl>
+                  <dt>preload</dt>
+                  <dd>
+                    auto : 페이지가 로드될 때 브라우저가 전체 비디오를 로드
+                    <br />
+                    (비디오 파일도 같이 로드된다.)
+                  </dd>
+                  <dd>
+                    metadata : 페이지가 로드될 때 브라우저가 메타데이터만 로드
+                    <br />
+                    (비디오 메타데이터만 로드)
+                  </dd>
+                  <dd>
+                    none : 페이지가 로드될 때 동영상을 로드하지 않음 <br />
+                    (비디오 파일을 로드하지 않음. 재생하기 전 비디오 시간 표시
+                    안됨)
+                  </dd>
+                  <dd>※ "autoplay" 속성 사용 시 "preload" 속성은 무시된다.</dd>
+                </dl>
+              </li>
+              <li>
+                <span
+                  >src : 비디오 경로 <br />
+                  (※ &lt;source&gt; 태그를 이용한 대체 영상을 제공 안할 시 사용.
+                  즉 단일 영상만 제공 시 사용)
+                </span>
+              </li>
+            </ul>
+          </details>
+
+          <!-- 소스 태그 -->
+          <details class="vedio__source-tag">
+            <summary>&lt;source&gt; 태그</summary>
+            <ul class="video__attr">
+              <li>src : 비디오 경로</li>
+              <li>
+                type : MIME-type <br />
+                (※ MIME-type? 텍스트로만 가능했던 초기 인터넷 전자메일에,
+                <br />
+                파일,이미지,오디오 등도 첨부 가능케 한 다목적용 확장 타입 규격)
+                <br />
+                (구성? type/subtype) <br />
+                (ex text/css, vedio/mp4 ...)
+              </li>
+            </ul>
+          </details>
+
+          <!-- 트랙 태그 -->
+          <details class="vedio__track-tag">
+            <summary>&lt;track&gt; 태그</summary>
+            <p>
+              미디어 요소의 자식으로서, 자막 등 시간별 텍스트 트랙(시간 기반
+              데이터)를 지정할 때 사용
+            </p>
+            <dl>
+              <dt>파일 종류</dt>
+              <dd>
+                <span>
+                  <a
+                    href="https://www.affde.com/ko/caption-format-acronyms-explained.html"
+                    >WebVTT(Web Video Text Tracks)</a
+                  >
+                  - .vtt 파일</span
+                >
+              </dd>
+              <dd>
+                <span>
+                  <a
+                    href="https://www.affde.com/ko/caption-format-acronyms-explained.html"
+                    >Timed Text Markup Language(TTML)</a
+                  >
+                </span>
+              </dd>
+            </dl>
+            <ul class="vidio__track-attr">
+              <li>
+                <span>default : 영상의 사용할 기본 트랙을 설정</span>
+              </li>
+              <li>
+                <span
+                  >kind : 텍스트 트랙의 종류 <br />
+                  (※ 기본은 "subtitles") <br />
+                  (※ 유효하지 않는 값은 "metadata"로 간주)
+                </span>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>subtitles</dt>
+                      <dd>번역 자막</dd>
+                      <dd>ex) 소리는 영어 -- 자막은 한국어</dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>captions</dt>
+                      <dd>
+                        <ul>
+                          <li><span>청각이 안좋은 사람들을 위한 자막</span></li>
+                          <li>
+                            <span
+                              >소리를 들을 수 없거나 켤 수 없는 경우에
+                              사용</span
+                            >
+                          </li>
+                          <li>
+                            <span>번역 자막 + 비언어적 효과 자막 (효과음)</span>
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>descriptions</dt>
+                      <dd>
+                        <ul>
+                          <li><span>비디오 콘텐츠의 텍스트 설명</span></li>
+                          <li>
+                            <span
+                              >비디오를 볼 수 없는 환경 / 시각이 안좋은
+                              사용자에게 적합</span
+                            >
+                          </li>
+                          <li><span>화면에 표시되지 않는다</span></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>chapters</dt>
+                      <dd>
+                        <ul>
+                          <li>
+                            <span
+                              >챕터 타이틀은 미디어 리소스를 탐색할 때
+                              사용</span
+                            >
+                          </li>
+                          <li><span>화면에 표시되지 않는다</span></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>metadata</dt>
+                      <dd>
+                        <ul>
+                          <li>
+                            <span
+                              >텍스트 트랙이 스크립트에 사용되는 콘텐츠임을
+                              명시</span
+                            >
+                          </li>
+                          <li><span>화면에 표시되지 않는다</span></li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+              <li><span>src : 트랙 파일의 URL</span></li>
+              <li><span>label : 트랙의 제목을 명시</span></li>
+              <li>
+                <dl>
+                  <dt>srclang</dt>
+                  <dd>
+                    <ul>
+                      <li>
+                        <span
+                          >트랙의 데이터 언어를 명시 <br />
+                          (단, kind 속성값이 “subtitles”인 경우에만 사용할 수
+                          있음)
+                        </span>
+                      </li>
+                      <li>
+                        <span
+                          >IETF(국제 인터넷 표준화 기구) 기술 사항 중
+                          <a
+                            href="https://www.w3schools.com/tags/ref_language_codes.asp"
+                            >ISO 639-1</a
+                          >
+                          사용</span
+                        >
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </details>
+
+      <!-- 사용 가능한 비디오 파일 종류 -->
+      <details class="vedio__format">
+        <summary>사용 가능한 비디오 파일 종류</summary>
+        <ul>
+          <li>
+            <span> <strong>★mp4</strong> - 가장 많은 브라우저 지원</span>
+          </li>
+          <li><span>webm - 사파리 지원 애매함</span></li>
+          <li><span>ogg - 사파리 지원 애매함</span></li>
+        </ul>
       </details>
     </article>
+    <hr />
+
     <!-- 오디오 요소 설명 -->
     <article class="audio">
       <h2 class="audio__title">"Audio" 요소 설명</h2>
+      <!-- 오디오 예시 -->
+      <details class="audio__example">
+        <summary>예시</summary>
+        <audio class="audio__player" controls muted preload="metadata">
+          <source src="music/Kalimba.mp3" type="audio/mpeg" />
+          <source src="music/Kalimba.ogg" type="audio/ogg" />
+          <p>브라우저가 오디오 재생을 지원하지 않습니다.</p>
+        </audio>
+      </details>
+      <!-- 관련 태그 및 속성들 -->
+      <details class="audio__explain">
+        <summary>관련 태그 및 속성들</summary>
+
+        <ul class="audio__attr-list">
+          <li><span>autoplay : 오디오 자동 실행</span></li>
+          <li><span>controls : 제어기가 표시됨</span></li>
+          <li><span>loop : 자동재생</span></li>
+          <li><span>muted : 페이지 로드 시 음소거 상태</span></li>
+          <li>
+            <dl>
+              <dt>preload (=비디오 태그 속성과 똑같다)</dt>
+              <dd>
+                <ul>
+                  <li>none</li>
+                  <li>metadata</li>
+                  <li>auto</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <span
+              >src : 오디오 파일 위치 명시 <br />
+              (※ &lt;audio&gt; 태그 와 함께 사용) <br />
+              (※ &lt;source&gt; 태그 와 함께 사용)
+            </span>
+          </li>
+        </ul>
+      </details>
+      <!-- 사용 가능한 오디오 파일 종류 -->
+      <details class="audio__format">
+        <summary>사용 가능한 오디오 파일 종류</summary>
+        <dl class="audio__format-list">
+          <dt><strong>★mp3</strong></dt>
+          <dd>
+            Moving Picture Experts Group에 의해 개발되었으며, MPEG-1의 오디오
+            규격으로 개발된 손실 압축형 파일 형식
+          </dd>
+          <dt>wav</dt>
+          <dd>
+            IBM과 Microsoft에 의해 개발되었으며, 개인용 PC에서 오디오를 재생하기
+            위한 IBM과 Microsoft의 표준 오디오 파일 형식
+          </dd>
+          <dt>ogg</dt>
+          <dd>
+            Xiph 재단에 의해 개발되었으며, MP3의 대안으로 개발된 특허권으로
+            보호되지 않는 개방형 공개 멀티미디어 파일 형식
+          </dd>
+        </dl>
+      </details>
     </article>
   </body>
 </html>
