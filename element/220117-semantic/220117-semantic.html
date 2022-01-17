@@ -4,16 +4,212 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      details summary {
+        cursor: pointer;
+      }
+      .semantic-elements__description,
+      .semantic-elements__benefit {
+        margin-left: 20px;
+      }
+      .semantic-elements__item {
+        margin: 8px 0;
+      }
+    </style>
     <title>Semantic tag</title>
   </head>
   <body>
     <h1 class="semantic__title">What is Semantic tag?</h1>
+    <hr />
+    <!-- 시맨틱 태그 설명 -->
     <section class="semantic">
-      <section class="section__element">
-        <h2 class="section__element-title">시맨틱태그 요소들</h2>
+      <!-- 시맨택 태그 요소들 -->
+      <section class="semantic-elements">
+        <h2 class="semantic-elements__title">시맨틱태그</h2>
+        <!-- 시맨틱 태그 정의 -->
+        <details class="semantic-elements__why">
+          <summary>시맨틱 태그 정의</summary>
+          <dl class="semantic-elements__description">
+            <dt>시맨틱 태그</dt>
+            <dd>말그대로 의미가 있는 태그이다.</dd>
+            <dd>개발자 관점 : 개발 시 가독성이 좋아졌다.</dd>
+            <dd>
+              크롤러 관점 : 의미있는 태그를 사용하면서 데이터 분류가 더
+              명확해졌다.
+            </dd>
+          </dl>
+
+          <!-- 시맨틱 태그 사용 이점 -->
+          <details class="semantic-elements__benefit">
+            <summary>시맨틱 태그 사용 시 이점</summary>
+            <ul class="semantic-elements__benefit-list">
+              <li>
+                <span
+                  >검색 엔진은 의미론적 마크업 을 페이지의 검색 랭킹에 영향을 줄
+                  수 있는 중요한 키워드로 간주</span
+                >
+              </li>
+              <li>
+                <span
+                  >시각 장애가 있는 사용자가 화면 판독기로 페이지를 탐색할 때
+                  의미론적 마크업을 푯말로 사용할 수 있습니다.</span
+                >
+              </li>
+              <li>
+                <span
+                  >의미없고 클래스 이름이 붙여져있거나 그렇지 않은 끊임없는 div
+                  들을 탐색하는 것보다, 의미있는 코드 블록을 찾는 것이 훨씬
+                  쉽습니다.</span
+                >
+              </li>
+              <li>
+                <span
+                  >개발자에게 태그 안에 채워질 데이터 유형을 제안합니다</span
+                >
+              </li>
+              <li>
+                <span
+                  >의미있는 이름짓기(Semantic naming)는 적절한 사용자 정의 요소
+                  / 구성 요소의 이름짓기(namimg)를 반영합니다.</span
+                >
+              </li>
+            </ul>
+          </details>
+        </details>
+        <!-- 시맨틱 태그 요소 목록 -->
+        <details class="semantic-elements__elements">
+          <summary>시맨틱태그 구획 요소 목록</summary>
+          <p>
+            의미론적 요소들은 스타일링을 목적으로 사용하면 안된다. <br />
+            (※ 참고로 "heading tag"랑 사용 시 섹셔닝 루트를 기억하자)
+          </p>
+
+          <ul class="semantic-elements__list">
+            <li class="semantic-elements__item">
+              <span
+                >article : 다양한 곳에 재사용이 가능한 독립적 구획<br />
+                ex) 게시판, 블로그 글, 매거진, 뉴스 기사 등... <br />
+              </span>
+            </li>
+            <li class="semantic-elements__item">
+              <span>section : HTML 문서 내에서 독립적 구획을 나눌 때 사용</span>
+            </li>
+            <li class="semantic-elements__item">
+              <span
+                >header : 소개 및 탐색에 도움을 주는 콘텐츠 집합을 나타내는 구획
+                <br />
+                ex) 제목, 로고, 검색 폼, 작성자 이름 등...
+              </span>
+            </li>
+            <li class="semantic-elements__item">
+              <span>main : &lt;body&gt;의 주요 콘텐츠를 나타낸다.</span> <br />
+              <span
+                >(※문서의 주제에 관련된 핵심 내용을 나타내는 구획이며, 반복되는
+                내용이어서는 안된다.)</span
+              >
+            </li>
+            <li class="semantic-elements__item">
+              <span
+                >footer : 구획 콘텐츠 / 구획 루트의 바닥글을 나타내는
+                구획이다.</span
+              >
+              <br />
+              <span>(※자세한 내용은 "MDN 콘텐츠 카테고리" 참조)</span>
+              <ul>
+                <li>
+                  <span
+                    >구획 콘텐츠 : &lt;article&gt;&lt;section&gt;&lt;aside&gt;
+                    등... 구획을 나타내는 요소들</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >구획 루트 : &lt;body&gt; "html" 파일내에서 단 한개만
+                    존재</span
+                  >
+                </li>
+                <li>
+                  <dl>
+                    <dt>일반적으로 사용되는 &lt;footer&gt; 내용들</dt>
+                    <dd>
+                      <ul>
+                        <li>작성자 정보</li>
+                        <li>저작권 정보</li>
+                        <li>연락처 정보</li>
+                        <li>사이트맵</li>
+                        <li>주소 정보</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </li>
+              </ul>
+            </li>
+            <li class="semantic-elements__item">
+              <span
+                >figure : 삽화나 다이어그램, 사진, 코드 목록 등과 같이 문서의
+                주요 흐름과는 독립적인 콘텐츠를 정의할 때 사용</span
+              ><br />
+              <span
+                >(※문서의 내용과는 연관성을 가지지만, 해당 콘텐츠의 위치가
+                문서의 주요 흐름과는 독립적이어서 <br />
+                제거해도 문서의 흐름에 영향을 주어서는 안 된다.)</span
+              >
+            </li>
+            <li class="semantic-elements__item">
+              <span>nav</span>
+              <p>
+                : 다른 페이지 또는 현재 페이지의 다른 부분과 연결되는 네비게이션
+                링크(navigation links)들의 집합을 정의할 때 사용
+              </p>
+              <ul>
+                <li>
+                  <span
+                    >문서의 모든 링크가 &lt;nav&gt; 요소 안에 있을 필요는
+                    없습니다. &lt;nav&gt; 요소는 주요 탐색 링크 블록을 위한
+                    요소입니다. <br />
+                    대개 &lt;footer&gt; 요소가 &lt;nav&gt;에 들어가지 않아도
+                    되는 링크를 포함합니다.</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >&lt;nav&gt; 하나는 사이트 전체 탐색, 다른 하나는 현재
+                    페이지 내 탐색으로 사용하는 등, <br />
+                    하나의 문서에서 여러 개의 &lt;nav&gt; 태그를 가질 수
+                    있습니다.</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >스크린 리더 등 장애를 가진 사용자를 위한 사용자 에이전트는
+                    최초 렌더링에서 탐색 전용 콘텐츠를 <br />
+                    제외할지 결정할 때 &lt;nav&gt;를 참고합니다.</span
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="semantic-elements__item">
+              <span
+                >aside : 문서의 주요 내용과 간접적으로만 연관된 부분을
+                나타냅니다. 주로 사이드바 혹은 콜아웃 박스로 표현</span
+              >
+              <br />
+              <span
+                >(※ 단편적인 설명을 추가로 하면, "TMI"와 같은 느낌이다.)</span
+              >
+              <br />
+              <span
+                >(주의 사항! : 괄호에 묶인 텍스트라도 문서의 주요 플로우에
+                포함되어야 하므로 &lt;aside&gt;로 나타내선 안된다.)</span
+              >
+            </li>
+          </ul>
+        </details>
       </section>
-      <section class="section__picture">
-        <h2 class="section__picture">시맨틱태그 레이아웃 그림</h2>
+      <hr />
+      <!-- 레이아웃 속 시맨틱 태그 -->
+      <section class="picture">
+        <h2 class="picture__title">시맨틱태그 레이아웃 그림</h2>
       </section>
     </section>
   </body>
