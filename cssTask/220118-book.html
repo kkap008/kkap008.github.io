@@ -5,30 +5,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      @font-face {
+        font-family: DotumWeb;
+        src: local("돋움체"), local("DotumChe"), local("돋움"), local("Dotum"),
+          url(../font/BareunDotumOTFPro2.woff2) format("woff2");
+        /* "BareunDotumOTFPro2" 서체의 저작권 및 지적 재산권은 대한인쇄문화협회에 있습니다. */
+      }
+      :root {
+        font-family: "DotumWeb", sans-serif;
+        font-size: 1rem;
+      }
+      .hidden {
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        border: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        clip: rect(1px 1px 1px 1px);
+      }
       .book {
-        width:380px;
-        margin:0 auto;
+        min-width: 380px;
+        width: 50vw;
+        max-width: 500px;
+        font-size: 0.75rem;
+        color: #333;
+        line-height: 1.125rem;
+        margin: 0 auto;
       }
       #book__title {
-        
-        font-size:1rem;
-        font-weight:bold;
+        font-size: 1rem;
+        font-weight: bold;
+        font-style: normal;
+      }
+      .book__author {
+        opacity: 0.75;
+      }
+      .book__intro {
+        text-align: justify;
+      }
+      span[class*="book__price"][class*="bold"] {
+        font-size: 0.88rem;
+        font-weight: bold;
+      }
+      span[class*="book__price"][class*="orange"] {
+        color: darkorange;
+      }
+      span[class*="book__price"][class*="blue"] {
+        color: cornflowerblue;
+      }
+      .book__free-ship--purple {
+        display: flex;
+        width: 4.5em;
+        height: 1.5em;
+        justify-content: center;
+        align-items: center;
+        color: antiquewhite;
+        background-color: #8549dc;
       }
     </style>
     <title>농부로사는 즐거움 - 책</title>
   </head>
   <body class="book">
-    <h1 class="book__title"><cite id="book__title">농부로 사는 즐거움(Paperback)</cite></h1>
+    <h1 class="book__title">
+      <cite id="book__title">농부로 사는 즐거움(Paperback)</cite>
+    </h1>
     <aside class="book__author">
-      <span>폴 베델 | 갈라파고스</span>
+      <h2 class="book__author-title hidden">책의 저자 및 출판사</h2>
+      <span class="book__author">폴 베델 | 갈라파고스</span>
     </aside>
     <aside class="book__price">
-      <span>12,150</span>원(<span>10</span>%<span>화살표</span>) | <span>1,220</span>원(<span>10</span>%<span>화살표</span>) 적립
+      <h2 class="book__price-title hidden">가격과 할인정보 및 적립금</h2>
+      <p class="book__price--normal">
+        <span class="book__price--bold-orange">12,150</span>원(<span
+          class="book__price--bold"
+          >10</span
+        >&#x0025;<span class="book__price--bold-blue">&#x1F847;</span>) |
+        <span class="book__price--bold-blue">1,220</span>원(<span
+          class="book__price--bold"
+          >10</span
+        >&#x0025;) 적립
+      </p>
     </aside>
     <main class="book__intro">
-      <p>여기 세상 끝의 끝, 푸른 바다와 농지가 펼쳐진 자그마한 시골 마을에 조상의 방식대로 농사를 짓는 행복한 농부, 폴 베델이 살고 있다. 폴은 조상 대대로 내려온 씨앗을 밭에 뿌리고, 소들에게는 들판의 풀을 먹여 두 손으로 젖을 짜고, 직접 만든 버터를 빵에 발라 먹으며, 자신만 아는 낚시터에서 소소하게 가재와 물고기를 낚는다.</p>
+      <h2 class="book__intro-title hidden">책 소개</h2>
+      <p class="book__intro">
+        여기 세상 끝의 끝, 푸른 바다와 농지가 펼쳐진 자그마한 시골 마을에 조상의
+        방식대로 농사를 짓는 행복한 농부, 폴 베델이 살고 있다. 폴은 조상 대대로
+        내려온 씨앗을 밭에 뿌리고, 소들에게는 들판의 풀을 먹여 두 손으로 젖을
+        짜고, 직접 만든 버터를 빵에 발라 먹으며, 자신만 아는 낚시터에서 소소하게
+        가재와 물고기를 낚는다.
+      </p>
     </main>
-    <aside class="book__free-ship"><span>무료배송</span></aside>
-
+    <aside class="book__free-ship">
+      <h2 class="book__free-ship-title hidden">배송 관련</h2>
+      <span class="book__free-ship--purple">무료배송</span>
+    </aside>
   </body>
 </html>
