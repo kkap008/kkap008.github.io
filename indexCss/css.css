@@ -1,0 +1,10 @@
+.css__function,
+.css__function-item {
+  margin-bottom: 20px;
+}
+
+.css__function-title,
+.css__task-title {
+  display: inline;
+  font-weight: normal;
+}

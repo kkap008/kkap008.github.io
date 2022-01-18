@@ -1,0 +1,9 @@
+.html__tag,
+.html__tag-item {
+  margin-bottom: 20px;
+}
+.html__tag-title,
+.html__task-title {
+  display: inline;
+  font-weight: normal;
+}

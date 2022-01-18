@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>현대자동차 뉴아반떼</title>
+    <style>
+      .hidden {
+        /* 전체 사이즈 1px */
+        height: 1px;
+        width: 1px;
+        /* 흐름에서 빼버림 / clip() 속성을 사용하기 위해서 */
+        position: absolute;
+        /* 넘치는 부분 안보이게 */
+        overflow: hidden;
+        /* 포토샵 마스크 효과 / 지정한 좌표대로 이미지를 잘라내기 */
+        clip: rect(1px 1px 1px 1px);
+        /* 1px의 공간으로는 텍스트의 공백과 줄바꿈의 계산되지 않기 때문에 (공백은 1개만 표시하고 줄바꿈은 되지 않는) 
+        white-space: nowrap으로 정의한다. 
+        (스크린 리더가 줄바꿈은 공백으로 해석하지 않아 띄어쓰기가 되지 않은 하나의 긴 단어처럼 읽어준다고 한다. */
+        white-space: nowrap;
+        /* top과 left에 각각 -1px를 넣어주지 않고 margin:-1px를 사용하는 이유?
+        position:absolute는 top과 left, bottom이런값들을 지정해주지 않으면 원래 있던 자리에 있게 됨.
+        만약 top과 left에 -1로 넣어주게 되면 relative 부모가 어디에 있느냐에 따라서 그 부모 위치를 쫓아가게 된다.
+        그러면 text_indent로 처리한것처럼 요소 크기가 커지게됨
+        그래서 원래 위치 기준으로 이동하도록 margin으로 처리 */
+        margin: -1px;
+      }
+      body {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title hidden">현대 뉴아반떼 소개 페이지</h1>
+    <!-- 헤더 -->
+    <header class="header">
+      <h2 class="header__title hidden">현대 뉴아반떼 메뉴</h2>
+      <img
+        src="img/header.jpg"
+        alt="페이지 카테고리 영역"
+        title="카테고리 영역"
+        usemap="#nav"
+      />
+      <map name="nav">
+        <area
+          shape="rect"
+          coords="200,130,280,170"
+          href="#hi"
+          rel="nofollow"
+          alt="뉴 아반떼 기존 아반떼와 달라진 부분"
+          title="Highlights"
+        />
+        <area
+          shape="rect"
+          coords="300,130,380,170"
+          href="#de"
+          rel="nofollow"
+          alt="제품 외관,색상 설명"
+          title="Design"
+        />
+        <area
+          shape="rect"
+          coords="400,130,480,170"
+          href="#sp"
+          rel="nofollow"
+          alt="뉴 아반떼 내부 공간 설명"
+          title="Space"
+        />
+        <area
+          shape="rect"
+          coords="500,130,610,170"
+          href="#co"
+          rel="nofollow"
+          alt="운잔자를 위한 편의 기능"
+          title="Convenience"
+        />
+        <area
+          shape="rect"
+          coords="630,130,700,170"
+          href="#dr"
+          rel="nofollow"
+          alt="주행 성능 설명"
+          title="Driving"
+        />
+        <area
+          shape="rect"
+          coords="730,130,790,170"
+          href="#sa"
+          rel="nofollow"
+          alt="운전자를 위한 안전 기능"
+          title="Safety"
+        />
+        <area
+          shape="rect"
+          coords="810,130,990,170"
+          href="#hg"
+          rel="nofollow"
+          alt="반려견을 위한 편의 및 상품 설명"
+          title="H Genuine Accessories"
+        />
+      </map>
+    </header>
+    <main class="main">
+      <h2 class="main__title hidden">현대 뉴아반떼 전체 설명 페이지</h2>
+      <!-- 하이라이트 영역 -->
+      <section id="hi" class="main__highlights">
+        <h3 class="main__highlights__title hidden">
+          새로운 아반떼 설명 페이지
+        </h3>
+        <p><img src="img/con01_visual.jpg" alt="뉴 아반떼 사진" /></p>
+      </section>
+      <!-- 디자인 영역 -->
+      <section class="main__design">
+        <p id="de">
+          <a href="#"><img src="img/top.png" alt="" /></a>
+        </p>
+        <h3 class="main__design__title hidden">아반떼 외관 및 색상 설명</h3>
+        <p>
+          <img
+            src="img/con02_highlights.jpg"
+            alt="기존 아반떼와 새로운 아반떼 차이"
+          />
+        </p>
+      </section>
+      <!-- 내부 인테리어 영역 -->
+      <section class="main__space">
+        <p id="sp">
+          <a href="#"><img src="img/top.png" alt="맨 위로 이동" /></a>
+        </p>
+        <h3 class="main__space__title hidden">내부 인테리어</h3>
+        <p>
+          <img src="img/con03_design.jpg" alt="뉴 아반떼 외관 및 색상" />
+        </p>
+      </section>
+      <!-- 운전자 편리 기능 영역 -->
+      <section class="main__convenience">
+        <p id="co">
+          <a href="#"><img src="img/top.png" alt="맨 위로 이동" /></a>
+        </p>
+        <h3 class="main__convenience__title hidden">운전자를 위한 편리 기능</h3>
+        <p>
+          <img src="img/con05_convenience.jpg" alt="운전자 편리 기능 설명" />
+        </p>
+      </section>
+
+      <!-- 주행 성능 영역 -->
+      <section class="main__driving">
+        <p id="dr">
+          <a href="#"><img src="img/top.png" alt="맨 위로 이동" /></a>
+        </p>
+        <h3 class="main__driving hidden">주행 성능 설명</h3>
+        <p>
+          <img src="img/con06_driving.jpg" alt="주행 성능 설명" />
+        </p>
+      </section>
+      <!-- 안전 보조 기능 영역 -->
+      <section class="main__safety">
+        <p id="sa">
+          <a href="#"><img src="img/top.png" alt="맨 위로 이동" /></a>
+        </p>
+        <h3 class="main__safety__title hidden">운전자를 위한 안전 보조 기능</h3>
+        <p>
+          <img
+            src="img/con07_safety.jpg"
+            alt="운전자 안전을 위한 보조 기능 설명"
+          />
+        </p>
+      </section>
+      <!-- 반려견을 위한 편의 및 상품 -->
+      <section class="main__HGA">
+        <p id="hg">
+          <a href="#"><img src="img/top.png" alt="맨 위로 이동" /></a>
+        </p>
+        <h3 class="main__HGA__title hidden">반려견을 위한 편의 및 상품 설명</h3>
+        <p>
+          <img src="img/con08_pet.jpg" alt="반려견을 위한 편의 및 상품 설명" />
+        </p>
+      </section>
+    </main>
+    <!-- 풋터 -->
+    <footer class="footer">
+      <p>
+        <a href="#"><img src="img/top.png" alt="맨 위로 이동" /></a>
+      </p>
+      <p>
+        <img
+          src="img/footer.jpg"
+          alt="페이지 정보 페이지"
+          title="페이지 정보 페이지"
+        />
+      </p>
+    </footer>
+  </body>
+</html>
