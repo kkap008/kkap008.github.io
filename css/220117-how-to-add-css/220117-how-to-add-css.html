@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="external.css" />
+    <style>
+      #internal {
+        color: green;
+      }
+    </style>
+    <title>CSS 선언 방법</title>
+  </head>
+  <body>
+    <h1 class="body__title">CSS 선언 방법</h1>
+    <hr />
+    <section class="info">
+      <h2 class="info__title">CSS 소개</h2>
+      <dl class="info__defined">
+        <dt class="info__defined-title">
+          <span>CSS(=Cascading Style Sheets)란?</span>
+        </dt>
+        <dd class="info__defined-content">
+          <ul class="info__defined-list">
+            <li class="info__defined-item">
+              <span>스타일 시트 언어</span>
+            </li>
+            <li class="info__defined-item">
+              <span
+                >현재 CSS 범위가 매우 커져서, CSS 권고안을 모듈별로 개발하고
+                공개 <br />
+                (W3C는 CSS 명세의 버전을 올리지 않고, 대신 주기적으로 CSS 명세
+                안정판의 스냅샷을 생성하고 있다.)
+              </span>
+            </li>
+            <li class="info__defined-item">
+              <span>핵심 키워드 "Cascading", 즉 상속</span>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+    </section>
+    <hr />
+    <!-- inline CSS -->
+    <section class="inline">
+      <h2 class="inline-title">Inline CSS</h2>
+      <code
+        >&lt;p style="color: red;"&gt;<span
+          style="color: rgba(255, 68, 12, 0.761)"
+          >inline CSS</span
+        >&lt;/p&gt;</code
+      >
+      <br /><br />
+    </section>
+    <hr />
+    <!-- internal CSS -->
+    <section class="internal">
+      <h2 class="internal-title">Internal CSS</h2>
+      <code>&lt;head&gt;</code><br />
+      <code>&lt;style&gt;</code><br />
+      <code>&nbsp;&nbsp;p { color: blue;}</code><br />
+      <code>&lt;/style&gt;</code><br />
+      <code>&lt;/head&gt;</code><br />
+      <code>&lt;body&gt;</code><br />
+      <code
+        >&nbsp;&nbsp;&lt;p&gt;<span id="internal">internal CSS</span
+        >&lt;/p&gt;</code
+      ><br />
+      <code>&lt;/body&gt;</code><br />
+    </section>
+    <hr />
+    <!-- external CSS -->
+    <section class="external">
+      <h2 class="external-title">External CSS</h2>
+      <code>&lt;head&gt;</code><br />
+      <code>&lt;link rel="stylesheet" href="./external.css" /&gt;</code><br />
+      <code>&lt;/head&gt;</code><br />
+      <code>&lt;body&gt;</code><br />
+      <code
+        >&nbsp;&nbsp;&lt;p&gt;<span id="external">external CSS</span
+        >&lt;/p&gt;</code
+      ><br />
+      <code>&lt;/body&gt;</code><br />
+    </section>
+  </body>
+</html>
