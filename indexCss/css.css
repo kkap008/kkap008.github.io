@@ -1,9 +1,9 @@
-.css__function,
-.css__function-item {
+.css__rule,
+.css__rule-item {
   margin-bottom: 20px;
 }
 
-.css__function-title,
+.css__rule-title,
 .css__task-title {
   display: inline;
   font-weight: normal;

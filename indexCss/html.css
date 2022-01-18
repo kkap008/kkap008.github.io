@@ -7,3 +7,12 @@
   display: inline;
   font-weight: normal;
 }
+.html__task-item-caption {
+  display: inline;
+}
+.html__task-item {
+  margin-bottom: 20px;
+}
+.html__task-sub-item {
+  margin-bottom: 10px;
+}
