@@ -12,9 +12,19 @@
           url(../font/BareunDotumOTFPro2.woff2) format("woff2");
         /* "BareunDotumOTFPro2" 서체의 저작권 및 지적 재산권은 대한인쇄문화협회에 있습니다. */
       }
+      @font-face {
+        /* Noto Sans - Google - Open Font License(OFL)  */
+        font-family: "Noto Sans";
+        src: local("Noto Sans"),
+          url(../font/Noto_Sans/NotoSans-Bold.ttf) format("truetype"),
+          url(../font/Noto_Sans/NotoSans-BoldItalic.ttf) format("truetype"),
+          url(../font/Noto_Sans/NotoSans-Italic.ttf) format("truetype"),
+          url(../font/Noto_Sans/NotoSans-Regular.ttf) format("truetype");
+      }
       :root {
-        font-family: "DotumWeb", "Segoe UI Symbol", "Apple Color Emoji",
-          "Noto Sans", "Helvetica", "Roboto", sans-serif, serif;
+        font-family: "DotumWeb", "Noto Sans", "Segoe UI Symbol",
+          "Apple Color Emoji", "Helvetica", "Roboto", "-apple-system",
+          "system-ui", sans-serif, serif;
         font-size: 1rem;
       }
       .hidden {
