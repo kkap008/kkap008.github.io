@@ -27,11 +27,17 @@
           url(../font/Roboto/Roboto-Regular.ttf) format("truetype"),
           url(../font/Roboto/Roboto-Bold.ttf) format("truetype");
       }
+      @font-face {
+        font-family: "Helvetica";
+        src: local("Helvetica"),
+          url(../font/Helvetica/Helvetica.ttf) format("truetype"),
+          url(../font/Helvetica/Helvetica-Bold.ttf) format("truetype");
+      }
 
       :root {
-        font-family: "DotumWeb", "Roboto", "Noto Sans", "Segoe UI Symbol",
-          "Apple Color Emoji", "Helvetica", "Roboto", "-apple-system",
-          "system-ui", sans-serif;
+        font-family: "DotumWeb", "Roboto", "Helvetica", "Noto Sans",
+          "Segoe UI Symbol", "Apple Color Emoji", "-apple-system", "system-ui",
+          sans-serif;
         font-size: 1rem;
       }
       .hidden {
