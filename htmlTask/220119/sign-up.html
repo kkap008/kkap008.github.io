@@ -4,6 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0 auto;
+        min-width: 340px;
+        width: 100vw;
+        max-width: 600px;
+      }
+      .sign-up__title {
+        background-color: tan;
+        color: white;
+      }
+      input {
+        display: block;
+        margin: 0.5rem 0;
+        font-size: 0.625rem;
+      }
+      label,
+      a {
+        font-size: 0.625rem;
+      }
+      .sign-up__phone > * {
+        display: inline-block;
+      }
+      .sign-up__email > * {
+        display: inline-block;
+      }
+
+      .sign-up__consent input {
+        display: inline-block;
+      }
+    </style>
     <title>회원가입</title>
   </head>
   <body>
@@ -11,6 +42,60 @@
     <form action="" class="sign-up">
       <fieldset class="sign-up__info">
         <legend class="sign-up__info-title">정보입력</legend>
+        <input type="text" placeholder="이름" />
+        <input type="text" placeholder="아이디" />
+        <input type="password" placeholder="비밀번호" />
+        <input type="password" placeholder="비밀번호 재입력" />
+        <div class="sign-up__phone">
+          <select class="sign-up__phone-first">
+            <option value="" selected>휴대폰 번호 선택</option>
+            <option value="010">010</option>
+            <option value="011">011</option>
+          </select>
+          <span class="sign-up__phone-middle">-</span>
+          <input type="number" />
+          <span>-</span>
+          <input class="sign-up__phone-last" type="number" />
+        </div>
+        <div class="sign-up__email">
+          <input type="email" />
+          <span>@</span>
+          <select class="sign-up__email">
+            <option value="" selected>선택</option>
+            <option value="naver">naver.com</option>
+            <option value="gmail">gmail.com</option>
+            <option value="daum">daum.net</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="sign-up__consent">
+        <legend class="sign-up__consent-title">약관동의</legend>
+        <div class="sign-up__consent-all">
+          <input type="checkbox" id="allConsent" />
+          <label for="allConsent">전체동의</label>
+        </div>
+        <hr />
+        <div class="sign-up__consent-check">
+          <div>
+            <input type="checkbox" id="use" />
+            <label for="use">전서구 이용약관<span>(필수)</span></label>
+          </div>
+          <a href="#">전체보기</a>
+        </div>
+        <div class="sign-up__consent-check">
+          <div>
+            <input type="checkbox" id="coll" />
+            <label for="coll">개인정보 수집 및 이용<span>(필수)</span></label>
+          </div>
+          <a href="#">전체보기</a>
+        </div>
+        <div class="sign-up__consent-check">
+          <div>
+            <input type="checkbox" id="location" />
+            <label for="location">위치정보 이용약관<span>(필수)</span></label>
+          </div>
+          <a href="#">전체보기</a>
+        </div>
       </fieldset>
     </form>
   </body>
