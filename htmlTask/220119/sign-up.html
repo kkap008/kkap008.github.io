@@ -12,19 +12,22 @@
         margin: 0;
         border: none;
       }
+      :root {
+        background-color: #d5d2c1;
+      }
       input,
       label {
         display: block;
       }
       label {
-        margin: 1.125rem 0 0.5rem;
+        margin: 1rem 0 0.5rem;
         font-weight: bolder;
       }
       input,
       select {
         height: 3.25rem;
         padding: 0.5em 0.875em;
-        border: 1px solid #b48d73;
+        border: 1px solid #d2b4a1;
         width: 100%;
       }
 
@@ -44,9 +47,9 @@
 
       /* 바디 부분 */
       body {
-        min-width: 20rem;
+        min-width: 16.25rem;
         width: 90%;
-        max-width: 25rem;
+        max-width: 26.25rem;
         margin: 0 auto;
       }
 
@@ -58,7 +61,7 @@
       }
       .logo__img {
         vertical-align: top;
-        width: 5.5rem;
+        width: 7rem;
       }
 
       /* 아이디 및 패스워드 */
@@ -66,7 +69,7 @@
       /* 이름,생년월일,성별,이메일 */
       .sign-up__name-wrap,
       .sign-up__phone-wrap {
-        margin-top: 1.25rem;
+        margin-top: 1.5rem;
       }
 
       .sign-up__birth-inputs {
@@ -88,15 +91,25 @@
       }
 
       .sign-up__phone-number > .sign-up__input {
-        flex: 0 1 calc((100% / 12) * 8);
+        flex: 0 1 calc((100% / 100) * 58);
       }
       .sign-up__certified-submit {
-        flex: 0 1 calc((100% / 10) * 3);
+        flex: 0 1 calc((100% / 100) * 40);
         background-color: #a56944;
+        font-size: 0.875rem;
       }
       .sign-up__certified-title {
         padding: 0.5rem 0;
         color: white;
+      }
+
+      /* 가입하기 버튼 */
+      .sign-up__submit {
+        background-color: #a56944;
+        color: white;
+        font-size: 1.125rem;
+        font-weight: lighter;
+        margin: 1.75rem 0 3rem 0;
       }
     </style>
     <title>회원가입</title>
@@ -163,9 +176,10 @@
         <fieldset class="sign-up__gender">
           <label class="sign-up__label" for="gender">성별</label>
           <select name="gender" id="gender">
-            <option value="남">남자</option>
-            <option value="남">여자</option>
-            <option value="남"></option>
+            <option value="">성별</option>
+            <option value="man">남자</option>
+            <option value="woman">여자</option>
+            <option value="no">선택 안함</option>
           </select>
         </fieldset>
       </fieldset>
@@ -197,9 +211,12 @@
           name="certified"
           id="certified"
           placeholder="인증번호를 입력하세요"
+          disabled
         />
       </fieldset>
+      <fieldset class="sign-up__submit-wrap">
+        <input class="sign-up__submit" type="submit" value="가입하기" />
+      </fieldset>
     </form>
-    <footer class="sign-up__footer"></footer>
   </body>
 </html>
