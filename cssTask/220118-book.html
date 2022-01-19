@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+       /* local("돋움체"), local("DotumChe"), local("돋움"), local("Dotum"), */
       @font-face {
         /* "BareunDotumOTFPro2" 서체의 저작권 및 지적 재산권은 대한인쇄문화협회에 있습니다. */
-        font-family: DotumWeb;
-        src: local("돋움체"), local("DotumChe"), local("돋움"), local("Dotum"),
-          url(../font/BareunDotumOTFPro2.woff2) format("woff2");
+        font-family: "BareunDotum";
+        src:
+        url(../font/BareunDotum/BareunDotumOTFPro2.woff2) format("woff2"),
+        url(../font/BareunDotum/Fixed/BareunDotum1.ttf) format("truetype"),
+        url(../font/BareunDotum/Pro/BareunDotumPro1.ttf) format("truetype");
       }
       @font-face {
         /* Noto Sans - Google - Open Font License(OFL)  */
@@ -35,7 +38,7 @@
       }
 
       :root {
-        font-family: "DotumWeb", "Roboto", "Helvetica", "Noto Sans",
+        font-family: "BareunDotum", "Roboto", "Helvetica", "Noto Sans",
           "Segoe UI Symbol", "Apple Color Emoji", "-apple-system", "system-ui",
           sans-serif;
         font-size: 1rem;
@@ -65,6 +68,7 @@
         font-size: 1rem;
         font-weight: bold;
         font-style: normal;
+        
       }
       .book__author {
         opacity: 0.75;
@@ -109,7 +113,7 @@
         <span class="book__price--bold-orange">12,150</span>원(<span
           class="book__price--bold"
           >10</span
-        >&#37;<span class="book__price--bold-blue">&#8595;</span>) |
+        >&#37;<span class="book__price--bold-blue">&#129095;</span>) |
         <span class="book__price--bold-blue">1,220</span>원(<span
           class="book__price--bold"
           >10</span
