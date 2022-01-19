@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-       /* local("돋움체"), local("DotumChe"), local("돋움"), local("Dotum"), */
+      /* local("돋움체"), local("DotumChe"), local("돋움"), local("Dotum"), */
       @font-face {
         /* "BareunDotumOTFPro2" 서체의 저작권 및 지적 재산권은 대한인쇄문화협회에 있습니다. */
         font-family: "BareunDotum";
-        src:
-        url(../font/BareunDotum/BareunDotumOTFPro2.woff2) format("woff2"),
-        url(../font/BareunDotum/Fixed/BareunDotum1.ttf) format("truetype"),
-        url(../font/BareunDotum/Pro/BareunDotumPro1.ttf) format("truetype");
+        src: url(../font/BareunDotum/Pro/BareunDotumPro1.ttf) format("truetype"),
+          url(../font/BareunDotum/Pro/BareunDotumPro2.ttf) format("truetype"),
+          url(../font/BareunDotum/Pro/BareunDotumPro3.ttf) format("truetype");
       }
       @font-face {
         /* Noto Sans - Google - Open Font License(OFL)  */
@@ -68,13 +67,13 @@
         font-size: 1rem;
         font-weight: bold;
         font-style: normal;
-        
       }
       .book__author {
         opacity: 0.75;
       }
       .book__intro {
         text-align: justify;
+        font-weight: 400;
         opacity: 95%;
       }
       span[class*="book__price"][class*="bold"] {
