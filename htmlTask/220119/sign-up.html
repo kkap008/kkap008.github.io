@@ -5,12 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      /* 리셋 */
       * {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
+        border: none;
+      }
+      input,
+      label {
+        display: block;
+      }
+      label {
+        margin: 1.125rem 0 0.5rem;
+        font-weight: bolder;
+      }
+      input,
+      select {
+        height: 3.25rem;
+        padding: 0.5em 0.875em;
+        border: 1px solid #b48d73;
+        width: 100%;
       }
 
+      /* IR 기법 */
       .hidden {
         position: absolute;
         width: 1px;
@@ -23,43 +41,74 @@
         clip: rect(1px, 1px, 1px, 1px);
         clip: rect(1px 1px 1px 1px);
       }
+
+      /* 바디 부분 */
       body {
-        min-width: 340px;
-        max-width: 800px;
+        min-width: 20rem;
+        width: 90%;
+        max-width: 25rem;
         margin: 0 auto;
       }
-      .sign-up {
-        padding: 0 0.5rem;
+
+      /* 로고 부분 */
+      .logo {
+        text-align: center;
+        width: 100%;
+        margin: 3rem 0 1.625rem;
       }
       .logo__img {
-        width: 5rem;
+        vertical-align: top;
+        width: 5.5rem;
       }
-      .logo {
-        width: 5rem;
-        margin: 1rem auto 0;
+
+      /* 아이디 및 패스워드 */
+
+      /* 이름,생년월일,성별,이메일 */
+      .sign-up__name-wrap,
+      .sign-up__phone-wrap {
+        margin-top: 1.25rem;
       }
-      .sign-up__input,
-      .sign-up__label {
-        display: block;
-        width: 100%;
-      }
+
       .sign-up__birth-inputs {
         display: flex;
+        width: 100%;
         justify-content: space-between;
       }
+
       .sign-up__birth-inputs > .sign-up__input {
-        flex: calc(100% / 3.2) 0;
+        min-width: 60px;
+        flex: 0 1 30%;
+      }
+
+      /* 휴대번호 입력 및 인증 */
+      .sign-up__phone-number {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.875rem 0;
+      }
+
+      .sign-up__phone-number > .sign-up__input {
+        flex: 0 1 calc((100% / 12) * 8);
+      }
+      .sign-up__certified-submit {
+        flex: 0 1 calc((100% / 10) * 3);
+        background-color: #a56944;
+      }
+      .sign-up__certified-title {
+        padding: 0.5rem 0;
+        color: white;
       }
     </style>
     <title>회원가입</title>
   </head>
   <body>
     <h1 class="sign-up__title hidden">전서구 회원가입</h1>
-    <div class="logo">
+    <header class="logo">
+      <h2 class="logo__title hidden">전서구 로고</h2>
       <a href="#" class="logo__link">
         <img src="img/fawn.png" alt="로고" title="로고" class="logo__img" />
       </a>
-    </div>
+    </header>
     <form action="#" class="sign-up">
       <!-- 아이디 및 패스워드 -->
       <fieldset class="sign-up__id-wrap">
@@ -77,8 +126,8 @@
         </fieldset>
       </fieldset>
 
-      <!-- 이름, 생년월일,성별,이메일 -->
-      <fieldset class="sign-up__name">
+      <!-- 이름, 생년월일,성별 -->
+      <fieldset class="sign-up__name-wrap">
         <fieldset class="sign-up__name">
           <label class="sign-up__label" for="name">이름</label>
           <input class="sign-up__input" type="text" name="name" id="name" />
@@ -86,12 +135,71 @@
         <fieldset class="sign-up__birth">
           <label class="sign-up__label" for="name">생년월일</label>
           <div class="sign-up__birth-inputs">
-            <input class="sign-up__input" type="text" name="name" id="name" />
-            <input class="sign-up__input" type="text" name="name" id="name" />
-            <input class="sign-up__input" type="text" name="name" id="name" />
+            <input
+              class="sign-up__input"
+              type="number"
+              name="year"
+              id="year"
+              placeholder="년(4자)"
+            />
+            <select class="sign-up__input" name="month">
+              <option value="" selected>월</option>
+              <option value="1"><span>1</span></option>
+              <option value="2"><span>2</span></option>
+              <option value="3"><span>3</span></option>
+              <option value="4"><span>4</span></option>
+              <option value="5"><span>5</span></option>
+              <option value="6"><span>6</span></option>
+              <option value="7"><span>7</span></option>
+              <option value="8"><span>8</span></option>
+              <option value="9"><span>9</span></option>
+              <option value="10"><span>10</span></option>
+              <option value="11"><span>11</span></option>
+              <option value="12"><span>12</span></option>
+            </select>
+            <input class="sign-up__input" type="number" name="day" id="day" />
           </div>
         </fieldset>
+        <fieldset class="sign-up__gender">
+          <label class="sign-up__label" for="gender">성별</label>
+          <select name="gender" id="gender">
+            <option value="남">남자</option>
+            <option value="남">여자</option>
+            <option value="남"></option>
+          </select>
+        </fieldset>
+      </fieldset>
+
+      <!-- 휴대폰 번호 입력 및 인증 -->
+      <fieldset class="sign-up__phone-wrap">
+        <label class="sign-up__label" for="gender">휴대전화</label>
+        <select class="sign-up__code" name="code" id="code">
+          <option selected value="82">대한민국 +82</option>
+          <option value="82">미국/캐나다 +1</option>
+          <option value="45">덴마크 +45</option>
+          <option value="977">네팔 +977</option>
+        </select>
+
+        <div class="sign-up__phone-number">
+          <input
+            class="sign-up__input"
+            type="number"
+            name="number"
+            id="number"
+          />
+          <button class="sign-up__certified-submit">
+            <span class="sign-up__certified-title">인증번호 받기</span>
+          </button>
+        </div>
+        <input
+          class="sign-up__input"
+          type="number"
+          name="certified"
+          id="certified"
+          placeholder="인증번호를 입력하세요"
+        />
       </fieldset>
     </form>
+    <footer class="sign-up__footer"></footer>
   </body>
 </html>
