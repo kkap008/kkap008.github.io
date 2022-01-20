@@ -37,6 +37,7 @@
       .book__title {
         color: #4646cd;
         font-style: normal;
+        font-weight: bold;
         font-size: 1.5rem;
         margin: 0;
         display: inline;
@@ -93,7 +94,10 @@
     <title>지금 알고 있는 걸 .....</title>
   </head>
   <body class="book">
-    <form action="">
+    <h1 class="book__title hidden">
+      책 제목 : 지금 알고 있는 걸 그때도 알았더라면
+    </h1>
+    <form action="#">
       <input
         type="checkbox"
         id="now"
@@ -102,9 +106,7 @@
         class="book__check"
       />
       <label for="now">
-        <h1 class="book__title">
-          <cite class="book__title"> 지금 알고 있는 걸 그때도 알았더라면</cite>
-        </h1>
+        <cite class="book__title"> 지금 알고 있는 걸 그때도 알았더라면</cite>
       </label>
       <button type="button" class="book__event-btn">
         <span class="book__event-btn-title">이벤트</span>
