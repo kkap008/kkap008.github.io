@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300,400s,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        white-space: nowrap;
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+      }
+
+      .book {
+        font-family: "Noto Sans Kr";
+        font-weight: 400;
+        min-width: 340px;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+      .book__check {
+        display: block;
+      }
+      .book__title {
+        color: #4646cd;
+        font-style: normal;
+        font-size: 1.5rem;
+        margin: 0;
+        display: inline;
+      }
+      .book__event-btn {
+        background-color: #148cff;
+        border-style: outset;
+        border-width: 3px;
+        border-color: #0078ff;
+        color: white;
+        line-height: 1rem;
+        vertical-align: text-top;
+        height: 1.5rem;
+        cursor: pointer;
+        border-radius: 1px;
+      }
+      .book__event-btn:active {
+        border-style: inset;
+      }
+      .book__address-set {
+        display: flex;
+        font-size: 0.95rem;
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+        color: #828282;
+      }
+      .book__address-line {
+        margin: 0 0.1em;
+      }
+      .book__gpa {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .book__reviews {
+        font-size: 1rem;
+      }
+      .book__price {
+        margin-bottom: 0.8rem;
+        font-weight: bold;
+      }
+      .book__price--red {
+        color: #ff4646;
+        font-size: 1.25rem;
+      }
+      .book__price--blue {
+        color: #3c3c8c;
+      }
+      .book__ship-content--blue {
+        font-weight: bold;
+        color: #4646cd;
+      }
+    </style>
+    <title>지금 알고 있는 걸 .....</title>
+  </head>
+  <body class="book">
+    <form action="">
+      <input
+        type="checkbox"
+        id="now"
+        name="now"
+        value="now"
+        class="book__check"
+      />
+      <label for="now">
+        <h1 class="book__title">
+          <cite class="book__title"> 지금 알고 있는 걸 그때도 알았더라면</cite>
+        </h1>
+      </label>
+      <button type="button" class="book__event-btn">
+        <span class="book__event-btn-title">이벤트</span>
+      </button>
+    </form>
+    <aside class="book__address">
+      <h2 class="book__address-title hidden">저자, 출판사, 출판일</h2>
+      <div class="book__address-set">
+        <span class="book__address-item">류시화 (엮음)</span>
+        <span class="book__address-line">│</span>
+        <span class="book__address-item">열림원</span>
+        <span class="book__address-line">│</span>
+        <span class="book__address-item">2014년 12월 03일</span>
+      </div>
+    </aside>
+    <aside class="book__gpa">
+      <h2 class="book__gpa-title hidden">평점 및 리뷰 갯수</h2>
+      <span class="book__star">&#9734;</span
+      ><span class="book__star">&#9734;</span
+      ><span class="book__star">&#9734;</span
+      ><span class="book__star">&#9734;</span
+      ><span class="book__star">&#9734;</span>
+
+      <span class="book__reviews">(0개의 리뷰가 있습니다)</span>
+    </aside>
+    <aside class="book__price">
+      <h2 class="book__price-title hidden">가격 및 할인률과 적립률</h2>
+      <span class="book__price--black">도서</span>&nbsp;<span
+        class="book__price--red"
+        >8,100원</span
+      >&nbsp;<span class="book__price--blue">[10%&#8595; + 5% 적립]</span>
+    </aside>
+    <aside class="book__ship">
+      <h2 class="book__ship-title hidden">배송 현황</h2>
+      <span class="book__ship-content">지금 주문하면</span>
+      <span class="book__ship-content--blue">내일(22일,토) 도착 예정</span>
+      <span class="book__ship-content">입니다</span>
+    </aside>
+  </body>
+</html>
