@@ -103,17 +103,20 @@
         font-size: 0.75rem;
       }
       .sign-up__certified-title {
-        padding: 0.5rem 0;
+        --one-calc: calc(1.3rem - 0.875rem);
+        font-size: calc(
+          0.875rem+ ((90%-16.25rem) / (26.25rem - 16.25rem) * var(--one-calc))
+        );
         color: white;
       }
 
       /* 가입하기 버튼 */
       .sign-up__submit {
-        vertical-align: top;
+        vertical-align: text-bottom;
         background-color: #a56944;
         color: white;
         height: 4rem;
-        font-size: 1.125rem;
+        font-size: 1.25rem;
         font-weight: lighter;
         margin: 1.75rem 0 3rem 0;
       }
