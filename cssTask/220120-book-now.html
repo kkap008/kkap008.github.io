@@ -42,19 +42,14 @@
         margin: 0;
         display: inline;
       }
-      .book__event-btn {
-        background-color: #6e6ed7;
-        border-style: outset;
-        border-width: 3px;
-        border-color: #6464cd;
+      .book__event-btn-title {
+        display: inline-block;
+        background-color: #4646cd;
         color: white;
-        line-height: 1rem;
+        font-weight: lighter;
+        font-size: 0.5rem;
         vertical-align: text-top;
-        cursor: pointer;
-        border-radius: 1px;
-      }
-      .book__event-btn:active {
-        border-style: inset;
+        padding: 0.2rem 0.4rem;
       }
       .book__address-set {
         display: flex;
@@ -93,9 +88,6 @@
     <title>지금 알고 있는 걸 .....</title>
   </head>
   <body class="book">
-    <h1 class="book__title hidden">
-      책 제목 : 지금 알고 있는 걸 그때도 알았더라면
-    </h1>
     <form action="#">
       <input
         type="checkbox"
@@ -104,13 +96,14 @@
         value="now"
         class="book__check"
       />
-      <label for="now">
-        <cite class="book__title"> 지금 알고 있는 걸 그때도 알았더라면</cite>
-      </label>
-      <button type="button" class="book__event-btn">
-        <span class="book__event-btn-title">이벤트</span>
-      </button>
     </form>
+    <h1 class="book__title">
+      <cite class="book__title"
+        ><label for="now">지금 알고 있는 걸 그때도 알았더라면</label>
+      </cite>
+    </h1>
+    <span class="book__event-btn-title">이벤트</span>
+
     <section class="book__address">
       <h2 class="book__address-title hidden">저자, 출판사, 출판일</h2>
       <div class="book__address-set">
