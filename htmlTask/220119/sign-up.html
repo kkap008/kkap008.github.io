@@ -14,6 +14,7 @@
       }
       :root {
         background-color: #d5d2c1;
+        font-size: 0.875rem;
       }
       input,
       label {
@@ -103,22 +104,20 @@
         font-size: 0.75rem;
       }
       .sign-up__certified-title {
-        --one-calc: calc(1.3rem - 0.875rem);
-        font-size: calc(
-          0.875rem+ ((90%-16.25rem) / (26.25rem - 16.25rem) * var(--one-calc))
-        );
+        font-size: 0.875rem;
         color: white;
       }
 
       /* 가입하기 버튼 */
       .sign-up__submit {
-        vertical-align: text-bottom;
         background-color: #a56944;
         color: white;
-        height: 4rem;
+        width: 100%;
+        height: 3em;
         font-size: 1.25rem;
+        line-height: 1.25em;
         font-weight: lighter;
-        margin: 1.75rem 0 3rem 0;
+        margin: 1.25em 0 2.5em 0;
       }
     </style>
     <title>회원가입</title>
@@ -159,7 +158,6 @@
           <div class="sign-up__birth-inputs">
             <input
               class="sign-up__input"
-              type="number"
               name="year"
               id="year"
               placeholder="년(4자)"
@@ -179,7 +177,7 @@
               <option value="11"><span>11</span></option>
               <option value="12"><span>12</span></option>
             </select>
-            <input class="sign-up__input" type="number" name="day" id="day" />
+            <input class="sign-up__input" name="day" id="day" />
           </div>
         </fieldset>
         <fieldset class="sign-up__gender">
@@ -204,13 +202,8 @@
         </select>
 
         <div class="sign-up__phone-number">
-          <input
-            class="sign-up__input"
-            type="number"
-            name="number"
-            id="number"
-          />
-          <button class="sign-up__certified-submit">
+          <input class="sign-up__input" name="number" id="number" />
+          <button type="button" class="sign-up__certified-submit">
             <span class="sign-up__certified-title">인증번호 받기</span>
           </button>
         </div>
@@ -224,7 +217,9 @@
         />
       </fieldset>
       <fieldset class="sign-up__submit-wrap">
-        <input class="sign-up__submit" type="submit" value="가입하기" />
+        <button class="sign-up__submit" type="submit">
+          <span class="sign-up__submit-title">가입하기</span>
+        </button>
       </fieldset>
     </form>
   </body>
