@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      details {
+        margin: 1rem 0;
+      }
+      summary {
+        cursor: pointer;
+      }
+      pre {
+        white-space: pre-line;
+        margin: 0;
+        margin-left: 1rem;
+      }
+      code > span {
+        display: inline-block;
+        line-height: 1.75em;
+        margin-left: 1.25em;
+      }
+      dl {
+        margin-left: 1rem;
+      }
+      dt {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+    <title>선택자들</title>
+  </head>
+  <body class="selectors">
+    <h1 class="selectors__title">선택자들</h1>
+    <hr />
+    <details class="selectors__all">
+      <summary class="selectors__all-summary">전체선택자(All)</summary>
+      <pre>
+        <code>
+          * {
+            <span>font-size:2rem;</span>
+            <span>/* 모든 태그 적용 */</span>
+            <span>/* 명시도 : 0 */</span>
+          }
+        </code>
+      </pre>
+    </details>
+    <details class="selectors__tag">
+      <summary class="selectors__tag-summary">태그선택자(Tag)</summary>
+      <pre>
+        <code>
+          h1{
+            <span>font-size:3rem;</span>
+            <span>/* h1 태그 전부 적용 */</span>
+            <span>/* 명시도 : 1 */</span>
+          }
+        </code>
+      </pre>
+    </details>
+    <details class="selectors__class">
+      <summary class="selectors__class-summary">클래스 선택자(Class)</summary>
+      <pre>
+        <code>
+          .title{
+            <span>color:red;</span>
+            <span>/* title 클래스에 속하는 태그 전부 적용 */</span>
+            <span>/* 명시도 : 10 */</span>
+          }
+
+          &lt;h1 class="title"&gt;h1&lt;/h1&gt;
+          &lt;h2 class="title"&gt;h2&lt;/h2&gt;
+      </code>
+    </pre>
+    </details>
+    <details class="selectors__id">
+      <summary class="selectors__id-summary">아이디 선택자(Id)</summary>
+      <pre>
+        <code>
+          #title{
+            <span>color:red;</span>
+            <span>/* 유일무이 */</span>
+            <span>/* 명시도 : 100 */</span>
+          }
+
+          &lt;h1 class="title"&gt;h1&lt;/h1&gt;
+          &lt;h2 class="title "id="title"&gt;h2&lt;/h2&gt;
+          &lt;h3 class="title"&gt;h3&lt;/h3&gt;
+        </code>
+      </pre>
+    </details>
+    <details class="selectors__combinator">
+      <summary class="selectors__combinator-summary">
+        복합선택자(Combinator)
+      </summary>
+      <dl>
+        <dt>※하위 선택자와 자식 선택자</dt>
+        <dd>
+          <span>#하위 선택자</span>
+          <pre>
+            <code>
+              section p {
+                <span>color:red;</span>
+                <span>/* &lt;section&gt; All Vertical Depth &lt;p&gt; */</span>
+                <span>/* 명시도 : 2 */</span>
+              }
+            </code>
+          </pre>
+          <span>#자식 선택자</span>
+          <pre>
+            <code>
+            section > p {
+              <span>color:red;</span>
+              <span>/* &lt;section&gt; 1 Vertical Depth &lt;p&gt;</span>
+              <span>/* 명시도 : 2 */</span>
+            }
+          </code>
+          </pre>
+        </dd>
+        <dt>※인접 형제 선택자와 일반 형제 선택자</dt>
+        <dd>
+          <span>#인접 형제 선택자</span>
+          <pre>
+            <code>
+              ul > li+li {
+                <span>color:red;</span>
+                <span>/* &lt;li&gt; 1 sibling */</span>
+                <span>명시도 : 3</span>
+              }
+            </code>
+          </pre>
+          <span>#일반 형제 선택자</span>
+          <pre>
+            <code>
+              ul > li~li {
+                <span>color:red;</span>
+                <span>/* &lt;li&gt; All sibling */</span>
+                <span>명시도 : 3</span>
+              }
+            </code>
+          </pre>
+        </dd>
+      </dl>
+    </details>
+  </body>
+</html>
