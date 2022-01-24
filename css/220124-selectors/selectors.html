@@ -21,7 +21,8 @@
         line-height: 1.75em;
         margin-left: 1.25em;
       }
-      dl {
+      dl,
+      p {
         margin-left: 1rem;
       }
       dt {
@@ -52,7 +53,7 @@
           h1{
             <span>font-size:3rem;</span>
             <span>/* h1 태그 전부 적용 */</span>
-            <span>/* 명시도 : 1 */</span>
+            <span>/* 명시도 : 001 */</span>
           }
         </code>
       </pre>
@@ -64,7 +65,7 @@
           .title{
             <span>color:red;</span>
             <span>/* title 클래스에 속하는 태그 전부 적용 */</span>
-            <span>/* 명시도 : 10 */</span>
+            <span>/* 명시도 : 010 */</span>
           }
 
           &lt;h1 class="title"&gt;h1&lt;/h1&gt;
@@ -101,7 +102,7 @@
               section p {
                 <span>color:red;</span>
                 <span>/* &lt;section&gt; All Vertical Depth &lt;p&gt; */</span>
-                <span>/* 명시도 : 2 */</span>
+                <span>/* 명시도 : 002 */</span>
               }
             </code>
           </pre>
@@ -111,7 +112,7 @@
             section > p {
               <span>color:red;</span>
               <span>/* &lt;section&gt; 1 Vertical Depth &lt;p&gt;</span>
-              <span>/* 명시도 : 2 */</span>
+              <span>/* 명시도 : 002 */</span>
             }
           </code>
           </pre>
@@ -124,7 +125,7 @@
               ul > li+li {
                 <span>color:red;</span>
                 <span>/* &lt;li&gt; 1 sibling */</span>
-                <span>명시도 : 3</span>
+                <span>명시도 : 003</span>
               }
             </code>
           </pre>
@@ -134,12 +135,24 @@
               ul > li~li {
                 <span>color:red;</span>
                 <span>/* &lt;li&gt; All sibling */</span>
-                <span>명시도 : 3</span>
+                <span>명시도 : 003</span>
               }
             </code>
           </pre>
         </dd>
       </dl>
+    </details>
+    <details class="selectors__refe">
+      <summary class="selectors__refe-summary">참고사이트</summary>
+      <p>
+        <a
+          href="https://www.nextree.co.kr/p8468/"
+          rel="external noreferrer"
+          target="_blank"
+          >넥스트리소프트</a
+        >
+        <span>← 다양한 선택자가 정리되어 있다</span>
+      </p>
     </details>
   </body>
 </html>
