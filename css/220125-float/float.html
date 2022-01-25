@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 70vw;
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      h2,
+      h3 {
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      header {
+        height: 6.25em;
+        background-color: brown;
+      }
+      main {
+        overflow: hidden;
+        background-color: burlywood;
+        margin: 10px 0;
+        text-align: center;
+      }
+      section {
+        float: left;
+      }
+      section:first-child {
+        width: 45%;
+        height: 15em;
+        background-color: cornflowerblue;
+      }
+      section:nth-child(2) {
+        width: 40%;
+        height: 6.25em;
+        background-color: darkgreen;
+      }
+      section:nth-child(3) {
+        width: 15%;
+        height: 18.75em;
+        background-color: crimson;
+      }
+      section:last-child::after {
+        clear: left;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
+        content: "";
+      }
+      footer {
+        height: 6.25em;
+        background-color: chocolate;
+      }
+    </style>
+    <title>float</title>
+  </head>
+  <body>
+    <h1>float</h1>
+    <header>
+      <h2>header</h2>
+    </header>
+    <main>
+      <section>
+        <h3>section</h3>
+      </section>
+      <section>
+        <h3>article</h3>
+      </section>
+      <section>
+        <h3>aside</h3>
+      </section>
+    </main>
+    <footer>
+      <h2>footer</h2>
+    </footer>
+
+    <p></p>
+  </body>
+</html>
