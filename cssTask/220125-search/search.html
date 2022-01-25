@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        /* border: 1px solid black; */
+        position: relative;
+      }
+      .title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px);
+        border: none;
+        padding: 0;
+        margin: -1px;
+      }
+      .search {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      table {
+        border-collapse: collapse;
+        text-align: center;
+        width: 100%;
+      }
+      tbody {
+        color: #949494;
+      }
+      thead > tr:first-child {
+        color: white;
+        background-color: #f49abe;
+        border-top: 4px solid #f06ba6;
+        border-bottom: 1px solid #f06ba6;
+      }
+      thead > tr > th {
+        padding: 0.5em 0;
+      }
+      col:first-child {
+        width: 10%;
+      }
+      col:nth-child(2) {
+        width: 60%;
+      }
+      col:nth-child(3) {
+        width: 10%;
+      }
+      col:nth-child(4) {
+        width: 10%;
+      }
+      col:last-child {
+        width: 10%;
+      }
+      tbody tr > td:first-child {
+        padding: 0.3em;
+      }
+      tbody tr > td:nth-child(2) {
+        cursor: pointer;
+        text-align: left;
+        color: #4b7190;
+      }
+      tbody tr > td:nth-child(3) {
+        text-align: right;
+        font-weight: bold;
+        color: #808080;
+      }
+      tbody tr {
+        border-bottom: 1px dashed #767677;
+      }
+
+      form {
+        box-sizing: border-box;
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      button {
+        display: inline-block;
+
+        background-color: #ea648d;
+        color: white;
+        border: 1px outset #be5a7c;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="text"] {
+        width: 7rem;
+      }
+    </style>
+    <title>Search</title>
+  </head>
+  <body>
+    <h1 class="title">검색 테이블</h1>
+    <section class="search">
+      <table class="search__table">
+        <caption>
+          <h2 class="search__title">공지사항</h2>
+        </caption>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>NO.</th>
+            <th>SUBJECT</th>
+            <th>WRITER</th>
+            <th>DATE</th>
+            <th>HIT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7</td>
+            <td>[필독] 핑크 하우스 회원 혜택</td>
+            <td>관리자</td>
+            <td>05-29</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>[안내] 생일 축하 쿠폰 및 적립금 안내</td>
+            <td>관리자</td>
+            <td>05-29</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>[안내] 핑크 하우스 무료 배송 안내</td>
+            <td>관리자</td>
+            <td>05-29</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>[필독] 배송사 및 처리 확인</td>
+            <td>관리자</td>
+            <td>05-29</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>[필독] 카드 무이자 할부 행사 안내</td>
+            <td>관리자</td>
+            <td>05-29</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>[안내] 핑크 하우스 오프라인 매장 안내</td>
+            <td>관리자</td>
+            <td>05-29</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>[필독] 핑크 하우스 등급제 안내</td>
+            <td>관리자</td>
+            <td>05-29</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+      <form class="search__form" action="#">
+        <select name="type" id="type">
+          <option value="title">제목</option>
+          <option value="author">작성자</option>
+        </select>
+        <input type="text" />
+        <button type="submit"><span>검색</span></button>
+        <input type="radio" id="and" name="radio" checked />
+        <label for="and">and</label>
+        <input type="radio" id="or" name="radio" />
+        <label for="or">or</label>
+      </form>
+    </section>
+  </body>
+</html>
