@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+      .hidden {
+        margin-left: 100vw;
+        position: absolute;
+      }
+      .box-model {
+        display: inline-block;
+        margin-right: 100%;
+        text-align: center;
+      }
+      .box-model__img {
+        vertical-align: top;
+        margin-left: -8px;
+      }
+      .box-model__img-description {
+        display: inline-block;
+        margin-left: -8px;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        border: 10px dashed blue;
+        margin-bottom: 10%;
+      }
+      div > div[class="content-box"] {
+        width: 100%;
+        box-sizing: content-box;
+        border: 10px solid red;
+        padding: 10px;
+        margin: 10px;
+      }
+      div > div[class="border-box"] {
+        width: 100%;
+        box-sizing: border-box;
+        border: 10px solid red;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+    <title>boxsizing</title>
+  </head>
+  <body>
+    <h1 class="title">CSS 박스 모델</h1>
+    <hr />
+    <figure class="box-model">
+      <img
+        src="img/box-sizing.jpg"
+        alt="CSS 박스 모델 이미지"
+        title="CSS 박스 모델 이미지"
+        class="box-model__img"
+      />
+      <figcaption class="box-model__img-description">
+        <span>CSS 박스 모델 이미지</span>
+      </figcaption>
+    </figure>
+    <section class="box-sizing">
+      <h2 class="box-sizing__title hidden">박스모델 기본사항</h2>
+      <dl class="box-sizing__dl">
+        <dt class="box-sizing__dt">box-sizing</dt>
+        <dd class="box-sizing__dd">
+          <ul class="box-sizing__list">
+            <li class="box-sizing__item">
+              <dl class="box-sizing__content">
+                <dt class="box-sizing__content-title">기본값 : content-box</dt>
+                <dd class="box-sizing__content-description">
+                  <p class="content-box">
+                    content + (padding + border + margin) = 박스 크기
+                  </p>
+                  <div>
+                    <div class="content-box"><span>content-box</span></div>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li class="box-sizing__item">
+              <dl class="box-sizing__content">
+                <dt class="box-sizing__content-title">border-box</dt>
+                <dd class="box-sizing__content-description">
+                  <p>(content + padding + border) + margin = 박스 크기</p>
+                  <div>
+                    <div class="border-box"><span>border-box</span></div>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+    </section>
+  </body>
+</html>
