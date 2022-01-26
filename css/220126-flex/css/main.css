@@ -69,3 +69,10 @@
   flex: 1 0 30%;
   background-color: bisque;
 }
+
+.affiliates__list {
+  display: flex;
+}
+.affiliates__item {
+  margin: 0 8px;
+}
