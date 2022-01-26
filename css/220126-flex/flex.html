@@ -11,7 +11,10 @@
     <h1 class="title hidden">CJ 레이아웃</h1>
     <!-- 헤더 -->
     <header class="header">
+      <!-- 로컬 네비게이션 -->
       <nav class="header__lnb">
+        <h2 class="header__lnb-title hidden">로컬 네비게이션</h2>
+        <!-- 로고 -->
         <figure class="header__logo">
           <img
             src="https://via.placeholder.com/80"
@@ -23,19 +26,23 @@
             <span>LOGO</span>
           </figcaption>
         </figure>
+        <!-- 좌측 로컬 네비게이션 -->
         <ul class="header__lnb-list--left">
           <li class="header__lnb-item"><span>lnb1</span></li>
           <li class="header__lnb-item"><span>lnb2</span></li>
           <li class="header__lnb-item"><span>lnb3</span></li>
           <li class="header__lnb-item"><span>lnb4</span></li>
         </ul>
+        <!-- 우측 로컬 네비게이션 -->
         <ul class="header__lnb-list--right">
           <li class="header__lnb-item"><span>lnb1</span></li>
           <li class="header__lnb-item"><span>lnb2</span></li>
           <li class="header__lnb-item"><span>lnb3</span></li>
         </ul>
       </nav>
+      <!-- 글로벌 네비게이션 -->
       <nav class="header__gnb">
+        <h2 class="header__gnb-title hidden">글로벌 네비게이션</h2>
         <ul class="header__gnb-list">
           <li class="header__gnb-item"><span>menu1</span></li>
           <li class="header__gnb-item"><span>menu2</span></li>
@@ -46,6 +53,56 @@
       </nav>
     </header>
     <!-- 메인 -->
+    <main class="main">
+      <!-- 슬라이더 -->
+      <figure class="concept">
+        <ul class="concept__list">
+          <li class="concept__item">
+            <img
+              src="https://via.placeholder.com/1000x400"
+              alt="배너"
+              class="concept__banner"
+            />
+          </li>
+        </ul>
+      </figure>
+      <!-- 이벤트 -->
+      <section class="event">
+        <h2 class="event__title hidden">선물,추천제품,배달</h2>
+        <article class="event__gift">
+          <h3 class="event__gift-title">선물</h3>
+        </article>
+        <article class="event__attn">
+          <h3 class="event__attn-title">추천제품</h3>
+        </article>
+        <article class="event__delivery">
+          <h3 class="event__delivery-title">배달</h3>
+        </article>
+      </section>
+      <!-- 오프라인 매장 -->
+      <section class="shop">
+        <h2 class="shop__title hidden">매장</h2>
+        <section class="shop__find">
+          <h3 class="shop__find">매장 찾기</h3>
+        </section>
+        <section class="shop__dc">
+          <h3 class="shop__dc">제휴카드</h3>
+        </section>
+      </section>
+      <!-- 뚜레쥬르 소식 -->
+      <section class="notice">
+        <h2 class="notice__title hidden">뚜레쥬르 소식</h2>
+        <article class="notice__open">
+          <h3 class="notice__open">창업 문의</h3>
+        </article>
+        <article class="notice__hire">
+          <h3 class="notice__hire">기사 채용</h3>
+        </article>
+        <article class="notice__news">
+          <h3 class="notice__news">뉴스 및 공지사항</h3>
+        </article>
+      </section>
+    </main>
     <!-- 풋터 -->
   </body>
 </html>
