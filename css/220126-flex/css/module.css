@@ -3,15 +3,7 @@
 @import "main.css";
 @import "footer.css";
 
-/* reset css */
-* {
-  margin: unset;
-  padding: unset;
-  list-style: none;
-  border: unset;
-  position: relative;
-}
-
+/* IR */
 .hidden {
   width: 1px;
   height: 1px;
@@ -19,4 +11,21 @@
   white-space: nowrap;
   margin: -1px;
   position: absolute;
+}
+
+/* reset css */
+* {
+  margin: unset;
+  padding: unset;
+  list-style: none;
+  border: unset;
+  position: relative;
+  border: 1px solid black;
+}
+
+/* start */
+body {
+  width: 90vw;
+  max-width: 1080px;
+  margin: 32px auto;
 }

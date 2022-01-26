@@ -1,0 +1,40 @@
+.header__lnb {
+  display: flex;
+  justify-content: space-around;
+}
+.header__logo {
+  order: 2;
+  vertical-align: top;
+}
+.header__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.header__lnb-list--left {
+  order: 1;
+  display: flex;
+  align-items: center;
+}
+.header__lnb-list--right {
+  order: 3;
+  display: flex;
+  align-items: center;
+}
+.header__lnb-item {
+  padding: 4px;
+  margin: 0 8px;
+}
+.header__gnb-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  height: 3em;
+}
+.header__gnb-item {
+  padding: 1em 0.5em;
+}
