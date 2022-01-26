@@ -11,7 +11,7 @@
         padding: 0;
         list-style: none;
         box-sizing: border-box;
-        border: 1px solid #ffcba4;
+        /* border: 1px solid #ffcba4; */
       }
       .hidden {
         position: absolute;
@@ -76,18 +76,25 @@
 
       .main {
         width: 90%;
-        margin: 0 auto;
+        margin: 2.5rem auto;
       }
       .silder {
-        height: 250px;
-        margin-bottom: 1rem;
+        width: 100%;
+        height: 350px;
       }
       .silder__title {
-        height: 20%;
+        height: 15%;
       }
-      .silder__imgs {
-        height: 80%;
-        background-color: gray;
+      .silder__list {
+        height: 85%;
+      }
+      .silder__item {
+        vertical-align: top;
+        width: 100%;
+        height: 100%;
+      }
+      .intro {
+        margin: 2rem 0;
       }
       .intro__left {
         display: inline-block;
@@ -112,6 +119,14 @@
       .intro__content > span:last-child {
         color: #485ea5;
       }
+      .intro__warning {
+        font-size: 0.625rem;
+        padding: 0.25em 0.5em;
+      }
+      .author {
+        background-color: #e2e2e2;
+        height: 6.25rem;
+      }
     </style>
     <title>float-layout</title>
   </head>
@@ -126,7 +141,7 @@
       <figure class="header__logo-wrap">
         <a href="#" class="header__logo"
           ><img
-            src="img/logo.jpg"
+            src="https://via.placeholder.com/200x50"
             alt="판교 퍼스트 파크 홈페이지 로고"
             title="판교 퍼스트 파크 홈페이지 로고"
             class="header__logo-img"
@@ -160,7 +175,13 @@
       <!-- 슬라이드 영역 -->
       <article class="silder">
         <h2 class="silder__title">프리미엄</h2>
-        <figure class="silder__imgs"></figure>
+        <figure class="silder__list">
+          <img
+            src="https://via.placeholder.com/1000x1000"
+            alt=""
+            class="silder__item"
+          />
+        </figure>
       </article>
       <!-- 소개 및 장점 영역 -->
       <section class="intro">
@@ -266,6 +287,32 @@
           </ul>
         </section>
       </section>
+      <!-- 안내사항 -->
+      <p class="intro__warning">
+        <span
+          >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis,
+          unde.</span
+        >
+      </p>
+      <p class="intro__warning">
+        <span
+          >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis,
+          unde.</span
+        >
+      </p>
+      <p class="intro__warning">
+        <span
+          >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis,
+          unde.</span
+        >
+        laborum.
+      </p>
     </main>
+    <footer class="author">
+      <span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+        laboriosam?</span
+      >
+    </footer>
   </body>
 </html>
