@@ -1,10 +1,8 @@
-.main * {
-  border: none;
-}
 .main {
   margin: 32px 0;
   width: 80%;
   margin: 0 auto;
+  border: 3px solid coral;
 }
 
 .concept__list {

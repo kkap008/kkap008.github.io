@@ -20,12 +20,12 @@
   list-style: none;
   border: unset;
   position: relative;
-  border: 1px solid black;
 }
 
 /* start */
 body {
-  width: 90vw;
+  width: 80vw;
   max-width: 1080px;
   margin: 32px auto;
+  border: 1px solid #ffcba4;
 }
