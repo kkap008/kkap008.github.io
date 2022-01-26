@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+        border: 1px solid #ffcba4;
+      }
+      .hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(1px 1px 1px 1px);
+      }
+      body {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .header__logo-wrap {
+        padding: 1rem 0;
+        text-align: center;
+      }
+      .header__nav {
+        overflow: hidden;
+        vertical-align: top;
+        text-align: center;
+        background-color: #3c539e;
+        color: white;
+        height: 3rem;
+      }
+      .header__nav-wrap {
+        display: inline-block;
+        width: 90%;
+      }
+      .header__nav-ul {
+        float: left;
+      }
+
+      .header__nav-item {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 3em;
+      }
+      .header__nav-item:last-child {
+        color: yellow;
+      }
+      .header__inquery {
+        float: right;
+        line-height: 3em;
+        background-color: #2d3e7b;
+        padding: 0 0.5em;
+      }
+
+      .header__inquery > span:first-child {
+        display: inline-block;
+        font-size: 0.75rem;
+        line-height: initial;
+        transform: translateY(-25%);
+        padding: 0 0.5em;
+      }
+      .header__inquery > span:last-child {
+        font-size: 1.5rem;
+      }
+
+      .main {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .silder {
+        height: 250px;
+        margin-bottom: 1rem;
+      }
+      .silder__title {
+        height: 20%;
+      }
+      .silder__imgs {
+        height: 80%;
+        background-color: gray;
+      }
+      .intro__left {
+        display: inline-block;
+        width: 49%;
+      }
+      .intro__right {
+        display: inline-block;
+        width: 49%;
+      }
+      .intro__item {
+        margin: 1rem 0;
+      }
+      .intro__icon {
+        vertical-align: top;
+      }
+      .intro__content {
+        display: inline-block;
+        line-height: 3.125em;
+        margin-left: 1rem;
+        font-weight: bold;
+      }
+      .intro__content > span:last-child {
+        color: #485ea5;
+      }
+    </style>
+    <title>float-layout</title>
+  </head>
+  <body>
+    <h1 class="body__title hidden">판교 퍼스트 파크 홈페이지</h1>
+    <!-- 헤더 영역 -->
+    <header class="header">
+      <h2 class="header__title hidden">
+        판교 퍼스트 파크 홈페이지 로고와 메뉴들
+      </h2>
+      <!-- 로고 -->
+      <figure class="header__logo-wrap">
+        <a href="#" class="header__logo"
+          ><img
+            src="img/logo.jpg"
+            alt="판교 퍼스트 파크 홈페이지 로고"
+            title="판교 퍼스트 파크 홈페이지 로고"
+            class="header__logo-img"
+        /></a>
+        <!-- 로고 설명 -->
+        <figcaption class="header__logo-caption hidden">
+          <span>판교 퍼스트 파크 홈페이지 로고</span>
+        </figcaption>
+      </figure>
+      <!-- 네비게이션 -->
+
+      <nav class="header__nav">
+        <!-- 네비게이션-메뉴 -->
+        <div class="header__nav-wrap">
+          <ul class="header__nav-ul">
+            <li class="header__nav-item">사업개요</li>
+            <li class="header__nav-item">입지환경</li>
+            <li class="header__nav-item">프리미엄</li>
+            <li class="header__nav-item">청약안내</li>
+            <li class="header__nav-item">보도자료</li>
+            <li class="header__nav-item">오시는길</li>
+            <li class="header__nav-item">관심고객등록</li>
+          </ul>
+          <!-- 네비게이션-문의사항 -->
+          <p class="header__inquery"><span>문의</span><span>1599-9661</span></p>
+        </div>
+      </nav>
+    </header>
+    <!-- 메인 영역 -->
+    <main class="main">
+      <!-- 슬라이드 영역 -->
+      <article class="silder">
+        <h2 class="silder__title">프리미엄</h2>
+        <figure class="silder__imgs"></figure>
+      </article>
+      <!-- 소개 및 장점 영역 -->
+      <section class="intro">
+        <h2 class="intro__title hidden">판교 퍼스트파크의 자랑</h2>
+        <!-- 왼쪽 -->
+        <section class="intro__left">
+          <h3 class="intro__title hidden">브랜드 강점과 지리적 위치</h3>
+          <ul class="intro__list">
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="판교신도시"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>살기 좋은 도시 BEST 3</span>
+                <span>판교신도시</span>
+              </p>
+            </li>
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="포스코 건설 더샵"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>주거만족도 1위</span>
+                <span>포스코 건설 더샵</span>
+              </p>
+            </li>
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="초대형 커뮤니티"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>약 7,500㎡</span>
+                <span>초대형 커뮤니티</span>
+              </p>
+            </li>
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="판교 명문학군"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>낙생고, 성남외국어고등학교 등</span>
+                <span>판교 명문학군</span>
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- 오른쪽 -->
+        <section class="intro__right">
+          <h3 class="intro__title hidden">브랜드 강점과 지리적 위치</h3>
+          <ul class="intro__list">
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="판교신도시"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>살기 좋은 도시 BEST 3</span>
+                <span>판교신도시</span>
+              </p>
+            </li>
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="포스코 건설 더샵"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>주거만족도 1위</span>
+                <span>포스코 건설 더샵</span>
+              </p>
+            </li>
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="초대형 커뮤니티"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>약 7,500㎡</span>
+                <span>초대형 커뮤니티</span>
+              </p>
+            </li>
+            <li class="intro__item">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="판교 명문학군"
+                class="intro__icon"
+              />
+              <p class="intro__content">
+                <span>낙생고, 성남외국어고등학교 등</span>
+                <span>판교 명문학군</span>
+              </p>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

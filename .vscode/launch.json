@@ -17,6 +17,12 @@
       "name": "http://127.0.0.1:3000/css/220125-box-sizing/boxsizing.html",
       "request": "launch",
       "url": "http://127.0.0.1:3000/css/220125-box-sizing/boxsizing.html"
+    },
+    {
+      "type": "pwa-chrome",
+      "name": "http://127.0.0.1:3000/css/220125-float/float-layout.html",
+      "request": "launch",
+      "url": "http://127.0.0.1:3000/css/220125-float/float-layout.html"
     }
   ]
 }
