@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "header.css";
+@import "main.css";
+@import "footer.css";
+
+/* reset css */
+* {
+  margin: unset;
+  padding: unset;
+  list-style: none;
+  border: unset;
+  position: relative;
+}
+
+.hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: -1px;
+  position: absolute;
+}
