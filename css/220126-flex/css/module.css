@@ -13,6 +13,10 @@
   position: absolute;
 }
 
+:root {
+  font-size: 0.75rem;
+}
+
 /* reset css */
 * {
   margin: unset;
@@ -27,5 +31,4 @@ body {
   width: 80vw;
   max-width: 1080px;
   margin: 32px auto;
-  border: 1px solid #ffcba4;
 }
