@@ -22,22 +22,10 @@ body {
   margin: 0 auto;
 }
 
-.package__item {
-  text-align: center;
-}
-
 .package__img {
-  vertical-align: top;
-  max-width: 90%;
-}
-
-.package__caption {
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  max-width: 95%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .package__btn-left,
