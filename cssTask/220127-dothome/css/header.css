@@ -1,3 +1,10 @@
+.header {
+  position: fixed;
+  top: 0;
+  min-width: 280px;
+  width: 100vw;
+  max-width: 1000px;
+}
 .header__logo-wrap {
   text-align: center;
   background-color: white;
@@ -6,6 +13,36 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: clamp(0.625rem, 2vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 1rem);
   padding: 1em 0;
+  background-color: #434c53;
+  color: white;
+}
+.header__item {
+  cursor: pointer;
+  position: relative;
+}
+div[class*="header__shapes"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(150%);
+  min-width: 3px;
+  width: 1vw;
+  max-width: 8px;
+  min-height: 3px;
+  height: 1vw;
+  max-height: 8px;
+  border-radius: 50%;
+  overflow: hidden;
+  color: transparent;
+}
+.header__shapes--red {
+  background-color: #ff6969;
+}
+.header__shapes--yellow {
+  background-color: #e8e80c;
+}
+.header__shapes--blue {
+  background-color: #3447da;
 }
