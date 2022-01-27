@@ -37,17 +37,18 @@ img {
   text-align: top;
   position: fixed;
   top: 25vh;
+  right: 8vw;
 }
 .banner__btn {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(50%, -100%);
+  transform: translateX(-150%);
   cursor: pointer;
   font-size: clamp(8px, 2vw, 18px);
 }
 .banner__img {
-  min-width: 50px;
+  min-width: 40px;
   width: 10vw;
   max-width: 110px;
 }
