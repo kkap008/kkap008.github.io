@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index</title>
+</head>
+<body>
+  <div class="red"><span>R</span></div>
+  <div class="green"><span>G</span></div>
+  <div class="blue"><span>B</span></div>
+  <style>
+    .div:first-child{
+      opacity: .90;
+    }
+    .red, .green, .blue {
+      position:absolute;
+      width:100px;
+      color:white;
+      line-height:100px;
+      text-align: center;
+    }
+    .red {
+      z-index:1;
+      top:100px;
+      left:100px;
+      background-color: red;
+    }
+    .green{
+      top:150px;
+      left:150px;
+      background-color: green;
+    }
+    .blue{
+      top:200px;
+      left:200px;
+      background-color: blue;
+    }
+  </style>
+</body>
+</html>
