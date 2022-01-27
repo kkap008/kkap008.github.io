@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  margin: -1px;
+  clip: rect(1px 1px 1px 1px);
+}
