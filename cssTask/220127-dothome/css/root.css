@@ -22,4 +22,13 @@
 }
 
 body {
+  min-width: 340px;
+  width: 100vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
 }

@@ -1,30 +1,11 @@
-.header {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: calc(
-    0.625rem + (((100vw - 21.25rem) / (90 - 21.25)) * (2 - 0.875))
-  );
-}
 .header__logo-wrap {
-  width: 100vw;
-  max-width: 1200px;
   text-align: center;
-  height: 20vh;
-}
-.header__logo {
-  display: inline-block;
-  padding: 8px;
+  background-color: white;
 }
 .header__menu {
   display: flex;
-  width: 80%;
-  margin: 0 auto;
-
-  justify-content: space-between;
-}
-.header__item {
-  padding: 8px;
-  cursor: pointer;
+  justify-content: space-around;
+  align-items: center;
+  font-size: clamp(0.625rem, 2vw, 1rem);
+  padding: 1em 0;
 }
