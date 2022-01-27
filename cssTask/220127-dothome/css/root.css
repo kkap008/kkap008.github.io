@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "header.css";
+@import "main.css";
 @import "footer.css";
 
 * {
@@ -18,4 +19,7 @@
   position: absolute;
   margin: -1px;
   clip: rect(1px 1px 1px 1px);
+}
+
+body {
 }
