@@ -1,12 +1,116 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js"
+      integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js"
+      integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      * {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      .hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        white-space: nowrap;
+        clip: rect(1px 1px 1px 1px);
+      }
+    </style>
+    <title>Position</title>
+  </head>
+  <body>
+    <h1 class="title">
+      <span class="title__span">해외패키지</span> 인기 기획전
+    </h1>
+    <ul class="package">
+      <li class="package__item">
+        <figure package__img>
+          <img
+            src="https://via.placeholder.com/250x400"
+            alt=""
+            class="package__img"
+          />
+          <figcaption class="package__caption">
+            <span class="package__caption">다채로운 매력의 미국으로</span>
+          </figcaption>
+        </figure>
+      </li>
+      <li class="package__item">
+        <figure package__img>
+          <img
+            src="https://via.placeholder.com/250x400"
+            alt=""
+            class="package__img"
+          />
+          <figcaption class="package__caption">
+            <span class="package__caption"
+              >11일간의 힐링 인도 갠지스 리버 크루즈</span
+            >
+          </figcaption>
+        </figure>
+      </li>
+      <li class="package__item">
+        <figure package__img>
+          <img
+            src="https://via.placeholder.com/250x400"
+            alt=""
+            class="package__img"
+          />
+          <figcaption class="package__caption">
+            <span class="package__caption"
+              >전 일정 일급 호텔 숙박 아프리카&두바이</span
+            >
+          </figcaption>
+        </figure>
+      </li>
+      <li class="package__item">
+        <figure package__img>
+          <img
+            src="https://via.placeholder.com/250x400"
+            alt=""
+            class="package__img"
+          />
+          <figcaption class="package__caption">
+            <span class="package__caption"> 세부여행 플랜테이션 베이 </span>
+          </figcaption>
+        </figure>
+      </li>
+      <button type="button" class="package__btn-left">
+        <img
+          src="img/chevron-left-solid.svg"
+          alt="슬라이드 왼쪽 이동 버튼"
+          title="슬라이드 왼쪽 이동 버튼"
+          class="package__btn-img-left"
+        />
+      </button>
+      <button type="button" class="package__btn-right">
+        <img
+          src="img/chevron-right-solid.svg"
+          alt="슬라이드 오른쪽 이동 버튼"
+          title="슬라이드 왼쪽 이동 버튼"
+          class="package__btn-img-right"
+        />
+      </button>
+    </ul>
+  </body>
 </html>
