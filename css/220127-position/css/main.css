@@ -41,7 +41,6 @@ body {
   max-width: 30px;
   top: 50%;
   cursor: pointer;
-  vertical-align: top;
 }
 .package__btn-left:active > img,
 .package__btn-right:active > img {
