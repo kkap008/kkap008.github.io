@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <script defer src="js/index.js"></script>
+    <style>
+      .hidden {
+        width: 1px;
+        height: 1px;
+        white-space: nowrap;
+        clip: rect(1px 1px 1px 1px);
+        margin: -1px;
+        overflow: hidden;
+      }
+      /* TODO reset */
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+        /* border: 1px solid black; */
+      }
+      body {
+        min-width: 340px;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 500vh;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.625rem;
+        width: 100%;
+        max-width: 1200px;
+        border-bottom: 2px solid #ffcba4;
+      }
+      .logo {
+        display: block;
+        margin-right: auto;
+      }
+      .menu-btn {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        z-index: 1;
+        background-color: transparent;
+        border: none;
+      }
+      .menu-btn__img {
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+      }
+      .nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        overflow-y: hidden;
+        height: 0;
+        padding-top: 0;
+        background-color: black;
+        opacity: 0.5;
+        transition: 0.3s;
+      }
+      .nav__details {
+        width: 100%;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        margin-bottom: 15px;
+        transition: 0.2s;
+      }
+      .nav__summary {
+        background-color: sandybrown;
+        font-size: 1.8rem;
+      }
+      .nav__gnb {
+        background-color: beige;
+        color: black;
+        font-size: 1.2rem;
+      }
+      .nav__gnb-item {
+        margin-bottom: 12px;
+        padding: 12px 0;
+        background-color: bisque;
+      }
+      .nav--open {
+        display: block;
+        transition: 0.3s;
+        overflow-y: initial;
+        height: 100vh;
+        padding-top: 25vh;
+      }
+    </style>
+    <title>문방고-네비게이션</title>
+  </head>
+  <body>
+    <h1 class="body__title hidden">문방고 웹</h1>
+    <!-- 헤더 영역 -->
+
+    <header class="header">
+      <figure class="logo">
+        <a href="#none" rel="nofollow noreferrer" class="logo">
+          <img src="img/logo.png" alt="사이트 로고 이미지" class="logo__img" />
+        </a>
+      </figure>
+      <button class="menu-btn" type="button">
+        <img src="img/bars-solid.svg" alt="메뉴 버튼" class="menu-btn__img" />
+      </button>
+      <nav class="nav">
+        <details class="nav__details" data-number="1">
+          <summary class="nav__summary">main</summary>
+          <ul class="nav__gnb">
+            <li class="nav__gnb-item"><span>sub-menu</span></li>
+            <li class="nav__gnb-item"><span>sub-menu</span></li>
+          </ul>
+        </details>
+        <details class="nav__details" data-number="2">
+          <summary class="nav__summary">main</summary>
+          <ul class="nav__gnb">
+            <li class="nav__gnb-item"><span>sub-menu</span></li>
+            <li class="nav__gnb-item"><span>sub-menu</span></li>
+          </ul>
+        </details>
+        <details class="nav__details" data-number="3">
+          <summary class="nav__summary">main</summary>
+          <ul class="nav__gnb">
+            <li class="nav__gnb-item"><span>sub-menu</span></li>
+            <li class="nav__gnb-item"><span>sub-menu</span></li>
+          </ul>
+        </details>
+      </nav>
+    </header>
+  </body>
+</html>
