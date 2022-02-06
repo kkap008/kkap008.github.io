@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root[data-theme="light"] {
+        background-color: white;
+        --default-color: black;
+        --gnb-bg: #008a00;
+        --color: white;
+      }
+      :root[data-theme="dark"] {
+        background-color: black;
+        --default-color: white;
+        --gnb-bg: lightgreen;
+        --color: black;
+      }
+      body {
+        min-width: 950px;
+        margin: 0 auto;
+        color: var(--default-color);
+      }
+      .header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .logo__link {
+        display: block;
+        width: 449px;
+        height: 112px;
+        background-image: url(img/imageSprite.png);
+        background-position: 0px -313px;
+        color: transparent;
+      }
+      .mode {
+        position: relative;
+        width: 290px;
+        height: 100px;
+      }
+      .mode__check {
+        display: block;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+        background-image: url(img/imageSprite.png);
+        background-position: -530px -220px;
+      }
+      .mode__label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip: rect(0, 0, 0, 0);
+        clip-path: polygon(0 0, 0 0, 0 0);
+        margin: -1px;
+      }
+      .mode__check--dark {
+        background-position: -542px 0px;
+      }
+      .gnb__wrap {
+        background-color: var(--gnb-bg);
+      }
+      .gnb {
+        max-width: 1200px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+      }
+      .gnb__item {
+        padding: 0.8em;
+        font-size: 1.25rem;
+        line-height: 1em;
+        text-transform: uppercase;
+        color: var(--color);
+      }
+    </style>
+    <title>네이버</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="logo">
+        <a href="#" class="logo__link" rel="nofollow">
+          <span>네이버</span>
+        </a>
+      </h1>
+      <div class="mode">
+        <input type="checkbox" id="mode" class="mode__check" name="다크모드" />
+        <label for="mode" class="mode__label">다크모드</label>
+      </div>
+    </div>
+    <div class="gnb__wrap">
+      <ul class="gnb">
+        <li class="gnb__item"><span>menu</span></li>
+        <li class="gnb__item"><span>menu</span></li>
+        <li class="gnb__item"><span>menu</span></li>
+        <li class="gnb__item"><span>menu</span></li>
+        <li class="gnb__item"><span>menu</span></li>
+      </ul>
+    </div>
+    <script>
+      const mode = document.querySelector(".mode__check");
+      const darkClass = "mode__check--dark";
+      const dataTheme = "data-theme";
+      const root = document.documentElement;
+      mode.addEventListener("change", (event) => {
+        if (event.target.checked) {
+          mode.classList.add(darkClass);
+          root.setAttribute(dataTheme, "dark");
+        } else {
+          mode.classList.remove(darkClass);
+          root.setAttribute(dataTheme, "light");
+        }
+      });
+    </script>
+  </body>
+</html>
