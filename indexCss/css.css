@@ -8,3 +8,6 @@
   display: inline;
   font-weight: normal;
 }
+.css__task-sub-item {
+  margin-bottom: 1rem;
+}
