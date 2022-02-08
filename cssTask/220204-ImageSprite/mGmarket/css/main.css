@@ -90,7 +90,7 @@ img {
 }
 
 /* 글로벌네비게이션 */
-.gnb__list {
+/* .gnb__list {
   width: 100%;
   display: flex;
   margin-left: calc(var(--margin-left-12) - var(--padding-8));
@@ -101,10 +101,23 @@ img {
   -ms-overflow-style: none;
 
   scrollbar-width: none;
-}
+} */
 /* 크롬 및 사파리 */
-.gnb__list::-webkit-scrollbar {
+/* .gnb__list::-webkit-scrollbar {
   display: none;
+} */
+
+.gnb {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.gnb__list {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .gnb__item {
