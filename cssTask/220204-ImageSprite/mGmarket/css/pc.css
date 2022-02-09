@@ -1,4 +1,8 @@
 /* 로그인 확인 여부 */
 img.cart__img {
-  background-image: url(../img/imageSprite/mGmarket-36.png);
+  background-image: url(../img/imageSprite/mGmarket-24.png);
+}
+
+img.bottom-gnb__img {
+  background-image: url(../img/imageSprite/mGmarket-24.png);
 }
