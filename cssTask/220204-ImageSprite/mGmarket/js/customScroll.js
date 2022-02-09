@@ -18,7 +18,7 @@ const currentTargetStyleLeft_str = "currentTargetStyleLeft";
 const eventTargetATag_str = Symbol("eventTargetAtag");
 
 // json파일 가져오기
-async function imgLoadList(target, index) {
+async function imgLoadList(index) {
   const imgJson = await fetch("json/imgList.json");
   const imgList = await imgJson.json();
   const images = imgList.imageList;
@@ -87,17 +87,25 @@ function gnbListPointerUpEvent(event) {
 function gnbListPointerDownEvent(event) {
   event.stopPropagation(); // 이벤트 전파 방지
   event.preventDefault();
-  const currentTarget = event.currentTarget;
-  const eventTargetATag = event.target;
-  currentTarget.setPointerCapture(event.pointerId);
-  if (!currentTarget.style.left) {
-    currentTarget.style.left = window.getComputedStyle(currentTarget).left;
+
+  switch (event.pointerType) {
+    case "mouse":
+      const currentTarget = event.currentTarget;
+      const eventTargetATag = event.target;
+      currentTarget.setPointerCapture(event.pointerId);
+      if (!currentTarget.style.left) {
+        currentTarget.style.left = window.getComputedStyle(currentTarget).left;
+      }
+      tab.set(currentTargetStyleLeft_str, currentTarget.style.left);
+      tab.set(eventTargetATag_str, eventTargetATag);
+      currentTarget.addEventListener("pointermove", gnbListPointerMoveEvent);
+      const shiftX = event.clientX - currentTarget.getBoundingClientRect().left;
+      tab.set(shiftX_str, shiftX);
+    case "touch":
+      alert(event.pointerType);
+    default:
+      break;
   }
-  tab.set(currentTargetStyleLeft_str, currentTarget.style.left);
-  tab.set(eventTargetATag_str, eventTargetATag);
-  currentTarget.addEventListener("pointermove", gnbListPointerMoveEvent);
-  const shiftX = event.clientX - currentTarget.getBoundingClientRect().left;
-  tab.set(shiftX_str, shiftX);
 }
 
 function aTagClickEvent(target) {
@@ -108,7 +116,7 @@ function aTagClickEvent(target) {
   target.classList.add(green);
   previousGnbItemLink.set(previousGnbItemLinkKey, target);
   const index = Number(target.getAttribute(dataIndexStr) - 1);
-  imgLoadList(target, index).then((result) => {
+  imgLoadList(index).then((result) => {
     const image = document.querySelector(mainContent_str);
 
     image.setAttribute("src", result.imageSrc);
