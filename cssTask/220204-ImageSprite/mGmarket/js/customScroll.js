@@ -45,15 +45,26 @@ function gnbItemLinkForEach(aTag, aTagIndex) {
   aTag.setAttribute(dataIndexStr, index);
 }
 
-function gnbListPointerMoveEvent(event) {
+function gnbListMoveEvent(event) {
+  event.currentTarget.classList.add(active_str);
   const gnb = document.querySelector(gnb_str);
-  event.target.classList.add(active_str);
-  let left =
-    event.clientX - tab.get(shiftX_str) - gnb.getBoundingClientRect().left;
   const overflowWidth = Math.ceil(
     gnb.getBoundingClientRect().width -
-      event.target.getBoundingClientRect().width
+      event.currentTarget.getBoundingClientRect().width
   );
+  let left = undefined;
+  switch (event.type) {
+    case "touchmove":
+      left =
+        event.changedTouches[0].clientX -
+        tab.get(shiftX_str) -
+        gnb.getBoundingClientRect().left;
+      break;
+    case "pointermove":
+      left =
+        event.clientX - tab.get(shiftX_str) - gnb.getBoundingClientRect().left;
+      break;
+  }
 
   switch (true) {
     case left > 0:
@@ -63,8 +74,7 @@ function gnbListPointerMoveEvent(event) {
       left = overflowWidth;
       break;
   }
-
-  event.target.style.left = `${left}px`;
+  event.currentTarget.style.left = `${left}px`;
 }
 
 function gnbListPointerUpEvent(event) {
@@ -77,33 +87,35 @@ function gnbListPointerUpEvent(event) {
     pointerDownCurrentTargetStyleLeft === pointerUpCurrentTargetStyleLeft
       ? true
       : false;
-  currentTarget.removeEventListener("pointermove", gnbListPointerMoveEvent);
+  currentTarget.removeEventListener("pointermove", gnbListMoveEvent);
   currentTarget.classList.remove(active_str);
   if (isItAtag && pointerGap) {
     aTagClickEvent(target);
   }
 }
 
+let left = 0;
+
 function gnbListPointerDownEvent(event) {
   event.stopPropagation(); // 이벤트 전파 방지
   event.preventDefault();
-
+  const currentTarget = event.currentTarget;
+  const eventTargetATag = event.target;
+  tab.set(currentTargetStyleLeft_str, currentTarget.style.left);
+  tab.set(eventTargetATag_str, eventTargetATag);
+  if (!currentTarget.style.left) {
+    currentTarget.style.left = window.getComputedStyle(currentTarget).left;
+  }
+  currentTarget.setPointerCapture(event.pointerId);
+  const shiftX = event.clientX - currentTarget.getBoundingClientRect().left;
+  tab.set(shiftX_str, shiftX);
   switch (event.pointerType) {
-    case "mouse":
-      const currentTarget = event.currentTarget;
-      const eventTargetATag = event.target;
-      currentTarget.setPointerCapture(event.pointerId);
-      if (!currentTarget.style.left) {
-        currentTarget.style.left = window.getComputedStyle(currentTarget).left;
-      }
-      tab.set(currentTargetStyleLeft_str, currentTarget.style.left);
-      tab.set(eventTargetATag_str, eventTargetATag);
-      currentTarget.addEventListener("pointermove", gnbListPointerMoveEvent);
-      const shiftX = event.clientX - currentTarget.getBoundingClientRect().left;
-      tab.set(shiftX_str, shiftX);
     case "touch":
-      alert(event.pointerType);
-    default:
+      currentTarget.addEventListener("touchmove", gnbListMoveEvent);
+
+      break;
+    case "mouse":
+      currentTarget.addEventListener("pointermove", gnbListMoveEvent);
       break;
   }
 }
