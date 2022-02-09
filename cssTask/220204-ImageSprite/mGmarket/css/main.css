@@ -37,6 +37,7 @@ body {
   min-width: var(--min-width);
   width: 100%;
   max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 img {
@@ -113,16 +114,17 @@ img {
 }
 
 .gnb__list {
+  width: intrinsic; /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content; /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
+  width: max-content;
   display: flex;
-  white-space: nowrap;
-  position: relative;
-  top: 0;
+  flex-wrap: nowrap;
   left: 0;
 }
 
 .gnb__item {
   padding: var(--padding-8);
-  flex: 0 0;
 }
 .gnb__item-link {
   display: block;

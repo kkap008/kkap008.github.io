@@ -1,0 +1,19 @@
+{
+  "imageList": [
+    {
+      "index": 1,
+      "src": "img/main/1-now.png",
+      "alt": "오늘은 탭 내용"
+    },
+    {
+      "index": 2,
+      "src": "img/main/2-best.jpg",
+      "alt": "베스트 탭 내용"
+    },
+    {
+      "index": 3,
+      "src": "img/main/3-delivery.jpg",
+      "alt": "스마일배송 탭 내용"
+    }
+  ]
+}
