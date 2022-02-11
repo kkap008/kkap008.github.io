@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.css" title="mobile css" />
     <title>Starbucks</title>
   </head>
   <body>
@@ -12,12 +12,42 @@
     <h1 class="title hide">스타벅스 홈페이지</h1>
 
     <!-- 스타벅스 헤더 -->
-    <header class="header"></header>
+    <article class="header-wrap">
+      <header class="header">
+        <h2 class="header__title hide">스타벅스 머리글 영역</h2>
+        <section class="header__logo logo">
+          <h3 class="logo__title">
+            <a href="index.html" class="logo__link" rel="nofollow">
+              <img
+                src="img/gap/space48.png"
+                alt="스타벅스 홈 바로가기 및 로고 이미지"
+                class="logo__img"
+              />
+            </a>
+          </h3>
+        </section>
+        <nav class="header__gnb">
+          <ul class="header__gnb-list">
+            <li class="header__gnb-item">
+              <a href="#none" class="header__gnb-link" hreflang="ko"></a>
+            </li>
+            <li class="header__gnb-item">
+              <a href="#none" class="header__gnb-link" hreflang="ko"></a>
+            </li>
+            <li class="header__gnb-item">
+              <button type="button" class="header__menu"></button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </article>
 
     <!-- 스타벅스 메인 콘텐츠 영역 -->
     <main class="main"></main>
 
     <!-- 스타벅스 풋터 영역 -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <h2 class="footer__title hide">스타벅스 바닥글 영역</h2>
+    </footer>
   </body>
 </html>
