@@ -5,13 +5,14 @@
   --bg-alabaster: #f6f5ef;
   --bg-cork: #554c46;
   --bg-kabul: #645952;
-  --bg-nero: #282828;
-  --bg-bokara-gray: #2c2a29;
+  --bg-nero: #222;
+  --bg-bokara-gray: #2d2926;
   --bg-dim-gray: #666;
   --bg-watercourse: #00704a;
   --bg-racing-green: #1e3932;
   --bg-transparent: transparent;
-  --bg-opacity: 0.7;
+  --bg-rgba-black-7: rgba(0, 0, 0, 0.7);
+  --bg-rgba-black-5: rgba(0, 0, 0, 0.5);
 
   /* 폰트 색상 */
   --text-color-white: white;
@@ -25,15 +26,21 @@
   /* 폰트 사이즈 */
 
   /* 상대 간격 */
-  --gap-4px: 0.25rem;
-  --gap-8px: calc(var(--gap-4px) * 2);
-  --gap-16px: calc(var(--gap-8px) * 2);
-  --gap-32px: calc(var(var(--gap-16px)) * 2);
+  --rem-gap-4px: 0.25rem;
+  --rem-gap-8px: calc(var(--rem-gap-4px) * 2);
+  --rem-gap-12px: calc((var(--rem-gap-8px) * 2) - 4px);
+  --rem-gap-16px: calc(var(--rem-gap-8px) * 2);
+  --rem-gap-20px: calc((var(--rem-gap-8px) * 2) + 4px);
+  --rem-gap-24px: calc(var(--rem-gap-8px) * 3);
+  --rem-gap-32px: calc(var(--rem-gap-16px) * 2);
+  --rem-gap-36px: calc((var(--rem-gap-16px) * 2) + 4px);
 
   /* 고정 간격 */
   --static-gap-4px: 4px;
   --static-gap-8px: 8px;
+  --static-gap-12px: 12px;
   --static-gap-16px: 16px;
+  --static-gap-20px: 20px;
   --static-gap-32px: 32px;
   --static-gap-64px: 64px;
 
@@ -47,13 +54,31 @@
   --ko-font-weight--normal: 500;
   --ko-font-weight--bold: 700;
   font-family: var(--ko-font-family);
-  font-weight: 500;
+  font-weight: bold;
   font-size: 1rem;
+}
+
+img,
+button {
+  vertical-align: top;
+}
+
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  white-space: nowrap;
+  clip: rect(0px 0px 0px 0px);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  overflow: hidden;
 }
 
 * {
   margin: 0;
   padding: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
 h1,
@@ -68,4 +93,8 @@ h6 {
 ul,
 details {
   list-style: none;
+}
+
+button {
+  background: none;
 }

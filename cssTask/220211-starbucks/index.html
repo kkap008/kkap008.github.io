@@ -4,22 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" title="mobile css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <title>Starbucks</title>
   </head>
   <body>
     <!-- 아웃라인 타이틀 -->
     <h1 class="title hide">스타벅스 홈페이지</h1>
-
     <!-- 스타벅스 헤더 -->
     <article class="header-wrap">
       <header class="header">
-        <h2 class="header__title hide">스타벅스 머리글 영역</h2>
+        <h2 class="header__title hide">머리글 영역</h2>
         <section class="header__logo logo">
           <h3 class="logo__title">
             <a href="index.html" class="logo__link" rel="nofollow">
               <img
-                src="img/gap/space48.png"
+                src="img/logo/logo.png"
                 alt="스타벅스 홈 바로가기 및 로고 이미지"
                 class="logo__img"
               />
@@ -27,17 +53,85 @@
           </h3>
         </section>
         <nav class="header__gnb">
+          <h3 class="header__gnb-title hide">
+            로그인 버튼, 위치찾기 버튼, 메뉴 버튼
+          </h3>
           <ul class="header__gnb-list">
             <li class="header__gnb-item">
-              <a href="#none" class="header__gnb-link" hreflang="ko"></a>
+              <a href="#none" class="header__gnb-link" hreflang="ko">
+                <img
+                  src="img/gap/space48.png"
+                  alt="로그인 아이콘"
+                  class="header__gnb-user"
+                />
+              </a>
             </li>
             <li class="header__gnb-item">
-              <a href="#none" class="header__gnb-link" hreflang="ko"></a>
+              <a href="#none" class="header__gnb-link" hreflang="ko">
+                <img
+                  src="img/gap/space48.png"
+                  alt="위치찾기 아이콘"
+                  class="header__gnb-location"
+                />
+              </a>
             </li>
             <li class="header__gnb-item">
-              <button type="button" class="header__menu"></button>
+              <button type="button" class="header__gnb-btn">
+                <img
+                  src="img/gap/space48.png"
+                  alt="메뉴 아이콘"
+                  class="header__gnb-btn-img"
+                />
+              </button>
             </li>
           </ul>
+          <button type="button" class="header__lnb-close-btn">
+            <img
+              src="img/gap/space48.png"
+              alt="메뉴 닫기 버튼"
+              class="header__lnb-close-img"
+            />
+          </button>
+          <nav class="header__lnb">
+            <h4 class="header__lnb-title hide">메뉴 리스트</h4>
+
+            <ul class="header__lnb-list">
+              <li class="header__lnb-item">
+                <form action="#none" class="header__lnb-search search">
+                  <input
+                    type="text"
+                    title="검색"
+                    name="search"
+                    class="search__input"
+                  />
+                  <button type="submit" class="search__btn">
+                    <span class="search__btn-text">검색</span>
+                  </button>
+                </form>
+              </li>
+              <li class="header__lnb-item">
+                <span class="header__lnb-title">나의 스타벅스</span>
+              </li>
+              <li class="header__lnb-item">
+                <span class="header__lnb-title">커피</span>
+              </li>
+              <li class="header__lnb-item">
+                <span class="header__lnb-title">메뉴</span>
+              </li>
+              <li class="header__lnb-item">
+                <span class="header__lnb-title">매장</span>
+              </li>
+              <li class="header__lnb-item">
+                <span class="header__lnb-title">사회적 활동</span>
+              </li>
+              <li class="header__lnb-item">
+                <span class="header__lnb-title">스타벅스 혜택</span>
+              </li>
+              <li class="header__lnb-item">
+                <span class="header__lnb-title">스타벅스 뉴스</span>
+              </li>
+            </ul>
+          </nav>
         </nav>
       </header>
     </article>
