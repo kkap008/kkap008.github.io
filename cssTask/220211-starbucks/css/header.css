@@ -82,9 +82,8 @@
 .search__btn {
   background-color: var(--bg-dim-gray);
   border-radius: 4px;
-  flex-basis: 25%;
-  flex-shrink: 0;
-  flex-grow: 0;
+  min-width: 48px;
+  flex: 0 25%;
 }
 .search__btn-text {
   color: var(--text-color-white);
@@ -94,15 +93,14 @@
 }
 .search__input {
   border-radius: 4px;
-  flex-basis: 70%;
-  flex-shrink: 0;
-  flex-grow: 0;
+  min-width: 114px;
+  flex: 0 70%;
 }
 
 /* 중간 크기 */
 @media only screen and (min-width: 30rem) {
   :root {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   .logo__img {
     width: 2rem;

@@ -1,4 +1,7 @@
 :root {
+  /* 갤럭시 폴드 기준 최소값 */
+  min-width: 280px;
+
   /* 백그라운드 컬러 */
   --bg-white: white;
   --bg-black: black;
