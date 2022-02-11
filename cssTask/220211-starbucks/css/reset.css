@@ -1,0 +1,67 @@
+:root {
+  /* 백그라운드 컬러 */
+  --bg-white: white;
+  --bg-black: black;
+  --bg-alabaster: #f6f5ef;
+  --bg-cork: #554c46;
+  --bg-kabul: #645952;
+  --bg-nero: #282828;
+  --bg-bokara-gray: #2c2a29;
+  --bg-dim-gray: #666;
+  --bg-watercourse: #00704a;
+  --bg-racing-green: #1e3932;
+  --bg-transparent: transparent;
+  --bg-opacity: 0.7;
+
+  /* 폰트 색상 */
+  --text-color-white: white;
+  --text-color-black: black;
+  --text-color-bon-jour: #e6dbd3;
+  --text-color-gray: #666;
+  --text-color-eclipse: #453d3d;
+  --text-color-very-light-gray: #ccc;
+
+  /* 폰트 사이즈 */
+
+  /* 상대 간격 */
+  --gap-4px: 0.25rem;
+  --gap-8px: calc(var(--gap-4px) * 2);
+  --gap-16px: calc(var(--gap-8px) * 2);
+  --gap-32px: calc(var(var(--gap-16px)) * 2);
+
+  /* 고정 간격 */
+  --static-gap-4px: 4px;
+  --static-gap-8px: 8px;
+  --static-gap-16px: 16px;
+  --static-gap-32px: 32px;
+  --static-gap-64px: 64px;
+
+  /* 기본 폰트 */
+  --sans-serif: sans-serif;
+  --en-heading-font-family: "Rubik Mono One", var(--sans-serif);
+  --ko-heading-font-family: "Black Han Sans", var(--sans-serif);
+  --en-font-family: "Archivo Black", "Mitr", var(--sans-serif);
+  --ko-font-family: "IBM Plex Sans KR", "Noto Sans KR", var(--sans-serif);
+  font-family: var(--ko-font-family);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ko-heading-font-family);
+}
+
+ul,
+details {
+  list-style: none;
+}
