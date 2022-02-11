@@ -2,3 +2,14 @@
 
 @import url(GoogleFont.css);
 @import url(reset.css);
+
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  white-space: nowrap;
+  clip: rect(0px 0px 0px 0px);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  overflow: hidden;
+}

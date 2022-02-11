@@ -20,6 +20,7 @@
   --text-color-gray: #666;
   --text-color-eclipse: #453d3d;
   --text-color-very-light-gray: #ccc;
+  --text-color-watercourse: #00704a;
 
   /* 폰트 사이즈 */
 
@@ -42,6 +43,9 @@
   --ko-heading-font-family: "Black Han Sans", var(--sans-serif);
   --en-font-family: "Archivo Black", "Mitr", var(--sans-serif);
   --ko-font-family: "IBM Plex Sans KR", "Noto Sans KR", var(--sans-serif);
+  --ko-font-weight--light: 400;
+  --ko-font-weight--normal: 500;
+  --ko-font-weight--bold: 700;
   font-family: var(--ko-font-family);
   font-weight: 500;
   font-size: 1rem;
@@ -58,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--ko-heading-font-family);
+  font-family: var(--en-heading-font-family);
 }
 
 ul,
