@@ -53,12 +53,33 @@
   --ko-heading-font-family: "Black Han Sans", var(--sans-serif);
   --en-font-family: "Archivo Black", "Mitr", var(--sans-serif);
   --ko-font-family: "IBM Plex Sans KR", "Noto Sans KR", var(--sans-serif);
-  --ko-font-weight--light: 400;
-  --ko-font-weight--normal: 500;
-  --ko-font-weight--bold: 700;
-  font-family: var(--ko-font-family);
-  font-weight: bold;
-  font-size: 1rem;
+
+  /* 폰트 사이즈 */
+  --font-headline-4: 2.1875rem;
+  --font-headline-5: 1.5625rem;
+  --font-headline-6: 1.3125rem;
+  --font-subtitle-1: 1rem;
+  --font-subtitle-2: 0.825rem;
+  --font-body-1: 1rem;
+  --font-body-2: 0.875rem;
+  --font-button: 0.875rem;
+  --font-caption: 0.75rem;
+  --font-overline: 0.625rem;
+
+  /* 폰트 자간 */
+  --letter-headline-4: 0.015625rem;
+  --letter-headline-6: 0.009375rem;
+  --letter-subtitle-1: 0.009375rem;
+  --letter-subtitle-2: 0.00625rem;
+  --letter-body-1: 0.03125rem;
+  --letter-body-2: 0.015625rem;
+  --letter-button: 0.078125rem;
+  --letter-caption: 0.025rem;
+  --letter-overline: 0.09375rem;
+
+  /* 폰트 굵기 */
+  --font-weight-normal: normal;
+  --font-weight-medium: 500;
 }
 
 img,

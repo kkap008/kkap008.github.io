@@ -8,12 +8,11 @@
   padding: var(--rem-gap-12px);
   top: 0;
   width: 100vw;
-  height: 5rem;
 }
 
 .logo__img {
-  width: 3rem;
-  height: 3rem;
+  width: 48px;
+  height: 48px;
 }
 
 .header__gnb-list {
@@ -58,7 +57,10 @@
   width: 70%;
   height: 100%;
   margin-left: auto;
-  background-color: var(--bg-nero);
+  background-color: var(--bg-black);
+  font-size: var(--font-subtitle-1);
+  letter-spacing: var(--letter-subtitle-1);
+  font-weight: var(--font-weight-normal);
 }
 .header__lnb-item {
   width: 100%;
@@ -75,52 +77,42 @@
 
 .search {
   display: flex;
-  height: 5rem;
-  padding: var(--rem-gap-24px) var(--rem-gap-12px);
   justify-content: center;
+  align-items: center;
+  padding: var(--rem-gap-20px) 0;
+  padding-left: var(--rem-gap-16px);
 }
 .search__btn {
   background-color: var(--bg-dim-gray);
   border-radius: 4px;
   min-width: 48px;
   flex: 0 20%;
+  height: 32px;
 }
 .search__btn-text {
   color: var(--text-color-white);
   font-family: var(--ko-font-family);
-  font-weight: var(--ko-font-weight--light);
-  font-size: 1rem;
+  font-size: var(--font-button);
+  letter-spacing: var(--letter-button);
+  font-weight: var(--font-weight-medium);
 }
 .search__input {
+  height: 30px;
   border-radius: 4px;
   min-width: 114px;
-  flex: 0 80%;
+  flex: 0 60%;
   margin-right: var(--static-gap-12px);
 }
 
 /* 중간 크기 */
 @media only screen and (min-width: 30rem) {
-  :root {
-    font-size: 1.75rem;
-  }
-  .logo__img {
-    width: 2rem;
-    height: 2rem;
-  }
-  .header__lnb-close-btn {
-    background-image: url(../img/imageSprite/header-imageSprite.png);
-    background-position: calc(-48px * 12) 0px;
-    transform: translate(-50%, 1.5rem);
-  }
-  .header {
-    height: 4rem;
-  }
   .search {
-    height: 5rem;
+  }
+  .search__btn {
+    height: 50px;
   }
   .search__input {
-    flex-basis: 60%;
-    margin-right: var(--static-gap-20px);
+    height: 50px;
   }
 }
 
