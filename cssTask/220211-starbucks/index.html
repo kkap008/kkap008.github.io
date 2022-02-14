@@ -8,330 +8,121 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;400;500;700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;400;500;700&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
       rel="stylesheet"
     />
+    <!-- default CSS -->
+    <link rel="stylesheet" href="css/newCss/default.css" />
     <!-- 헤더 CSS -->
     <link rel="stylesheet" href="css/newCss/header.css" />
     <!-- 메인 CSS -->
     <!-- 풋터 CSS -->
-    <!-- default CSS -->
-    <link rel="stylesheet" href="css/newCss/default.css" />
-    <script defer src="js/header.js"></script>
     <title>Starbucks</title>
   </head>
+
+  <!-- 1 -->
   <body>
-    <h1 class="title hide">스타벅스 한국 홈페이지</h1>
-    <article class="header">
-      <h2 class="header__title hide">머리글</h2>
-      <header class="header">
-        <section class="header__logo">
-          <h3 class="header__logo">
-            <a href="#none" class="header__home" rel="nofollow" hreflang="ko">
-              <img
-                src="img/logo/logo.png"
-                alt="스타벅스 로고 이미지"
-                title="스타벅스 로고 이미지"
-                class="header__logo-img"
-              />
-            </a>
-          </h3>
-        </section>
-        <!-- Mobile none && PC block -->
-        <nav class="header__gnb--pc header__gnb--top">
-          <h3 class="header__title hide">
-            로그인,나의 스타벅스,고객센터 및 건의하사항,매장찾기,검색
-          </h3>
-          <ul class="header__gnb-list--pc">
-            <li class="header__gnb-item--pc">
-              <a href="#none" class="header__gnb-link--pc" rel="nofollow">
-                <span>로그인</span>
-              </a>
-            </li>
-            <li class="header__gnb-item--pc">
-              <a href="#none" class="header__gnb-link--pc" rel="nofollow">
-                <span>나의 스타벅스</span>
-              </a>
-            </li>
-            <li class="header__gnb-item--pc">
-              <a href="#none" class="header__gnb-link--pc" rel="nofollow">
-                <span>고객센터 및 건의사항</span>
-              </a>
-            </li>
-            <li class="header__gnb-item--pc">
-              <a href="#none" class="header__gnb-link--pc" rel="nofollow">
-                <span>매장 찾기</span>
-              </a>
-            </li>
-          </ul>
-          <form action="#none" class="header__search--pc" method="get">
-            <input
-              type="text"
-              name="search-input"
-              class="header__search-input--pc"
+    <h1 class="hidden">스타벅스 한국 홈페이지</h1>
+    <!-- [ Mobile First ] -->
+    <header class="header">
+      <!-- 2 -->
+      <nav class="header__logo">
+        <h2 class="header__logo-title">
+          <a href="#none" class="header__logo-link">
+            <img
+              src="img/logo/logo.png"
+              alt="시작페이지 이동"
+              title="스타벅스 로고"
+              class="header__logo-img"
             />
-            <button type="submit" class="header__search-btn--pc">
-              <img
-                src="img/gap/space48.png"
-                alt="검색 아이콘"
-                title="검색 아이콘"
-                class="header__search-btn-img--pc"
-              />
-            </button>
-          </form>
+          </a>
+        </h2>
+      </nav>
+      <!-- 2 -->
+      <div class="header__nav-wrap">
+        <nav class="header__nav">
+          <a href="#none" class="header__login" title="로그인 페이지 이동">
+            <img
+              src="img/gap/space48.png"
+              alt="로그인 페이지 이동"
+              class="header__login-icon"
+            />
+          </a>
+          <a href="#none" class="header__shop" title="매장 찾기 페이지 이동">
+            <img
+              src="img/gap/space48.png"
+              alt="매장 찾기 페이지 이동"
+              class="header__shop-icon"
+            />
+          </a>
         </nav>
-        <nav class="header__gnb--pc header__gnb--bottom">
-          <h3 class="header__title hide">전체 메뉴</h3>
-          <ul class="header__gnb-list--pc">
-            <li class="header__gnb-item--pc">
-              <span class="header__gnb-item-title--pc">홈카페</span>
-            </li>
-            <li class="header__gnb-item--pc">
-              <span class="header__gnb-item-title--pc">메뉴</span>
-            </li>
-            <li class="header__gnb-item--pc">
-              <span class="header__gnb-item-title--pc">매장</span>
-            </li>
-            <li class="header__gnb-item--pc">
-              <span class="header__gnb-item-title--pc">사회적 공헌</span>
-            </li>
-            <li class="header__gnb-item--pc">
-              <span class="header__gnb-item-title--pc">혜택</span>
-            </li>
-            <li class="header__gnb-item--pc">
-              <span class="header__gnb-item-title--pc">스타벅스 소식</span>
-            </li>
-          </ul>
-        </nav>
-        <!-- Mobile block && PC none -->
-        <nav class="header__gnb">
-          <h3 class="header__title hide">로그인,매장찾기,메뉴 아이콘</h3>
-          <ul class="header__gnb-list">
-            <li class="header__gnb-item">
-              <a href="#none" class="header__gnb-link" hreflang="ko"
-                ><img
-                  src="img/gap/space48.png"
-                  alt="로그인 페이지 이동"
-                  class="header__gnb-icon"
-              /></a>
-            </li>
-            <li class="header__gnb-item">
-              <a href="#none" class="header__gnb-link" hreflang="ko"
-                ><img
-                  src="img/gap/space48.png"
-                  alt="매장 찾기 지도 페이지 이동"
-                  class="header__gnb-icon"
-              /></a>
-            </li>
-            <li class="header__gnb-item">
-              <button type="button" class="header__gnb-btn">
-                <img
-                  src="img/gap/space48.png"
-                  alt="전체 메뉴 보기"
-                  class="header__gnb-icon"
-                />
-              </button>
-            </li>
-          </ul>
-        </nav>
-        <div class="header__lnb-wrap">
-          <button type="button" class="header__gnb-close">
-            <img src="img/gap/space48.png" alt="전체 메뉴 닫기" />
+        <button class="header__gnb-btn" type="button">
+          <img
+            src="img/gap/space48.png"
+            alt="메뉴 화면에 표시"
+            title="메뉴 아이콘"
+            class="header__gnb-icon"
+          />
+        </button>
+      </div>
+      <!-- 2 -->
+      <nav class="header__lnb">
+        <form action="#none" class="header__search" method="get">
+          <input type="text" class="header__input" name="search" />
+          <button type="submit" class="header__submit">
+            <span class="header__value">검색</span>
           </button>
-          <nav class="header__lnb">
-            <h3 class="header__title hide">전체 메뉴 보기 아이콘</h3>
-            <form action="#none" class="header__search" method="get">
-              <input
-                type="text"
-                name="search-input"
-                class="header__search-input"
-              />
-              <button type="submit" class="header__search-btn">
-                <span>검색</span>
-              </button>
-            </form>
-            <!-- 1 -->
-            <details
-              class="header__lnb-item header__lnb-item--bokara-gray js-details"
-            >
-              <summary
-                class="header__lnb-summary header__lnb-summary--underline"
-              >
-                <span>나의 스타벅스</span>
-                <img
-                  class="header__lnb-img"
-                  src="img/gap/space48.png"
-                  alt="나의 스타벅스 하위 목록 보기"
-                />
-              </summary>
-              <a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>한눈에 보기</span></a
-              >
-              <!-- 1.1 -->
-              <details class="header__lnb-item header__lnb--nero js-details">
-                <summary
-                  class="header__lnb-summary header__lnb-summary--underline"
-                >
-                  <span>My 리워드</span>
-                  <img
-                    class="header__lnb-img"
-                    src="img/gap/space48.png"
-                    alt="My 리워드 하위 목록 보기"
-                  />
-                </summary>
-                <a href="" class="header__lnb-item-link"
-                  ><span> 리워드 및 혜택 </span></a
-                ><a href="" class="header__lnb-item-link"
-                  ><span> 별 히스토리 </span></a
-                >
-              </details>
-              <!-- 1.2 -->
-              <details class="header__lnb-item header__lnb--nero js-details">
-                <summary
-                  class="header__lnb-summary header__lnb-summary--underline"
-                >
-                  <span>My 스타벅스 카드</span>
-                  <img
-                    class="header__lnb-img"
-                    src="img/gap/space48.png"
-                    alt="My 스타벅스 카드 하위 목록 보기"
-                  />
-                </summary>
-              </details>
-              <!-- 1.3 -->
-              <details class="header__lnb-item header__lnb--nero js-details">
-                <summary
-                  class="header__lnb-summary header__lnb-summary--underline"
-                >
-                  <span>My 스타벅스 e-Gift Card</span>
-                  <img
-                    class="header__lnb-img"
-                    src="img/gap/space48.png"
-                    alt="My 스타벅스 e-Gift Card 하위 목록 보기"
-                  />
-                </summary>
-              </details>
-              <a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>My 쿠폰</span></a
-              ><a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>My 캘린더</span></a
-              ><a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>My 메뉴</span></a
-              ><a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>My 고객의 소리</span></a
-              ><a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>전자영수증</span></a
-              ><a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>개인컵 리워드 설정</span></a
-              >
-              <a href="#none" class="header__lnb-link header__lnb--nero"
-                ><span>My DT Pass</span></a
-              >
-              <!-- 1.4 -->
-              <details class="header__lnb-item header__lnb--nero js-details">
-                <summary
-                  class="header__lnb-summary header__lnb-summary--underline"
-                >
-                  <span>개인정보관리</span>
-                  <img
-                    class="header__lnb-img"
-                    src="img/gap/space48.png"
-                    alt="개인정보관리 하위 목록 보기"
-                  />
-                </summary>
-              </details>
-            </details>
-            <!-- 2 -->
-            <details class="header__lnb-item js-details">
-              <summary
-                class="header__lnb-summary header__lnb-summary--underline"
-              >
-                <span>홈카페</span>
-                <img
-                  class="header__lnb-img"
-                  src="img/gap/space48.png"
-                  alt="홈카페 하위 목록 보기"
-                />
-              </summary>
-            </details>
-            <!-- 3 -->
-            <details class="header__lnb-item js-details">
-              <summary
-                class="header__lnb-summary header__lnb-summary--underline"
-              >
-                <span>스타벅스 메뉴</span>
-                <img
-                  class="header__lnb-img"
-                  src="img/gap/space48.png"
-                  alt="스타벅스 메뉴 하위 목록 보기"
-                />
-              </summary>
-            </details>
-            <!-- 4 -->
-            <details class="header__lnb-item js-details">
-              <summary
-                class="header__lnb-summary header__lnb-summary--underline"
-              >
-                <span>매장</span>
-                <img
-                  class="header__lnb-img"
-                  src="img/gap/space48.png"
-                  alt="매장 하위 목록 보기"
-                />
-              </summary>
-            </details>
-            <!-- 5 -->
-            <details class="header__lnb-item js-details">
-              <summary
-                class="header__lnb-summary header__lnb-summary--underline"
-              >
-                <span>혜택</span>
-                <img
-                  class="header__lnb-img"
-                  src="img/gap/space48.png"
-                  alt="혜택 하위 목록 보기"
-                />
-              </summary>
-            </details>
-            <!-- 6 -->
-            <details class="header__lnb-item js-details">
-              <summary
-                class="header__lnb-summary header__lnb-summary--underline"
-              >
-                <span>사회적 공헌</span>
-                <img
-                  class="header__lnb-img"
-                  src="img/gap/space48.png"
-                  alt="사회적 공헌 하위 목록 보기"
-                />
-              </summary>
-            </details>
-            <!-- 7 -->
-            <details class="header__lnb-item js-details">
-              <summary
-                class="header__lnb-summary header__lnb-summary--underline"
-              >
-                <span>스타벅스 소식</span>
-                <img
-                  class="header__lnb-img"
-                  src="img/gap/space48.png"
-                  alt="스타벅스 소식 하위 목록 보기"
-                />
-              </summary>
-            </details>
-          </nav>
-        </div>
-      </header>
-    </article>
+        </form>
+        <ul class="header__lnb-list">
+          <li class="header__lnb-item">
+            <button class="header__lnb-btn">
+              <span class="header__summary">나의 스타벅스</span>
+            </button>
+          </li>
+          <li class="header__lnb-item">
+            <button class="header__lnb-btn">
+              <span class="header__summary">홈카페</span>
+            </button>
+          </li>
+          <li class="header__lnb-item">
+            <button class="header__lnb-btn">
+              <span class="header__summary">스타벅스 메뉴</span>
+            </button>
+          </li>
+          <li class="header__lnb-item">
+            <button class="header__lnb-btn">
+              <span class="header__summary">스타벅스 매장</span>
+            </button>
+          </li>
+          <li class="header__lnb-item">
+            <button class="header__lnb-btn">
+              <span class="header__summary">사회적 공헌</span>
+            </button>
+          </li>
+          <li class="header__lnb-item">
+            <button class="header__lnb-btn">
+              <span class="header__summary">스타벅스 혜택</span>
+            </button>
+          </li>
+          <li class="header__lnb-item">
+            <button class="header__lnb-btn">
+              <span class="header__summary">스타벅스 소식</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 2 -->
     <main class="main"></main>
+    <!-- 2 -->
     <footer class="footer"></footer>
   </body>
 </html>

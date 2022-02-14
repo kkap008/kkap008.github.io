@@ -24,7 +24,12 @@ button {
   vertical-align: top;
   background: none;
 }
+button:focus {
+  outline-color: black;
+  outline-style: solid;
+  outline-width: 1px;
+}
 a {
-  color: var(--text-white);
   text-decoration: none;
+  color: var(--text-black);
 }

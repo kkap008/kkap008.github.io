@@ -25,6 +25,7 @@
   --text-nobel: #999;
   --text-pigment-green: #00b050;
   --text-black: #000;
+  color: black;
 
   /* 보더 색상 */
   --border-nero: #222;
@@ -47,7 +48,7 @@
   --font-bold: 700;
 }
 
-.hide {
+.hidden {
   width: 1px;
   height: 1px;
   white-space: nowrap;
@@ -56,44 +57,4 @@
   margin: -1px;
   clip: rect(0px 0px 0px 0px);
   clip-path: polygon(0 0, 0 0, 0 0);
-}
-
-body {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, auto);
-  gap: 0 8px;
-  height: 100vh;
-}
-
-.header__lnb-wrap--open {
-  background-color: var(--bg-rgba-black-7);
-  transform: none;
-  transition: transform 0.4s ease-in;
-}
-.header__lnb--open {
-  transform: none;
-  transition: transform 0.4 ease-in;
-}
-.header__gnb-close--animation {
-  animation: gnb-colse-rotate 0.8s linear;
-}
-@keyframes gnb-colse-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(180deg);
-  }
-}
-.header__gnb-close--revers-animation {
-  animation: gnb-colse-rotate 0.8s linear reverse;
-}
-@keyframes gnb-close--revers-rotate {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(-180deg);
-  }
 }
