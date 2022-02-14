@@ -2,8 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: none;
 }
-ul {
+ul,
+summary {
   list-style: none;
 }
 h1,
@@ -13,4 +15,16 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading-family);
+}
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+button {
+  vertical-align: top;
+  background: none;
+}
+a {
+  color: var(--text-white);
+  text-decoration: none;
 }

@@ -5,7 +5,8 @@
 :root {
   /* 백그라운드 색상 */
   --bg-white: #fff;
-  --bg-black: #000;
+  --bg-black: #181818;
+  --bg-night-rider: #2e2e2e;
   --bg-alabaster: #f6f5ef;
   --bg-bokara-gray: #2d2926;
   --bg-dim-gary: #666;
@@ -15,6 +16,9 @@
   --bg-cork: #554c46;
   --bg-elipes: #453d3d;
   --bg-brandy-punch: #b9813e;
+  --bg-nero: #242424;
+  --bg-rgba-black-7: rgba(0, 0, 0, 0.7);
+  --bg-transparent: transparent;
 
   /* 텍스트 색상 */
   --text-white: #fff;
@@ -34,12 +38,9 @@
   /* 기본 폰트 패밀리 */
   font-family: var(--font-body-family);
 
+  /* 폰트 사이즈 */
+
   /* 폰트 크기 */
-  --font-size-s: 1rem;
-  --font-size-m: 1.25rem;
-  --font-size-lg: 1.5rem;
-  --font-size-xl: 2rem;
-  --font-size-xxl: 2.5rem;
 
   --font-light: 400;
   --font-normal: 500;
@@ -57,28 +58,42 @@
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-.s {
-  font-size: var(--font-size-s);
-  font-weight: var(--font-normal);
-  line-height: 1.618em;
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 0 8px;
+  height: 100vh;
 }
-.m {
-  font-size: var(--font-size-m);
-  font-weight: var(--font-normal);
-  line-height: 1.618em;
+
+.header__lnb-wrap--open {
+  background-color: var(--bg-rgba-black-7);
+  transform: none;
+  transition: transform 0.4s ease-in;
 }
-.lg {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-normal);
-  line-height: 1.618em;
+.header__lnb--open {
+  transform: none;
+  transition: transform 0.4 ease-in;
 }
-.xl {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-normal);
-  line-height: 1.618em;
+.header__gnb-close--animation {
+  animation: gnb-colse-rotate 0.8s linear;
 }
-.xxl {
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-normal);
-  line-height: 1.618em;
+@keyframes gnb-colse-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+.header__gnb-close--revers-animation {
+  animation: gnb-colse-rotate 0.8s linear reverse;
+}
+@keyframes gnb-close--revers-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
 }
