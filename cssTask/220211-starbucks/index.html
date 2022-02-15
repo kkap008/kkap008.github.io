@@ -31,7 +31,6 @@
   <!-- 1 -->
   <body>
     <h1 class="hidden">스타벅스 한국 홈페이지</h1>
-    <!-- [ Mobile First ] -->
     <header class="header">
       <!-- 2 -->
       <nav class="header__logo">
@@ -46,15 +45,15 @@
           </a>
         </h2>
       </nav>
-      <!-- 2 -->
-      <div class="header__nav-wrap">
-        <nav class="header__nav">
+      <!-- [ Mobile First ] -->
+      <div class="header__gnb-wrap">
+        <!-- 2 -->
+        <nav class="header__gnb">
+          <h2 class="hidden">
+            로그인, 매장 찾기, 전체 카테고리 화면 표시 버튼
+          </h2>
           <a href="#none" class="header__login" title="로그인 페이지 이동">
-            <img
-              src="img/gap/space48.png"
-              alt="로그인 페이지 이동"
-              class="header__login-icon"
-            />
+            <img src="img/gap/space48.png" alt="로그인 페이지 이동" class="" />
           </a>
           <a href="#none" class="header__shop" title="매장 찾기 페이지 이동">
             <img
@@ -67,58 +66,253 @@
         <button class="header__gnb-btn" type="button">
           <img
             src="img/gap/space48.png"
-            alt="메뉴 화면에 표시"
-            title="메뉴 아이콘"
+            alt="전체 카테고리 화면에 표시"
+            title="전체 카테고리 아이콘"
             class="header__gnb-icon"
           />
         </button>
       </div>
-      <!-- 2 -->
-      <nav class="header__lnb">
-        <form action="#none" class="header__search" method="get">
-          <input type="text" class="header__input" name="search" />
-          <button type="submit" class="header__submit">
-            <span class="header__value">검색</span>
-          </button>
-        </form>
-        <ul class="header__lnb-list">
-          <li class="header__lnb-item">
-            <button class="header__lnb-btn">
-              <span class="header__summary">나의 스타벅스</span>
+      <!-- DIV -->
+      <div class="header__lnb">
+        <button class="header__lnb-close">
+          <img
+            src="img/gap/space48.png"
+            alt="전체 카테고리 화면 닫기"
+            title="전체 카테고리 닫기 아이콘"
+            class="header__lnb-close-img"
+          />
+        </button>
+        <!-- 2 -->
+        <nav class="header__lnb-list">
+          <h2 class="hidden">전체 카테고리 목록</h2>
+          <form action="#none" class="header__search" method="get">
+            <input type="text" class="header__input" name="search" />
+            <button type="submit" class="header__submit">
+              <span class="header__value">검색</span>
             </button>
-          </li>
-          <li class="header__lnb-item">
-            <button class="header__lnb-btn">
-              <span class="header__summary">홈카페</span>
-            </button>
-          </li>
-          <li class="header__lnb-item">
-            <button class="header__lnb-btn">
-              <span class="header__summary">스타벅스 메뉴</span>
-            </button>
-          </li>
-          <li class="header__lnb-item">
-            <button class="header__lnb-btn">
-              <span class="header__summary">스타벅스 매장</span>
-            </button>
-          </li>
-          <li class="header__lnb-item">
-            <button class="header__lnb-btn">
-              <span class="header__summary">사회적 공헌</span>
-            </button>
-          </li>
-          <li class="header__lnb-item">
-            <button class="header__lnb-btn">
-              <span class="header__summary">스타벅스 혜택</span>
-            </button>
-          </li>
-          <li class="header__lnb-item">
-            <button class="header__lnb-btn">
-              <span class="header__summary">스타벅스 소식</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
+          </form>
+          <!-- 3 -->
+          <section class="header__lnb-item">
+            <h3 class="header__lnb-summary">
+              <button type="button" class="header__lnb-btn">
+                <span>나의 스타벅스</span>
+                <img
+                  src="img/gap/space48.png"
+                  alt=""
+                  class="header__lnb-btn-icon"
+                />
+              </button>
+            </h3>
+            <!-- 4 -->
+            <ul class="header__sub-lnb">
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <a href="#none" class="header__lnb-btn">
+                    <span>한눈에 보기</span>
+                  </a>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <button type="button" class="header__lnb-btn">
+                    <span>My 리워드</span>
+                    <img
+                      src="img/gap/space48.png"
+                      alt=""
+                      class="header__lnb-btn-icon"
+                    />
+                  </button>
+                </h4>
+                <!-- 5 -->
+                <ul class="header__lnb-last-lnb">
+                  <li class="header__lnb-item">
+                    <h5 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-btn">
+                        <span>리워드 및 혜택</span>
+                      </a>
+                    </h5>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h5 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-btn">
+                        <span>별 히스토리</span>
+                      </a>
+                    </h5>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <button type="button" class="header__lnb-btn">
+                    <span>My 스타벅스 카드</span>
+                    <img
+                      src="img/gap/space48.png"
+                      alt=""
+                      class="header__lnb-btn-icon"
+                    />
+                  </button>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <button type="button" class="header__lnb-btn">
+                    <span>My 스타벅스 e-Gift Card</span>
+                    <img
+                      src="img/gap/space48.png"
+                      alt=""
+                      class="header__lnb-btn-icon"
+                    />
+                  </button>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <button type="button" class="header__lnb-btn">
+                    <span>My 쿠폰</span>
+                    <img
+                      src="img/gap/space48.png"
+                      alt=""
+                      class="header__lnb-btn-icon"
+                    />
+                  </button>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <a href="#none" class="header__lnb-btn">
+                    <span>My 캘린더</span>
+                  </a>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <a href="#none" class="header__lnb-btn">
+                    <span>My 메뉴</span>
+                  </a>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <a href="#none" class="header__lnb-btn">
+                    <span>My 고객의 소리</span>
+                  </a>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <a href="#none" class="header__lnb-btn">
+                    <span>전자영수증</span>
+                  </a>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <a href="#none" class="header__lnb-btn">
+                    <span>개인컵 리워드 설정</span>
+                  </a>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <a href="#none" class="header__lnb-btn">
+                    <span>My DT Pass</span>
+                  </a>
+                </h4>
+              </li>
+              <li class="header__lnb-item">
+                <h4 class="header__lnb-summary">
+                  <button type="button" class="header__lnb-btn">
+                    <span>개인정보관리</span>
+                    <img
+                      src="img/gap/space48.png"
+                      alt=""
+                      class="header__lnb-btn-icon"
+                    />
+                  </button>
+                </h4>
+              </li>
+            </ul>
+          </section>
+          <!-- 3 -->
+          <section class="header__lnb-item">
+            <h3 class="header__lnb-summary">
+              <button type="button" class="header__lnb-btn">
+                <span>홈카페</span>
+                <img
+                  src="img/gap/space48.png"
+                  alt=""
+                  class="header__lnb-btn-icon"
+                />
+              </button>
+            </h3>
+          </section>
+          <!-- 3 -->
+          <section class="header__lnb-item">
+            <h3 class="header__lnb-summary">
+              <button type="button" class="header__lnb-btn">
+                <span>메뉴</span>
+                <img
+                  src="img/gap/space48.png"
+                  alt=""
+                  class="header__lnb-btn-icon"
+                />
+              </button>
+            </h3>
+          </section>
+          <!-- 3 -->
+          <section class="header__lnb-item">
+            <h3 class="header__lnb-summary">
+              <button type="button" class="header__lnb-btn">
+                <span>매장</span>
+                <img
+                  src="img/gap/space48.png"
+                  alt=""
+                  class="header__lnb-btn-icon"
+                />
+              </button>
+            </h3>
+          </section>
+          <!-- 3 -->
+          <section class="header__lnb-item">
+            <h3 class="header__lnb-summary">
+              <button type="button" class="header__lnb-btn">
+                <span>사회적 공헌</span>
+                <img
+                  src="img/gap/space48.png"
+                  alt=""
+                  class="header__lnb-btn-icon"
+                />
+              </button>
+            </h3>
+          </section>
+          <!-- 3 -->
+          <section class="header__lnb-item">
+            <h3 class="header__lnb-summary">
+              <button type="button" class="header__lnb-btn">
+                <span>스타벅스 혜택</span>
+                <img
+                  src="img/gap/space48.png"
+                  alt=""
+                  class="header__lnb-btn-icon"
+                />
+              </button>
+            </h3>
+          </section>
+          <!-- 3 -->
+          <section class="header__lnb-item">
+            <h3 class="header__lnb-summary">
+              <button type="button" class="header__lnb-btn">
+                <span>스타벅스 소식</span>
+                <img
+                  src="img/gap/space48.png"
+                  alt=""
+                  class="header__lnb-btn-icon"
+                />
+              </button>
+            </h3>
+          </section>
+        </nav>
+      </div>
     </header>
     <!-- 2 -->
     <main class="main"></main>

@@ -3,29 +3,30 @@
 @import url(reset.css);
 
 :root {
+  min-width: 280px;
   /* 백그라운드 색상 */
   --bg-white: #fff;
-  --bg-black: #181818;
-  --bg-night-rider: #2e2e2e;
+  --bg-black: #000;
+  --bg-night-rider: #323232;
   --bg-alabaster: #f6f5ef;
   --bg-bokara-gray: #2d2926;
-  --bg-dim-gary: #666;
+  --bg-dim-gray: #666;
   --bg-racing-green: #1e3932;
   --bg-watercoures: #00704a;
   --bg-kabul: #645952;
   --bg-cork: #554c46;
   --bg-elipes: #453d3d;
   --bg-brandy-punch: #b9813e;
-  --bg-nero: #242424;
+  --bg-nero: #222;
   --bg-rgba-black-7: rgba(0, 0, 0, 0.7);
   --bg-transparent: transparent;
 
   /* 텍스트 색상 */
+  --text-nobel: #999;
   --text-white: #fff;
   --text-nobel: #999;
   --text-pigment-green: #00b050;
   --text-black: #000;
-  color: black;
 
   /* 보더 색상 */
   --border-nero: #222;

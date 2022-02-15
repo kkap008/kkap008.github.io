@@ -23,13 +23,18 @@ const gnbCloseBtn = document.querySelector(".header__gnb-close");
 gnbCloseBtn.addEventListener("click", (event) => {
   const headerLnbWrap = document.querySelector(".header__lnb-wrap");
   const headerLnb = document.querySelector(".header__lnb");
+  const gnbCloseBtn = document.querySelector(".header__gnb-close");
 
   event.stopPropagation();
 
+  gnbCloseBtn.classList.add("header__gnb-close--animation");
   headerLnb.classList.remove("header__lnb--open");
   setTimeout(() => {
     headerLnbWrap.classList.remove("header__lnb-wrap--open");
-  }, 430);
+    setTimeout(() => {
+      gnbCloseBtn.classList.remove("header__gnb-close--animation");
+    }, 450);
+  }, 350);
 });
 
 gnbCloseBtn.addEventListener("mouseenter", (event) => {
@@ -52,11 +57,16 @@ const gnbOpenBtn = document.querySelector(".header__gnb-btn");
 gnbOpenBtn.addEventListener("click", (event) => {
   const headerLnbWrap = document.querySelector(".header__lnb-wrap");
   const headerLnb = document.querySelector(".header__lnb");
+  const gnbCloseBtn = document.querySelector(".header__gnb-close");
 
   event.stopPropagation();
-
+  gnbCloseBtn.classList.add("header__gnb-close--revers-animation");
   headerLnbWrap.classList.add("header__lnb-wrap--open");
+
   setTimeout(() => {
     headerLnb.classList.add("header__lnb--open");
+    setTimeout(() => {
+      gnbCloseBtn.classList.remove("header__gnb-close--revers-animation");
+    }, 450);
   }, 350);
 });
