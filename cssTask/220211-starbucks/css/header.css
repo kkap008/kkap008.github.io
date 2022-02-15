@@ -27,7 +27,7 @@
 .header__login,
 .header__shop,
 .header__gnb-btn {
-  background-image: url(../../img/imageSprite/header-imageSprite.png);
+  background-image: url(../img/imageSprite/header-imageSprite.png);
   background-repeat: no-repeat;
 }
 .header__login {
@@ -51,11 +51,12 @@
   top: 0;
   left: 0;
   background-color: var(--bg-rgba-black-7);
+  transform: translateX(100vw);
 }
 .header__lnb-close {
   position: relative;
   top: 18px;
-  background-image: url(../../img/imageSprite/header-imageSprite.png);
+  background-image: url(../img/imageSprite/header-imageSprite.png);
   background-repeat: no-repeat;
   background-position: calc(-48px * 10) 0px;
 }
@@ -69,7 +70,7 @@
   min-height: 48px;
 }
 .header__lnb-btn-icon {
-  background-image: url(../../img/imageSprite/header-imageSprite.png);
+  background-image: url(../img/imageSprite/header-imageSprite.png);
   background-repeat: no-repeat;
   background-position: calc(-48px * 13);
 }
@@ -79,6 +80,7 @@
   height: 100vh;
   background-color: var(--bg-black);
   overflow-y: auto;
+  transform: translateX(100vw);
 }
 .header__lnb-item {
   border-bottom: 1px solid var(--border-nero);
