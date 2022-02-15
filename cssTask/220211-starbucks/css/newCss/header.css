@@ -82,6 +82,7 @@
 }
 .header__lnb-item {
   border-bottom: 1px solid var(--border-nero);
+  
 }
 .header__lnb-item:first-of-type {
   background-color: var(--bg-bokara-gray);
@@ -113,6 +114,8 @@
 
 /* SUB LNB 2-Depth*/
 .header__sub-lnb {
+  height:0;
+  overflow-y:hidden;
   font-size: 1rem;
   background-color: var(--bg-nero);
 }
@@ -121,10 +124,12 @@
 }
 .header__sub-lnb .header__lnb-summary {
   padding-left: 10px;
+  word-break: keep-all;
 }
 
 /* LAST LNB 3-Depth*/
 .header__lnb-last-lnb {
+  
   font-size: 0.875rem;
   background-color: var(--bg-night-rider);
 }
@@ -135,3 +140,4 @@
 .header__lnb-last-lnb .header__lnb-summary {
   padding-left: 25px;
 }
+.
