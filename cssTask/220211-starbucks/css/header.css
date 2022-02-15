@@ -24,21 +24,6 @@
 .header__gnb-wrap {
   display: flex;
 }
-.header__login,
-.header__shop,
-.header__gnb-btn {
-  background-image: url(../img/imageSprite/header-imageSprite.png);
-  background-repeat: no-repeat;
-}
-.header__login {
-  background-position: calc(-48px * 5) 0px;
-}
-.header__shop {
-  background-position: calc(-48px * 4) 0px;
-}
-.header__gnb-btn {
-  background-position: calc(-48px * 6) 0px;
-}
 
 /* LNB 1-Depth*/
 .header__lnb {
@@ -53,27 +38,7 @@
   background-color: var(--bg-rgba-black-7);
   transform: translateX(100vw);
 }
-.header__lnb-close {
-  position: relative;
-  top: 18px;
-  background-image: url(../img/imageSprite/header-imageSprite.png);
-  background-repeat: no-repeat;
-  background-position: calc(-48px * 10) 0px;
-}
-.header__lnb-btn {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  padding: 0 1rem;
-  min-height: 48px;
-}
-.header__lnb-btn-icon {
-  background-image: url(../img/imageSprite/header-imageSprite.png);
-  background-repeat: no-repeat;
-  background-position: calc(-48px * 13);
-}
+
 .header__lnb-list {
   font-size: 1.125rem;
   flex-basis: 80%;
@@ -139,4 +104,42 @@
 }
 .header__lnb-last-lnb .header__lnb-summary {
   padding-left: 25px;
+}
+
+/* BUTTONS or ICONS */
+.header__lnb-btn-icon {
+  background-image: url(../img/imageSprite/header-imageSprite.png);
+  background-repeat: no-repeat;
+  background-position: calc(-48px * 13);
+}
+.header__lnb-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding: 0 1rem;
+  min-height: 48px;
+}
+.header__lnb-close {
+  position: relative;
+  top: 18px;
+  background-image: url(../img/imageSprite/header-imageSprite.png);
+  background-repeat: no-repeat;
+  background-position: calc(-48px * 10) 0px;
+}
+.header__login,
+.header__shop,
+.header__gnb-btn {
+  background-image: url(../img/imageSprite/header-imageSprite.png);
+  background-repeat: no-repeat;
+}
+.header__login {
+  background-position: calc(-48px * 5) 0px;
+}
+.header__shop {
+  background-position: calc(-48px * 4) 0px;
+}
+.header__gnb-btn {
+  background-position: calc(-48px * 6) 0px;
 }
