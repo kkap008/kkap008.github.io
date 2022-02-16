@@ -36,7 +36,7 @@
   top: 0;
   left: 0;
   background-color: var(--bg-rgba-black-7);
-  /* transform: translateX(100vw); */
+  transform: translateX(100vw);
 }
 
 .header__lnb-list {
@@ -45,7 +45,7 @@
   height: 100vh;
   background-color: var(--bg-black);
   overflow-y: auto;
-  /* transform: translateX(100vw); */
+  transform: translateX(100vw);
 }
 .header__lnb-item {
   border-bottom: 1px solid var(--border-nero);

@@ -23,3 +23,25 @@ window.addEventListener("load", () => {
   headerStyleSheet.removeRule(cssText.get(index));
   headerStyleSheet.insertRule(newRule, cssText.get(index));
 });
+
+document.querySelector(".header").addEventListener("pointerup", (event) => {
+  const _targetClassName = event.target.classList.item(0);
+
+  switch (_targetClassName) {
+    case "header__gnb-icon":
+    case "header__lnb-close-img":
+      headerLnbBtnEvent(event, _targetClassName);
+      return;
+    default:
+      console.error("No match class name : ", _targetClassName);
+      return;
+  }
+});
+
+function headerLnbBtnEvent({ pointerType }, _targetClassName) {
+  const headerLnb = document.querySelector(".header__lnb");
+  const headerLnbList = headerLnb.querySelector(".header__lnb-list");
+
+  headerLnbList.classList.add("GNB_ANIMATION");
+  headerLnb.classList.add("GNB_ANIMATION");
+}

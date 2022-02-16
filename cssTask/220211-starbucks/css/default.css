@@ -57,3 +57,20 @@
   clip: rect(0px 0px 0px 0px);
   clip-path: polygon(0 0, 0 0, 0 0);
 }
+
+.GNB_ANIMATION {
+  animation-name: GNB_ANIMATION;
+  animation-duration: 0.4s;
+  animation-timing-function: steps(150);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
+@keyframes GNB_ANIMATION {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
