@@ -32,16 +32,31 @@ document.querySelector(".header").addEventListener("pointerup", (event) => {
     case "header__lnb-close-img":
       headerLnbBtnEvent(event, _targetClassName);
       return;
+    case "header__logo-icon":
+      return;
     default:
       console.error("No match class name : ", _targetClassName);
       return;
   }
 });
 
-function headerLnbBtnEvent({ pointerType }, _targetClassName) {
+function headerLnbBtnEvent() {
   const headerLnb = document.querySelector(".header__lnb");
   const headerLnbList = headerLnb.querySelector(".header__lnb-list");
 
-  headerLnbList.classList.add("GNB_ANIMATION");
-  headerLnb.classList.add("GNB_ANIMATION");
+  if (!headerLnb.classList.contains("OPEN")) {
+    if (headerLnb.classList.contains("CLOSE")) {
+      headerLnb.classList.replace("CLOSE", "OPEN");
+      headerLnbList.classList.replace("CLOSE", "OPEN");
+    }
+    headerLnb.classList.add("GNB_ANIMATION", "OPEN");
+    headerLnbList.classList.add("GNB_ANIMATION", "OPEN");
+  } else {
+    headerLnb.classList.replace("OPEN", "CLOSE");
+    headerLnbList.classList.replace("OPEN", "CLOSE");
+  }
+}
+
+function animationStart(headerLnb) {
+  headerLnb.addEventListener("animationstart", () => {}, { once: true });
 }

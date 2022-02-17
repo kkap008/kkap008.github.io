@@ -59,18 +59,30 @@
 }
 
 .GNB_ANIMATION {
-  animation-name: GNB_ANIMATION;
   animation-duration: 0.4s;
   animation-timing-function: steps(150);
-  animation-iteration-count: 1;
-  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+.GNB_ANIMATION.OPEN {
+  animation-name: GNB_ANIMATION_OPEN;
+}
+.GNB_ANIMATION.CLOSE {
+  animation-name: GNB_ANIMATION_CLOSE;
 }
 
-@keyframes GNB_ANIMATION {
+@keyframes GNB_ANIMATION_OPEN {
   from {
-    transform: translateX(100%);
+    transform: translateX(100vw);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(0vw);
+  }
+}
+@keyframes GNB_ANIMATION_CLOSE {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(100vw);
   }
 }
