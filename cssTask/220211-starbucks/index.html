@@ -49,8 +49,9 @@
         </h2>
       </nav>
       <!-- [ Mobile First ] -->
+      <!-- GNB WRAP -->
       <div class="header__gnb-wrap">
-        <!-- 2 -->
+        <!-- 2 HEADER GNB -->
         <nav class="header__gnb">
           <h2 class="hidden">
             로그인, 매장 찾기, 전체 카테고리 화면 표시 버튼
@@ -79,7 +80,7 @@
           />
         </button>
       </div>
-      <!-- DIV -->
+      <!-- 2 LNB WRAP -->
       <div class="header__lnb">
         <button class="header__lnb-close">
           <img
@@ -89,20 +90,25 @@
             class="header__lnb-close-img"
           />
         </button>
-        <!-- 2 -->
+        <!-- 2 LNB lIST -->
         <nav class="header__lnb-list">
           <h2 class="hidden">전체 카테고리 목록</h2>
           <form action="#none" class="header__search" method="get">
-            <input type="text" class="header__input" name="search" />
+            <input
+              type="text"
+              class="header__input"
+              name="search"
+              placeholder="검색어 입력"
+            />
             <button type="submit" class="header__submit">
               <span class="header__value">검색</span>
             </button>
           </form>
-          <!-- 3 -->
+          <!-- 3 LNB LIST ITEM -->
           <section class="header__lnb-item">
             <h3 class="header__lnb-summary">
               <button type="button" class="header__lnb-btn">
-                <span>나의 스타벅스</span>
+                <span class="header__lnb-btn-summary">나의 스타벅스</span>
                 <img
                   src="img/gap/space48.png"
                   alt=""
@@ -110,21 +116,21 @@
                 />
               </button>
             </h3>
-            <!-- 4 -->
+            <!-- 4 SUB LNB LIST -->
             <ul class="header__sub-lnb">
-              <!-- 4.1 -->
+              <!-- 4.1 SUB LNB ITEM-->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
-                    <span>한눈에 보기</span>
+                    <span class="header__sub-lnb-summary">한눈에 보기</span>
                   </a>
                 </h4>
               </li>
-              <!-- 4.2 -->
+              <!-- 4.2 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
-                    <span>My 리워드</span>
+                    <span class="header__sub-lnb-summary">My 리워드</span>
                     <img
                       src="img/gap/space48.png"
                       alt=""
@@ -132,29 +138,35 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
+                  <!-- 5.1 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
-                        <span>리워드 및 혜택</span>
+                        <span class="header__sub-lnb-summary"
+                          >리워드 및 혜택</span
+                        >
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.2 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
-                        <span>별 히스토리</span>
+                        <span class="header__sub-lnb-summary">별 히스토리</span>
                       </a>
                     </h5>
                   </li>
                 </ul>
               </li>
-              <!-- 4.3 -->
+              <!-- 4.3 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
-                    <span>My 스타벅스 카드</span>
+                    <span class="header__sub-lnb-summary"
+                      >My 스타벅스 카드</span
+                    >
                     <img
                       src="img/gap/space48.png"
                       alt=""
@@ -162,43 +174,51 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
+                  <!-- 5.1 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
-                        <span>보유 카드</span>
+                        <span class="header__sub-lnb-summary">보유 카드</span>
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.2 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
-                        <span>카드 등록</span>
+                        <span class="header__sub-lnb-summary">카드 등록</span>
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.3 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
-                        <span>카드 충전</span>
+                        <span class="header__sub-lnb-summary">카드 충전</span>
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.4 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
-                        <span>분실신고 / 잔액 이전</span>
+                        <span class="header__sub-lnb-summary"
+                          >분실신고 / 잔액 이전</span
+                        >
                       </a>
                     </h5>
                   </li>
                 </ul>
               </li>
-              <!-- 4.4 -->
+              <!-- 4.4 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
-                    <span>My 스타벅스 e-Gift Card</span>
+                    <span class="header__sub-lnb-summary"
+                      >My 스타벅스 e-Gift Card</span
+                    >
                     <img
                       src="img/gap/space48.png"
                       alt=""
@@ -206,8 +226,9 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
+                  <!-- 5.1 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -215,6 +236,7 @@
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.2 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -222,6 +244,7 @@
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.3 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -231,10 +254,11 @@
                   </li>
                 </ul>
               </li>
+              <!-- 4.5 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
-                    <span>My 쿠폰</span>
+                    <span class="header__sub-lnb-summary">My 쿠폰</span>
                     <img
                       src="img/gap/space48.png"
                       alt=""
@@ -242,8 +266,9 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
+                  <!-- 5.1 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -251,6 +276,7 @@
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.2 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -258,6 +284,7 @@
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.3 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -267,52 +294,61 @@
                   </li>
                 </ul>
               </li>
+              <!-- 4.6 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
-                    <span>My 캘린더</span>
+                    <span class="header__sub-lnb-summary">My 캘린더</span>
                   </a>
                 </h4>
               </li>
+              <!-- 4.7 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
-                    <span>My 메뉴</span>
+                    <span class="header__sub-lnb-summary">My 메뉴</span>
                   </a>
                 </h4>
               </li>
+              <!-- 4.8 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
-                    <span>My 고객의 소리</span>
+                    <span class="header__sub-lnb-summary">My 고객의 소리</span>
                   </a>
                 </h4>
               </li>
+              <!-- 4.9 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
-                    <span>전자영수증</span>
+                    <span class="header__sub-lnb-summary">전자영수증</span>
                   </a>
                 </h4>
               </li>
+              <!-- 4.10 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
-                    <span>개인컵 리워드 설정</span>
+                    <span class="header__sub-lnb-summary"
+                      >개인컵 리워드 설정</span
+                    >
                   </a>
                 </h4>
               </li>
+              <!-- 4.11 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
-                    <span>My DT Pass</span>
+                    <span class="header__sub-lnb-summary">My DT Pass</span>
                   </a>
                 </h4>
               </li>
+              <!-- 4.12 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
-                    <span>개인정보관리</span>
+                    <span class="header__sub-lnb-summary">개인정보관리</span>
                     <img
                       src="img/gap/space48.png"
                       alt=""
@@ -320,7 +356,7 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
@@ -329,6 +365,7 @@
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.1 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -336,6 +373,7 @@
                       </a>
                     </h5>
                   </li>
+                  <!-- 5.2 LAST LNB ITEM -->
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
                       <a href="#none" class="header__lnb-btn">
@@ -347,11 +385,11 @@
               </li>
             </ul>
           </section>
-          <!-- 3 -->
+          <!-- 3 LNB LIST ITEM -->
           <section class="header__lnb-item">
             <h3 class="header__lnb-summary">
               <button type="button" class="header__lnb-btn">
-                <span>홈카페</span>
+                <span class="header__lnb-btn-summary">홈카페</span>
                 <img
                   src="img/gap/space48.png"
                   alt=""
@@ -359,9 +397,9 @@
                 />
               </button>
             </h3>
-            <!-- 4 -->
+            <!-- 4 SUB LNB LIST -->
             <ul class="header__sub-lnb">
-              <!-- 4.1 -->
+              <!-- 4.1 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
@@ -369,7 +407,7 @@
                   </a>
                 </h4>
               </li>
-              <!-- 4.2 -->
+              <!-- 4.2 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
@@ -381,7 +419,7 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
@@ -406,7 +444,7 @@
                   </li>
                 </ul>
               </li>
-              <!-- 4.3 -->
+              <!-- 4.3 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <a href="#none" class="header__lnb-btn">
@@ -414,7 +452,7 @@
                   </a>
                 </h4>
               </li>
-              <!-- 4.4 -->
+              <!-- 4.4 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
@@ -444,7 +482,7 @@
                   </li>
                 </ul>
               </li>
-              <!-- 4.5 -->
+              <!-- 4.5 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
@@ -456,7 +494,7 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
@@ -509,7 +547,7 @@
                   </li>
                 </ul>
               </li>
-              <!-- 4.6 -->
+              <!-- 4.6 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
@@ -560,7 +598,7 @@
                   </li>
                 </ul>
               </li>
-              <!-- 4.7 -->
+              <!-- 4.7 SUB LNB ITEM -->
               <li class="header__lnb-item">
                 <h4 class="header__lnb-summary">
                   <button type="button" class="header__lnb-btn">
@@ -572,7 +610,7 @@
                     />
                   </button>
                 </h4>
-                <!-- 5 -->
+                <!-- 5 LAST LNB -->
                 <ul class="header__lnb-last-lnb">
                   <li class="header__lnb-item">
                     <h5 class="header__lnb-summary">
@@ -616,11 +654,11 @@
               </li>
             </ul>
           </section>
-          <!-- 3 -->
+          <!-- 3 LNB LIST ITEM -->
           <section class="header__lnb-item">
             <h3 class="header__lnb-summary">
               <button type="button" class="header__lnb-btn">
-                <span>메뉴</span>
+                <span class="header__lnb-btn-summary">메뉴</span>
                 <img
                   src="img/gap/space48.png"
                   alt=""
@@ -629,11 +667,11 @@
               </button>
             </h3>
           </section>
-          <!-- 3 -->
+          <!-- 3 LNB LIST ITEM -->
           <section class="header__lnb-item">
             <h3 class="header__lnb-summary">
               <button type="button" class="header__lnb-btn">
-                <span>매장</span>
+                <span class="header__lnb-btn-summary">매장</span>
                 <img
                   src="img/gap/space48.png"
                   alt=""
@@ -642,11 +680,11 @@
               </button>
             </h3>
           </section>
-          <!-- 3 -->
+          <!-- 3 LNB LIST ITEM -->
           <section class="header__lnb-item">
             <h3 class="header__lnb-summary">
               <button type="button" class="header__lnb-btn">
-                <span>사회적 공헌</span>
+                <span class="header__lnb-btn-summary">사회적 공헌</span>
                 <img
                   src="img/gap/space48.png"
                   alt=""
@@ -655,11 +693,11 @@
               </button>
             </h3>
           </section>
-          <!-- 3 -->
+          <!-- 3 LNB LIST ITEM -->
           <section class="header__lnb-item">
             <h3 class="header__lnb-summary">
               <button type="button" class="header__lnb-btn">
-                <span>스타벅스 혜택</span>
+                <span class="header__lnb-btn-summary">스타벅스 혜택</span>
                 <img
                   src="img/gap/space48.png"
                   alt=""
@@ -668,11 +706,11 @@
               </button>
             </h3>
           </section>
-          <!-- 3 -->
+          <!-- 3 LNB LIST ITEM -->
           <section class="header__lnb-item">
             <h3 class="header__lnb-summary">
               <button type="button" class="header__lnb-btn">
-                <span>스타벅스 소식</span>
+                <span class="header__lnb-btn-summary">스타벅스 소식</span>
                 <img
                   src="img/gap/space48.png"
                   alt=""
@@ -684,9 +722,9 @@
         </nav>
       </div>
     </header>
-    <!-- 2 -->
+    <!-- 2 MAIN -->
     <main class="main"></main>
-    <!-- 2 -->
+    <!-- 2 FOOTER -->
     <footer class="footer"></footer>
   </body>
 </html>

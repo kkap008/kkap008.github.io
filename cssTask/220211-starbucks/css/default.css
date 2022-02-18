@@ -58,15 +58,20 @@
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-.GNB_ANIMATION {
+.header__lnb,
+.header__lnb-list {
   animation-duration: 0.4s;
   animation-timing-function: steps(150);
   animation-fill-mode: forwards;
 }
-.GNB_ANIMATION.OPEN {
+
+.header__lnb.OPEN,
+.header__lnb-list.OPEN {
   animation-name: GNB_ANIMATION_OPEN;
 }
-.GNB_ANIMATION.CLOSE {
+
+.header__lnb.CLOSE,
+.header__lnb-list.CLOSE {
   animation-name: GNB_ANIMATION_CLOSE;
 }
 
@@ -85,4 +90,14 @@
   to {
     transform: translateX(100vw);
   }
+}
+
+.header__sub-lnb,
+.header__lnb-last-lnb {
+  height: 0;
+  overflow-y: hidden;
+}
+
+.header__lnb-btn-icon.OPEN {
+  background-position: calc(-48px * 15);
 }

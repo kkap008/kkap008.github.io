@@ -43,8 +43,8 @@
   font-size: 1.125rem;
   flex-basis: 80%;
   height: 100vh;
+  overflow-y: scroll;
   background-color: var(--bg-black);
-  overflow-y: auto;
   transform: translateX(100vw);
 }
 .header__lnb-item {
@@ -68,6 +68,7 @@
   flex: 0 1 50%;
   border-radius: 4px;
   margin-right: 12px;
+  color: var(--text-black);
 }
 .header__submit {
   background-color: var(--bg-dim-gray);
@@ -80,8 +81,6 @@
 
 /* SUB LNB 2-Depth*/
 .header__sub-lnb {
-  height: 0;
-  overflow-y: hidden;
   font-size: 1rem;
   background-color: var(--bg-nero);
 }
@@ -96,6 +95,7 @@
 /* LAST LNB 3-Depth*/
 .header__lnb-last-lnb {
   font-size: 0.875rem;
+
   background-color: var(--bg-night-rider);
 }
 .header__lnb-last-lnb .header__lnb-item {
