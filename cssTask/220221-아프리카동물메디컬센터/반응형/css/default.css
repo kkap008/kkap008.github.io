@@ -16,7 +16,7 @@
   --FONT-MEDIUM: 500;
   --FONT-BOLD: 700;
   --FONT-ULTRA: 900;
-  /* FONT SIZE */
+  /* FONT SYSTEM */
   --FONT-CAPTION: 0.75rem; /* 12px */
   --FONT-BUTTON: 0.875rem; /* 14px */
   --FONT-BODY: 1rem; /* 16px */
@@ -24,4 +24,65 @@
   --FONT-HEADLINE-LIGHT: 1.5rem; /* 24px */
   --FONT-HEADLINE-MEDIUM: 1.75rem; /* 28px */
   --FONT-HEADLINE-BOLD: 2rem; /* 32px */
+  /* ICON 18px */
+  --ICON-18-LIVE-AREA: 16px;
+  --ICON-18-MARGIN: 15px;
+  --ICON-18-PADDING: 1px;
+  /* ICON 24px */
+  --ICON-24-LIVE-AREA: 20px;
+  --ICON-24-MARGIN: 12px;
+  --ICON-24-PADDING: 2px;
+  /* ICON 36px */
+  --ICON-36-LIVE-AREA: 30px;
+  --ICON-36-MARGIN: 6px;
+  --ICON-36-PADDING: 3px;
+  /* ICON 48px */
+  --ICON-48-LIVE-AREA: 40px;
+  --ICON-48-PADDING: 4px;
+
+  /* FONT BASIC SETTING */
+  font-family: var(--FONT-FAMILY);
+  font-size: var(--FONT-BODY);
+  font-weight: var(--FONT-REGULAR);
+  color: var(--FONT-BLACK);
+}
+
+.hidden {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  clip: rect(0px 0px 0px 0px);
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.icon-area {
+  max-width: 48px;
+  max-height: 48px;
+}
+.icon-xs {
+  max-width: var(--ICON-18-LIVE-AREA);
+  max-height: var(--ICON-18-LIVE-AREA);
+  margin: var(--ICON-18-MARGIN);
+  padding: var(--ICON-18-PADDING);
+}
+.icon-s {
+  max-width: var(--ICON-24-LIVE-AREA);
+  max-height: var(--ICON-24-LIVE-AREA);
+  margin: var(--ICON-24-MARGIN);
+  padding: var(--ICON-24-PADDING);
+}
+.icon-m {
+  max-width: var(--ICON-36-LIVE-AREA);
+  max-height: var(--ICON-36-LIVE-AREA);
+  margin: var(--ICON-36-MARGIN);
+  padding: var(--ICON-36-PADDING);
+}
+.icon-l {
+  max-width: var(--ICON-48-LIVE-AREA);
+  max-height: var(--ICON-48-LIVE-AREA);
+  padding: var(--ICON-48-PADDING);
 }
