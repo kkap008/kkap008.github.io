@@ -39,6 +39,7 @@
   width: 100vw;
   height: 100vh;
   color: var(--FONT-WHITE);
+  transform: translateX(100vw);
 }
 .header__gnb-list {
   flex: 1 0 80%;
