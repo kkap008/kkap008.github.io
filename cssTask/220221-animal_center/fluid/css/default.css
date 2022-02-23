@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
   /* FONT FAMILY */
   --FONT-FAMILY: "Noto Sans KR", "돋움", "Dotum", "맑은 고딕", "Malgun Gothic",
@@ -6,10 +8,21 @@
   --BG-PICTON-BLUE: #5ea9d1;
   --BG-WHITE: #fff;
   --BG-LIGHT-GRAY: #d2d2d2;
+  --BG-SUMMER-SKY: #3cb2f5;
+  --BG-COLUMBIA-BLUE: #9bd7fa;
+  --BG-CURIOUS-BLUE: #3a7cad;
+  /* BORDER COLOR */
+  --BD-SUMMER-SKY: #3cb2f5;
+  --BD-COLUMBIA-BLUE: #9bd7fa;
+  --BD-CURIOUS-BLUE: #3a7cad;
+  --BD-WHITE: #fff;
   /* FONT COLOR */
   --FONT-BLACK: #000;
   --FONT-WHITE: #fff;
   --FONT-LIGHT-GRAY: #c8c8c8;
+  --FONT-CURIOUS-BLUE: #3a7cad;
+  --FONT-SUMMER-SKY: #3cb2f5;
+  --FONT-COLUMBIA-BLUE: #9bd7fa;
   /* FONT WEIGHT */
   --FONT-LIGHT: 300;
   --FONT-REGULAR: 400;
@@ -20,7 +33,7 @@
   --FONT-CAPTION: 0.75rem; /* 12px */
   --FONT-BUTTON: 0.875rem; /* 14px */
   --FONT-BODY: 1rem; /* 16px */
-  --FONT-SUBTITLE: 1.25rem; /* 20px */
+  --FONT-SUBTITLE: 1.125rem; /* 18px */
   --FONT-HEADLINE-LIGHT: 1.5rem; /* 24px */
   --FONT-HEADLINE-MEDIUM: 1.75rem; /* 28px */
   --FONT-HEADLINE-BOLD: 2rem; /* 32px */
@@ -47,10 +60,17 @@
   color: var(--FONT-BLACK);
 }
 
+.body-max-min {
+  min-width: 280px;
+  width: 100vw;
+  max-width: 1920px;
+}
+
 .hidden {
-  position: relative;
+  position: absolute;
   width: 1px;
   height: 1px;
+  margin: -1px;
   white-space: nowrap;
   overflow: hidden;
   top: 0;
@@ -63,26 +83,18 @@
   max-width: 48px;
   max-height: 48px;
 }
-.icon-xs {
-  max-width: var(--ICON-18-LIVE-AREA);
-  max-height: var(--ICON-18-LIVE-AREA);
-  margin: var(--ICON-18-MARGIN);
-  padding: var(--ICON-18-PADDING);
-}
 .icon-s {
-  max-width: var(--ICON-24-LIVE-AREA);
-  max-height: var(--ICON-24-LIVE-AREA);
+  display: inline-block;
   margin: var(--ICON-24-MARGIN);
   padding: var(--ICON-24-PADDING);
+  font-size: 24px;
 }
 .icon-m {
-  max-width: var(--ICON-36-LIVE-AREA);
-  max-height: var(--ICON-36-LIVE-AREA);
   margin: var(--ICON-36-MARGIN);
   padding: var(--ICON-36-PADDING);
+  font-size: 36px;
 }
 .icon-l {
-  max-width: var(--ICON-48-LIVE-AREA);
-  max-height: var(--ICON-48-LIVE-AREA);
   padding: var(--ICON-48-PADDING);
+  font-size: 44px;
 }

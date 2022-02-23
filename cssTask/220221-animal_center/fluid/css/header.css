@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  width: 100vw;
+  border-bottom: 1px solid var(--BD-CURIOUS-BLUE);
+}
+
+/* HEADER > LOGO */
+.logo__img {
+  max-width: 180px;
+}
+
+/* HADER GNB BTN */
+.header__gnb--open {
+  color: var(--FONT-CURIOUS-BLUE);
+  width: 48px;
+  height: 48px;
+}
+
+/* HEADER > GNB--MOBILE */
+.header__gnb--close {
+  flex: 1 0 20%;
+  font-size: var(--FONT-CAPTION);
+}
+.header__gnb--mobile {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  color: var(--FONT-WHITE);
+}
+.header__gnb-list {
+  flex: 1 0 80%;
+  height: 100%;
+  background-color: var(--BG-CURIOUS-BLUE);
+  padding: 2.5rem 0;
+  overflow-y: scroll;
+}
+.header__lnb-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid var(--BD-WHITE);
+  font-size: var(--FONT-SUBTITLE);
+  font-weight: var(--FONT-BOLD);
+  /* font-weight: var(--FONT-MEDIUM); */
+}
+.header__lnb-btn > .fa-ellipsis-h {
+  opacity: 0.5;
+}
+
+.header__lnb-item {
+  /* height: 0; */
+  overflow: hidden;
+}
+
+.header__link {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0.625rem 0 0.625rem 1.5rem;
+  font-weight: var(--FONT-LIGHT);
+  font-size: var(--FONT-BODY);
+}

@@ -20,9 +20,164 @@
     <link rel="stylesheet" href="css/reset.css" />
     <!-- DEFAULT.CSS -->
     <link rel="stylesheet" href="css/default.css" />
+    <!-- HEADER.CSS -->
+    <link rel="stylesheet" href="css/header.css" />
     <title>아프리카동물메디컬센터</title>
   </head>
-  <body>
-      
+  <body class="body-max-min">
+    <!-- BODY TITLE -->
+    <h1 class="body__title hidden">24시 아프리카동물 메디컬센터</h1>
+    <!-- HEADER -->
+    <header class="header">
+      <!-- H.2 LOGO -->
+      <nav class="logo">
+        <h2 class="logo__title">
+          <a
+            href="logo__home"
+            title="24시 아프리카동물메디컬센터 홈바로가기"
+            hreflang="ko"
+          >
+            <img
+              src="img/AnimalMedicalCenter/4-Figma/DeepBlue/Blueanimal.png"
+              alt="24시 아프리카동물메디컬센터 로고"
+              title="24시 아프리카동물메디컬센터 로고"
+              class="logo__img"
+            />
+          </a>
+        </h2>
+      </nav>
+      <!-- H.2 GNB -->
+      <!-- H.2 GNB MOBILE FRIST -->
+      <button type="button" class="header__gnb--open">
+        <span class="header__gnb-summary hidden">전체메뉴 보기 버튼</span>
+        <i class="fa fa-solid fa-bars icon-s"></i>
+      </button>
+      <nav class="header__gnb header__gnb--mobile">
+        <!-- H.2 GNB TITLE -->
+        <h2 class="header__gnb-title hidden">전체메뉴</h2>
+        <button class="header__gnb--close">
+          <span>CLOSE</span>
+        </button>
+        <!-- GNB LIST -->
+        <ul class="header__gnb-list">
+          <!-- GNB ITEM 1 -->
+          <li class="header__gnb-item">
+            <button type="button" class="header__lnb-btn">
+              <span class="header__lnb-summary">병원소개</span>
+              <i class="fa fa-solid fa-ellipsis-h"></i>
+            </button>
+            <!-- LNB LIST 1 -->
+            <ul class="header__lnb-list">
+              <!-- LNB ITEM 1-1 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">인사말</a>
+              </li>
+              <!-- LNB ITEM 1-2 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">의료진 소개</a>
+              </li>
+              <!-- LNB ITEM 1-3 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">보유장비 소개</a>
+              </li>
+              <!-- LNB ITEM 1-4 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">병원둘러보기</a>
+              </li>
+              <!-- LNB ITEM 1-5 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">진료시간&오시는길</a>
+              </li>
+            </ul>
+          </li>
+          <!-- GNB ITEM 2 -->
+          <li class="header__gnb-item">
+            <button type="button" class="header__lnb-btn">
+              <span class="header__lnb-summary">진료안내</span>
+              <i class="fa fa-solid fa-ellipsis-h"></i>
+            </button>
+            <!-- LNB LIST 2 -->
+            <ul class="header__lnb-list">
+              <!-- LNB ITEM 2-1 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">외과</a>
+              </li>
+              <!-- LNB ITEM 2-2 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">내과</a>
+              </li>
+              <!-- LNB ITEM 2-3 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">안과</a>
+              </li>
+              <!-- LNB ITEM 2-4 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">치과</a>
+              </li>
+              <!-- LNB ITEM 2-5 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">건강검진</a>
+              </li>
+            </ul>
+          </li>
+          <!-- GNB ITEM 3 -->
+          <li class="header__gnb-item">
+            <button type="button" class="header__lnb-btn">
+              <span class="header__lnb-summary">특화 클리닉</span>
+              <i class="fa fa-solid fa-ellipsis-h"></i>
+            </button>
+          </li>
+          <!-- LNB LIST 3 -->
+          <ul class="header__lnb-list">
+            <!-- LNB ITEM 3-1 -->
+            <li class="header__lnb-item">
+              <a href="#none" class="header__link">내과 특화클리닉</a>
+            </li>
+            <!-- LNB ITEM 3-2 -->
+            <li class="header__lnb-item">
+              <a href="#none" class="header__link">외과 특화클리닉</a>
+            </li>
+            <!-- LNB ITEM 3-3 -->
+            <li class="header__lnb-item">
+              <a href="#none" class="header__link">영상의학과 특화클리닉</a>
+            </li>
+            <!-- LNB ITEM 3-4 -->
+            <li class="header__lnb-item">
+              <a href="#none" class="header__link"
+                >한방 및 재활치료 특화클리닉</a
+              >
+            </li>
+            <!-- LNB ITEM 3-5 -->
+            <li class="header__lnb-item">
+              <a href="#none" class="header__link">고양이 특화클리닉</a>
+            </li>
+            <!-- LNB ITEM 3-6 -->
+            <li class="header__lnb-item">
+              <a href="#none" class="header__link">노령동물 특화클리닉</a>
+            </li>
+          </ul>
+          <!-- GNB ITEM 4 -->
+          <li class="header__gnb-item">
+            <button type="button" class="header__lnb-btn">
+              <span class="header__lnb-summary">고객센터</span>
+              <i class="fa fa-solid fa-ellipsis-h"></i>
+            </button>
+            <!-- LNB LIST 4 -->
+            <ul class="header__lnb-list">
+              <!-- LNB ITEM 4-1 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">SMS / 문의 / 연락처</a>
+              </li>
+              <!-- LNB ITEM 4-2 -->
+              <li class="header__lnb-item">
+                <a href="#none" class="header__link">자주하는 문의</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- MAIN -->
+    <!-- FOOTER -->
   </body>
 </html>
