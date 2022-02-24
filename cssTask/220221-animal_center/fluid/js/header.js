@@ -44,13 +44,6 @@ LNB_BTN.forEach((element) => {
   element.addEventListener("keydown", pointerEvent);
 });
 
-function lnbTabWorking(lnb) {
-  lnb.setLnbClassToggle();
-  lnbTabIndexChange(lnb);
-  lnbChangeIcon(lnb);
-  lnbAnimation(lnb);
-}
-
 function lnbTabEvent(event) {
   const currentLnbObj = getLnbObj(event);
   switch (PREV_LNB.size) {
@@ -69,6 +62,13 @@ function lnbTabEvent(event) {
   }
   lnbTabWorking(currentLnbObj);
   PREV_LNB.set("prev", currentLnbObj);
+}
+
+function lnbTabWorking(lnb) {
+  lnb.setLnbClassToggle();
+  lnbTabIndexChange(lnb);
+  lnbChangeIcon(lnb);
+  lnbAnimation(lnb);
 }
 
 function getLnbObj(event) {
