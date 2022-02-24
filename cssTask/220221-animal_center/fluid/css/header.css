@@ -14,7 +14,8 @@
 
 /* HEADER > LOGO */
 .logo__img {
-  max-width: 180px;
+  height: 60px;
+  width: 205px;
 }
 
 /* HADER GNB BTN */
@@ -29,9 +30,7 @@
   flex: 1 0 20%;
   font-size: var(--FONT-CAPTION);
 }
-.gnb-btn--close:focus {
-  outline-color: white;
-}
+
 .header__nav--mobile {
   position: absolute;
   display: flex;
@@ -62,9 +61,7 @@
   font-size: var(--FONT-SUBTITLE);
   font-weight: var(--FONT-BOLD);
 }
-.lnb-btn:focus {
-  outline-color: white;
-}
+
 .lnb-btn > .fa-ellipsis-h {
   opacity: 0.5;
 }
@@ -81,7 +78,4 @@
   padding: 0.625rem 0 0.625rem 1.5rem;
   font-weight: var(--FONT-LIGHT);
   font-size: var(--FONT-BODY);
-}
-.header__link:focus {
-  outline-color: white;
 }

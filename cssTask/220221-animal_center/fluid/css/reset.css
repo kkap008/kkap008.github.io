@@ -16,21 +16,17 @@ button {
   background: none;
   color: inherit;
 }
-button:focus {
-  outline: thin solid black;
-  outline-offset: -4px;
-}
-
-img {
-  vertical-align: top;
-}
-
 a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
 }
-a:focus {
-  outline: thin solid black;
-  outline-offset: -4px;
+a:focus,
+button:focus {
+  text-decoration: underline solid white 1px;
+  outline-offset: -3px;
+}
+
+img {
+  vertical-align: top;
 }

@@ -1,12 +1,14 @@
-// HEADER GNB OPEN & CLOSE EVENT
 const GNB_BTN_OPEN = document.querySelector(".js-gnb-btn--open");
 const GNB_BTN_CLOSE = document.querySelector(".js-gnb-btn--close");
+const LNB_BTN = document.querySelectorAll(".js-lnb-btn");
+const PREV_LNB = new Map();
 
 GNB_BTN_OPEN.addEventListener("pointerdown", pointerEvent);
 GNB_BTN_CLOSE.addEventListener("pointerdown", pointerEvent);
 GNB_BTN_OPEN.addEventListener("keydown", pointerEvent);
 GNB_BTN_CLOSE.addEventListener("keydown", pointerEvent);
 
+// HEADER GNB & LNB POINTER EVENT
 function pointerEvent(event) {
   const pointerType = event.pointerType || undefined;
   const keyCode = event.code || undefined;
@@ -20,10 +22,7 @@ function pointerEvent(event) {
       if (gnbBtnContains) {
         gnbAnimation();
       } else {
-        const currentLnbObj = currentLnb(event);
-        lnbTabIndexChange(currentLnbObj);
-        lnbChageIcon(currentLnbObj);
-        lnbAnimation(currentLnbObj);
+        lnbTabEventFlow(event);
       }
       break;
     default:
@@ -31,6 +30,7 @@ function pointerEvent(event) {
   }
 }
 
+// HEADER GNB OPEN & CLOSE EVENT
 function gnbAnimation() {
   const gnbSelector = ".js-header__nav--mobile";
   const gnb = document.querySelector(gnbSelector);
@@ -38,34 +38,28 @@ function gnbAnimation() {
   gnb.classList.toggle("OPEN");
 }
 
-// HEADER LNB OPEN & CLOSE EVENT
-const LNB_BTN = document.querySelectorAll(".js-lnb-btn");
-
+// HEADER LNB HIGHT & ZERO HEIGHT EVENT
 LNB_BTN.forEach((element) => {
   element.addEventListener("pointerdown", pointerEvent);
   element.addEventListener("keydown", pointerEvent);
 });
 
-function currentLnb(event) {
+function lnbTabEventFlow(event) {
+  const currentLnbObj = currentLnbInfo(event);
+  lnbTabIndexChange(currentLnbObj);
+  lnbChageIcon(currentLnbObj);
+  lnbAnimation(currentLnbObj);
+}
+
+function currentLnbInfo(event) {
   return {
     currentTarget: event.currentTarget,
     lnb: event.currentTarget.nextElementSibling,
     lnbToggle: event.currentTarget.classList.toggle("OPEN"),
+    getScrollHeight() {
+      return this.lnb.scrollHeight;
+    },
   };
-}
-
-function lnbChageIcon(currentLnbObj) {
-  const lnbBtnIcon = currentLnbObj.currentTarget.querySelector("svg");
-  const lnbToggle = currentLnbObj.lnbToggle;
-
-  switch (lnbToggle) {
-    case true:
-      lnbBtnIcon.classList.replace("fa-ellipsis-h", "fa-times");
-      break;
-    case false:
-      lnbBtnIcon.classList.replace("fa-times", "fa-ellipsis-h");
-      break;
-  }
 }
 
 function lnbTabIndexChange(currentLnbObj) {
@@ -86,10 +80,24 @@ function lnbTabIndexChange(currentLnbObj) {
   }
 }
 
+function lnbChageIcon(currentLnbObj) {
+  const lnbBtnIcon = currentLnbObj.currentTarget.querySelector("svg");
+  const lnbToggle = currentLnbObj.lnbToggle;
+
+  switch (lnbToggle) {
+    case true:
+      lnbBtnIcon.classList.replace("fa-ellipsis-h", "fa-times");
+      break;
+    case false:
+      lnbBtnIcon.classList.replace("fa-times", "fa-ellipsis-h");
+      break;
+  }
+}
+
 function lnbAnimation(currentLnbObj) {
   const lnb = currentLnbObj.lnb;
   const lnbToggle = currentLnbObj.lnbToggle;
-  const lnbScrollHeight = currentLnbObj.lnb.scrollHeight;
+  const lnbScrollHeight = currentLnbObj.getScrollHeight();
 
   let frame = 0;
 
