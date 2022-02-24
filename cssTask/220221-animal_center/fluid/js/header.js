@@ -24,7 +24,7 @@ function pointerEvent(event) {
       } else {
         lnbTabEvent(event);
       }
-      break;
+      return;
     default:
       return;
   }
