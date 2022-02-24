@@ -98,3 +98,8 @@
   padding: var(--ICON-48-PADDING);
   font-size: 44px;
 }
+
+.js-header__nav--mobile.OPEN {
+  transform: translateX(0);
+  transition: transform 0.2s ease-out;
+}
