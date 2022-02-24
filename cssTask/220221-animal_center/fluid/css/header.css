@@ -35,7 +35,6 @@
   position: absolute;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -68,8 +67,11 @@
 }
 
 .header__lnb {
-  height: 0;
+  /* height:0px; */
+  max-height: 0px;
+  visibility: hidden;
   overflow: hidden;
+  transition: all 0.5s ease;
 }
 
 .header__link {
