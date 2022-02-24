@@ -3,8 +3,8 @@ const GNB_BTN_CLOSE = document.querySelector(".js-gnb-btn--close");
 const LNB_BTN = document.querySelectorAll(".js-lnb-btn");
 const PREV_LNB = new Map();
 
-GNB_BTN_OPEN.addEventListener("pointerdown", pointerEvent);
-GNB_BTN_CLOSE.addEventListener("pointerdown", pointerEvent);
+GNB_BTN_OPEN.addEventListener("click", pointerEvent);
+GNB_BTN_CLOSE.addEventListener("click", pointerEvent);
 GNB_BTN_OPEN.addEventListener("keydown", pointerEvent);
 GNB_BTN_CLOSE.addEventListener("keydown", pointerEvent);
 
@@ -40,7 +40,7 @@ function gnbAnimation() {
 
 // HEADER LNB HIGHT & ZERO HEIGHT EVENT
 LNB_BTN.forEach((element) => {
-  element.addEventListener("pointerdown", pointerEvent);
+  element.addEventListener("click", pointerEvent);
   element.addEventListener("keydown", pointerEvent);
 });
 
