@@ -22,7 +22,7 @@ function pointerEvent(event) {
       if (gnbBtnContains) {
         gnbAnimation();
       } else {
-        lnbTabEventFlow(event);
+        lnbTabEvent(event);
       }
       break;
     default:
@@ -44,18 +44,44 @@ LNB_BTN.forEach((element) => {
   element.addEventListener("keydown", pointerEvent);
 });
 
-function lnbTabEventFlow(event) {
-  const currentLnbObj = currentLnbInfo(event);
-  lnbTabIndexChange(currentLnbObj);
-  lnbChageIcon(currentLnbObj);
-  lnbAnimation(currentLnbObj);
+function lnbTabWorking(lnb) {
+  lnb.setLnbClassToggle();
+  lnbTabIndexChange(lnb);
+  lnbChangeIcon(lnb);
+  lnbAnimation(lnb);
 }
 
-function currentLnbInfo(event) {
+function lnbTabEvent(event) {
+  const currentLnbObj = getLnbObj(event);
+  switch (PREV_LNB.size) {
+    case 0:
+      PREV_LNB.set("prev", currentLnbObj);
+      break;
+    default:
+      const prevLnb = PREV_LNB.get("prev");
+      const compareLnb = prevLnb.lnb !== currentLnbObj.lnb ? true : false;
+      const classContains = prevLnb.getClassContains();
+      if (compareLnb && classContains) {
+        lnbTabWorking(prevLnb);
+        PREV_LNB.delete("prev");
+      }
+      break;
+  }
+  lnbTabWorking(currentLnbObj);
+  PREV_LNB.set("prev", currentLnbObj);
+}
+
+function getLnbObj(event) {
   return {
     currentTarget: event.currentTarget,
     lnb: event.currentTarget.nextElementSibling,
-    lnbToggle: event.currentTarget.classList.toggle("OPEN"),
+    lnbClassResult: undefined,
+    getClassContains() {
+      return this.currentTarget.classList.contains("OPEN");
+    },
+    setLnbClassToggle() {
+      this.lnbClassResult = this.currentTarget.classList.toggle("OPEN");
+    },
     getScrollHeight() {
       return this.lnb.scrollHeight;
     },
@@ -64,7 +90,7 @@ function currentLnbInfo(event) {
 
 function lnbTabIndexChange(currentLnbObj) {
   const lnbLinks = currentLnbObj.lnb.querySelectorAll(".header__link");
-  const lnbToggle = currentLnbObj.lnbToggle;
+  const lnbToggle = currentLnbObj.lnbClassResult;
 
   switch (lnbToggle) {
     case true:
@@ -80,9 +106,9 @@ function lnbTabIndexChange(currentLnbObj) {
   }
 }
 
-function lnbChageIcon(currentLnbObj) {
+function lnbChangeIcon(currentLnbObj) {
   const lnbBtnIcon = currentLnbObj.currentTarget.querySelector("svg");
-  const lnbToggle = currentLnbObj.lnbToggle;
+  const lnbToggle = currentLnbObj.lnbClassResult;
 
   switch (lnbToggle) {
     case true:
@@ -96,7 +122,7 @@ function lnbChageIcon(currentLnbObj) {
 
 function lnbAnimation(currentLnbObj) {
   const lnb = currentLnbObj.lnb;
-  const lnbToggle = currentLnbObj.lnbToggle;
+  const lnbToggle = currentLnbObj.lnbClassResult;
   const lnbScrollHeight = currentLnbObj.getScrollHeight();
 
   let frame = 0;
