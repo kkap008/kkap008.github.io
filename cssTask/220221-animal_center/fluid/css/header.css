@@ -14,8 +14,9 @@
 
 /* HEADER > LOGO */
 .logo__img {
-  height: 60px;
-  width: 205px;
+  height: calc((100% * 70) / 240);
+  max-width: 100%;
+  min-width: 180px;
 }
 
 /* HADER GNB BTN */
@@ -28,7 +29,10 @@
 /* HEADER > GNB--MOBILE */
 .gnb-btn--close {
   flex: 1 0 20%;
-  font-size: var(--FONT-CAPTION);
+  font-size: var(--FONT-BOLD);
+}
+.gnb-btn--close:focus {
+  text-decoration: none;
 }
 
 .header__nav--mobile {
@@ -37,7 +41,7 @@
   justify-content: space-between;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: 100vh;
   color: var(--FONT-WHITE);
@@ -49,7 +53,7 @@
   height: 100%;
   background-color: var(--BG-CURIOUS-BLUE);
   padding: 2.5rem 0;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 .lnb-btn {
   display: flex;
@@ -67,18 +71,17 @@
 }
 
 .header__lnb {
-  /* height:0px; */
   max-height: 0px;
   visibility: hidden;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
 }
 
 .header__link {
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 0.625rem 0 0.625rem 1.5rem;
+  padding: 0.875rem 0 0.875rem 1.5rem;
   font-weight: var(--FONT-MEDIUM);
   font-size: var(--FONT-BODY);
 }

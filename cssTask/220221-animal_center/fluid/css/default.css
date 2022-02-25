@@ -103,6 +103,7 @@
   transform: translateX(0);
   transition: transform 0.2s ease-out;
 }
+
 .js-header__lnb.OPEN {
   visibility: visible;
 }
