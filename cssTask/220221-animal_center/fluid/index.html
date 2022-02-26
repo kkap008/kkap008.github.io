@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="css/default.css" />
     <!-- HEADER.CSS -->
     <link rel="stylesheet" href="css/header.css" />
+    <!-- MAIN.CSS -->
+    <link rel="stylesheet" href="css/main.css" />
     <!-- VENDOR PREFIX -->
     <script defer src="js/prefixfree.min.js"></script>
     <!-- <script defer src="js/header.js"></script> -->
@@ -37,16 +39,11 @@
       <!-- H.2 LOGO -->
       <nav class="logo">
         <h2 class="logo__title">
-          <a
-            href="index.html"
-            title="24시 아프리카동물메디컬센터 홈바로가기"
-            class="logo__home"
-            hreflang="ko"
-          >
+          <a href="index.html" class="logo__home" hreflang="ko">
             <img
               src="img/AnimalMedicalCenter/4-Figma/DeepBlue/Blueanimal.png"
-              alt="24시 아프리카동물메디컬센터 로고"
-              title="24시 아프리카동물메디컬센터 로고"
+              alt="시작페이지로 이동"
+              title="시작페이지로 이동"
               class="logo__img"
             />
           </a>
@@ -54,9 +51,13 @@
       </nav>
       <!-- H.2 GNB -->
       <!-- H.2 GNB MOBILE FRIST -->
-      <button type="button" class="gnb-btn--open js-gnb-btn--open js-gnb-btn">
-        <span class="header__gnb-summary hidden">전체메뉴 보기 버튼</span>
-        <i class="fa fa-solid fa-bars icon-s"></i>
+      <button
+        type="button"
+        class="gnb-btn--open js-gnb-btn--open js-gnb-btn"
+        title="전체메뉴 보기"
+      >
+        <span class="header__gnb-summary">전체메뉴 보기 버튼</span>
+        <i class="fa fa-solid fa-bars"></i>
       </button>
       <nav class="header__nav header__nav--mobile js-header__nav--mobile">
         <!-- H.2 GNB TITLE -->
@@ -207,6 +208,23 @@
       </nav>
     </header>
     <!-- MAIN -->
+    <main class="main">
+      <!-- H.2 CAROUSEL SLIDER -->
+      <article class="carousel">
+        <h2 class="carousel__title hidden">슬라이드 이미지 영역</h2>
+        <ul class="carousel__list">
+          <li class="carousel__item">
+            <img src="img/Mobile/slide1.jpg" alt="" class="carousel__img" />
+          </li>
+          <li class="carousel__item">
+            <img src="img/Mobile/slide2.jpg" alt="" class="carousel__img" />
+          </li>
+          <li class="carousel__item">
+            <img src="img/Mobile/slide3.jpg" alt="" class="carousel__img" />
+          </li>
+        </ul>
+      </article>
+    </main>
     <!-- FOOTER -->
   </body>
 </html>

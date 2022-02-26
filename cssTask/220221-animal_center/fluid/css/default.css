@@ -37,18 +37,6 @@
   --FONT-HEADLINE-LIGHT: 1.5rem; /* 24px */
   --FONT-HEADLINE-MEDIUM: 1.75rem; /* 28px */
   --FONT-HEADLINE-BOLD: 2rem; /* 32px */
-  /* ICON 18px */
-  --ICON-18-LIVE-AREA: 16px;
-  --ICON-18-MARGIN: 15px;
-  --ICON-18-PADDING: 1px;
-  /* ICON 24px */
-  --ICON-24-LIVE-AREA: 20px;
-  --ICON-24-MARGIN: 12px;
-  --ICON-24-PADDING: 2px;
-  /* ICON 36px */
-  --ICON-36-LIVE-AREA: 30px;
-  --ICON-36-MARGIN: 6px;
-  --ICON-36-PADDING: 3px;
   /* ICON 48px */
   --ICON-48-LIVE-AREA: 40px;
   --ICON-48-PADDING: 4px;
@@ -58,12 +46,6 @@
   font-size: var(--FONT-BODY);
   font-weight: var(--FONT-REGULAR);
   color: var(--FONT-BLACK);
-}
-
-.body-max-min {
-  min-width: 280px;
-  width: 100vw;
-  max-width: 1920px;
 }
 
 .hidden {
@@ -79,29 +61,10 @@
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-.icon-area {
-  max-width: 48px;
-  max-height: 48px;
-}
-.icon-s {
-  display: inline-block;
-  margin: var(--ICON-24-MARGIN);
-  padding: var(--ICON-24-PADDING);
-  font-size: 24px;
-}
-.icon-m {
-  margin: var(--ICON-36-MARGIN);
-  padding: var(--ICON-36-PADDING);
-  font-size: 36px;
-}
-.icon-l {
-  padding: var(--ICON-48-PADDING);
-  font-size: 44px;
-}
-
 .js-header__nav--mobile.OPEN {
   transform: translateX(0);
-  transition: transform 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  visibility: visible;
 }
 
 .js-header__lnb.OPEN {

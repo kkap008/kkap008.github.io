@@ -1,0 +1,13 @@
+.carousel {
+  overflow-x: hidden;
+}
+.carousel__img {
+  max-width: 100%;
+}
+.carousel__list {
+  display: flex;
+}
+
+.carousel__item {
+  flex: 0 0 100%;
+}

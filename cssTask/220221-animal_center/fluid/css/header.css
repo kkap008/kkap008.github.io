@@ -9,7 +9,9 @@
   align-items: center;
   padding: 8px;
   width: 100vw;
-  border-bottom: 1px solid var(--BD-CURIOUS-BLUE);
+  background-color: var(--BG-WHITE);
+  outline: 2px solid var(--BD-CURIOUS-BLUE);
+  z-index: 1;
 }
 
 /* HEADER > LOGO */
@@ -21,9 +23,15 @@
 
 /* HADER GNB BTN */
 .gnb-btn--open {
+  display: inline-block;
   color: var(--FONT-CURIOUS-BLUE);
   width: 48px;
   height: 48px;
+  padding: var(--ICON-48-PADDING);
+  font-size: 28px;
+}
+.header__gnb-summary {
+  display: none;
 }
 
 /* HEADER > GNB--MOBILE */
@@ -46,7 +54,8 @@
   height: 100vh;
   color: var(--FONT-WHITE);
   transform: translateX(100vw);
-  transition: transform 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  visibility: hidden;
 }
 .header__gnb {
   flex: 1 0 80%;
