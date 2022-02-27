@@ -69,26 +69,3 @@ function lnbAnimation(currentLnb, currentLnb_Icon, toggle_Result) {
       return;
   }
 }
-
-// MAIN
-window.addEventListener("load", () => {
-  const header = document.querySelector(".header");
-  const main = document.querySelector(".main");
-  const headerHeight = header.getBoundingClientRect().height;
-
-  main.style.marginTop = `${headerHeight}px`;
-});
-
-const headerObserver = new ResizeObserver(setMainPosition);
-const header = document.querySelector(".header");
-
-function setMainPosition(entries) {
-  for (let entry of entries) {
-    const entryBorderBox = entry.borderBoxSize[0].blockSize;
-    const main = document.querySelector(".main");
-
-    main.style.marginTop = `${entryBorderBox}px`;
-  }
-}
-
-headerObserver.observe(header, { box: "border-box" });

@@ -11,7 +11,7 @@
   width: 100vw;
   background-color: var(--BG-WHITE);
   outline: 2px solid var(--BD-CURIOUS-BLUE);
-  z-index: 1;
+  z-index: 2;
 }
 
 /* HEADER > LOGO */

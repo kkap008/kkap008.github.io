@@ -27,8 +27,10 @@
     <link rel="stylesheet" href="css/main.css" />
     <!-- VENDOR PREFIX -->
     <script defer src="js/prefixfree.min.js"></script>
-    <!-- <script defer src="js/header.js"></script> -->
+    <!-- HEADER JS -->
     <script defer src="js/header-min.js"></script>
+    <!-- MAIN JS -->
+    <script defer src="js/main-min.js"></script>
     <title>아프리카동물메디컬센터</title>
   </head>
   <body class="body-max-min">
@@ -212,18 +214,91 @@
       <!-- H.2 CAROUSEL SLIDER -->
       <article class="carousel">
         <h2 class="carousel__title hidden">슬라이드 이미지 영역</h2>
-        <ul class="carousel__list">
+        <div class="carousel__caption">
+          <p class="carousel__welcome">
+            <!-- <span>WE ARE AFRICA FAMILY!</span> -->
+            <span>We Are Africa Family!</span>
+            <span>24 아프리카동물메디컬센터</span>
+          </p>
+          <hr class="carousel__hr" />
+          <p class="carousel__hour">
+            <span>365일 24시간운영</span>
+          </p>
+          <p class="carousel__sns">
+            <span class="carousel__kakao"
+              ><span>카톡상담</span> @대전아프리카</span
+            >
+            <span class="carousel__instar"
+              ><span>인스타그램ID :</span> djafricaah</span
+            >
+          </p>
+        </div>
+        <ul class="carousel__list js-carousel__list">
           <li class="carousel__item">
-            <img src="img/Mobile/slide1.jpg" alt="" class="carousel__img" />
+            <img
+              src="img/Mobile/slide1.jpg"
+              alt="쾨적한 환경과 넓은 병원시설"
+              class="carousel__img"
+            />
           </li>
           <li class="carousel__item">
-            <img src="img/Mobile/slide2.jpg" alt="" class="carousel__img" />
+            <img
+              src="img/Mobile/slide2.jpg"
+              alt="24시간 운영하는 아프리카동물메디컬센터"
+              class="carousel__img"
+            />
           </li>
           <li class="carousel__item">
-            <img src="img/Mobile/slide3.jpg" alt="" class="carousel__img" />
+            <img
+              src="img/Mobile/slide3.jpg"
+              alt="최신 장비 및 청결한 치료 시설"
+              class="carousel__img"
+            />
           </li>
         </ul>
+        <button
+          type="button"
+          class="carousel__arrows carousel__prev js-carousel__prev"
+        >
+          <span class="carousel__prev-summary hidden">이전 이미지</span>
+          <i class="fa fa-solid fa-angle-left"></i>
+        </button>
+        <button
+          type="button"
+          class="carousel__arrows carousel__next js-carousel__next"
+        >
+          <span class="carousel__next-summary hidden">다음 이미지</span>
+          <i class="fa fa-solid fa-angle-right"></i>
+        </button>
       </article>
+      <section class="content">
+        <h2 class="content-title hidden">콘텐츠 카테고리</h2>
+        <div class="content__item">
+          <img src="img/Mobile/icon01.jpg" alt="" class="content__img" />
+        </div>
+
+        <div class="content__item">
+          <img src="img/Mobile/icon02.jpg" alt="" class="content__img" />
+        </div>
+        <div class="content__item">
+          <img src="img/Mobile/icon03.jpg" alt="" class="content__img" />
+        </div>
+        <div class="content__item">
+          <img src="img/Mobile/icon04.jpg" alt="" class="content__img" />
+        </div>
+        <div class="content__item">
+          <img src="img/Mobile/icon05.jpg" alt="" class="content__img" />
+        </div>
+        <div class="content__item">
+          <img src="img/Mobile/icon06.jpg" alt="" class="content__img" />
+        </div>
+        <div class="content__item">
+          <img src="img/Mobile/icon07.jpg" alt="" class="content__img" />
+        </div>
+        <div class="content__item">
+          <img src="img/Mobile/tel.jpg" alt="" class="content__img" />
+        </div>
+      </section>
     </main>
     <!-- FOOTER -->
   </body>
