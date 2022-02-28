@@ -3,12 +3,13 @@
 /* HEADER */
 .header {
   position: fixed;
+  width: 100vw;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-  width: 100vw;
   background-color: var(--BG-WHITE);
   outline: 2px solid var(--BD-CURIOUS-BLUE);
   z-index: 2;
