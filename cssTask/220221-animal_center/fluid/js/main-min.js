@@ -6,7 +6,7 @@ function setMainPosition(entries) {
     const entryBorderBox = entry.borderBoxSize[0].blockSize;
     const main = document.querySelector(".main");
 
-    main.style.top = `${entryBorderBox}px`;
+    main.style.marginTop = `${entryBorderBox}px`;
   }
 }
 
