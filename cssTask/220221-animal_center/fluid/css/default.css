@@ -47,9 +47,6 @@
   font-weight: var(--FONT-REGULAR);
   color: var(--FONT-BLACK);
 }
-body {
-  height: 500vh;
-}
 
 .hidden {
   display: block;
