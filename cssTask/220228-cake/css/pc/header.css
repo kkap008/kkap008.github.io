@@ -1,6 +1,119 @@
 @charset "UTF-8";
 
+.header__gnb-btn {
+  display: none;
+}
+.header__search-link {
+  display: none;
+}
+
 .header {
-  height: 123px;
-  border: 1px solid blueviolet;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: white;
+}
+
+.header__logo {
+  z-index: 1;
+}
+
+.header__container {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__service-list {
+  display: flex;
+  align-items: center;
+}
+
+.header__service-link {
+  padding: 0 1em;
+  border-right: 2px solid black;
+  line-height: 1.2em;
+}
+
+.header__service-item:nth-last-of-type(2) .header__service-link {
+  border: none;
+}
+
+.header__search {
+  border-bottom: 1px solid black;
+}
+
+.header__search-input {
+  width: 15ch;
+}
+
+.header__gnb {
+  position: absolute;
+  width: 100%;
+  top: calc(100% - 3em);
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.header__gnb-list {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header__lnb {
+  font-size: 1rem;
+  font-weight: normal;
+  visibility: hidden;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.header__gnb-summary {
+  line-height: 3em;
+}
+.header__gnb-summary::after {
+  display: block;
+  content: "";
+  height: 2px;
+  background: orange;
+  transform: translateY(-4px) scale(0);
+  transition: all 0.3s ease;
+}
+
+.header__gnb-summary:hover {
+  color: orange;
+}
+.header__gnb-summary:hover::after {
+  transform: translateY(-3px) scale(1);
+}
+
+.header__gnb:hover .header__lnb {
+  visibility: initial;
+  max-height: 100%;
+  transition: all 0.3s ease;
+}
+
+.header__gnb-item {
+  margin-left: 3em;
+}
+
+.header__lnb-link {
+  display: inline-block;
+  padding: 0.8em 0;
+}
+.header__lnb-link:hover {
+  color: orange;
+  text-decoration: underline solid 2px orange;
 }

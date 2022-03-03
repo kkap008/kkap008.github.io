@@ -1,0 +1,12 @@
+.header__container,
+.header__gnb-list {
+  width: 100%;
+  padding: 0 24px;
+}
+.header__search-input {
+  width: 10ch;
+}
+
+.header__gnb-item {
+  margin-left: 1.5em;
+}

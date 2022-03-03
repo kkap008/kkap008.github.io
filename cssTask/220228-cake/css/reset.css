@@ -8,6 +8,7 @@
 }
 
 img {
+  display: inline-block;
   max-width: 100%;
   vertical-align: top;
   display: inline-block;
@@ -15,4 +16,24 @@ img {
 
 ul {
   list-style: none;
+}
+button {
+  background-color: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
 }

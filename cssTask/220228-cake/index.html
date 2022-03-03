@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/bde89ee8b8.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- RESET CSS -->
     <link rel="stylesheet" href="css/reset.css" />
     <!-- DEFAULT CSS -->
@@ -20,7 +25,7 @@
     <link rel="stylesheet" href="css/pc/header.css" />
     <link rel="stylesheet" href="css/pc/main.css" />
     <link rel="stylesheet" href="css/pc/footer.css" />
-    <!-- MIDDLE TABLET MAX 1023px-->
+
     <link
       rel="stylesheet"
       href="css/tablet/header.css"
@@ -36,29 +41,199 @@
       href="css/tablet/footer.css"
       media="screen and (max-width:63.9375rem)"
     />
-    <!-- LAST MOBILE MAX 767px-->
+
     <link
       rel="stylesheet"
       href="css/mobile/header.css"
-      media="screen and (max-width:47.9375rem)"
+      media="screen and (max-width47.9375rem)"
     />
     <link
       rel="stylesheet"
       href="css/mobile/main.css"
-      media="screen and (max-width:47.9375rem)"
+      media="screen and (max-width47.9375rem)"
     />
     <link
       rel="stylesheet"
       href="css/mobile/footer.css"
-      media="screen and (max-width:47.9375rem)"
+      media="screen and (max-width47.9375rem)"
     />
+
     <!-- VENDOR PREFIX -->
     <script defer src="js/prefixfree.min.js"></script>
     <title>수케이크</title>
   </head>
   <body>
+    <h1 class="body__title aoa11y-hidden">수케이크</h1>
     <!-- HEADER -->
-    <header class="header"></header>
+    <header class="header">
+      <div class="header__container">
+        <!-- LOGO -->
+        <article class="header__logo">
+          <h2 class="logo__caption">
+            <a href="index.html" class="logo__home">
+              <img
+                src="img/logo/logo.png"
+                alt="시작페이지로 이동"
+                title="시작페이지로 이동"
+                class="logo__img"
+              />
+            </a>
+          </h2>
+        </article>
+        <button class="header__gnb-btn" type="button">
+          <i class="fa fa-solid fa-navicon"></i>
+        </button>
+        <a href="#none" class="header__search-link">
+          <i class="fa fa-solid fa-search"></i>
+        </a>
+        <!-- SNS -->
+        <div class="header__nav">
+          <nav class="header__service">
+            <h2 class="header__service-title aoa11y-hidden">자주찾는 항목</h2>
+            <ul class="header__service-list">
+              <li class="header__service-item">
+                <h3 class="header__service-summary">
+                  <a href="#none" class="header__service-link">FRANCHISE</a>
+                </h3>
+              </li>
+              <li class="header__service-item">
+                <h3 class="header__service-summary">
+                  <a href="#none" class="header__service-link">EVENT</a>
+                </h3>
+              </li>
+              <li class="header__service-item">
+                <h3 class="header__service-summary">
+                  <a href="#none" class="header__service-link">JOIN</a>
+                </h3>
+              </li>
+              <li class="header__service-item">
+                <h3 class="header__service-summary">
+                  <a href="#none" class="header__service-link">LOGIN</a>
+                </h3>
+              </li>
+              <li class="header__service-item">
+                <h3 class="header__service-summary">
+                  <a href="#none" class="header__service-link">ADMIN</a>
+                </h3>
+              </li>
+              <li class="header__service-item">
+                <form action="#none" method="get" class="header__search">
+                  <input
+                    type="text"
+                    name="search"
+                    class="header__search-input"
+                  />
+                  <button class="header__search-submit">
+                    <i class="fa fa-solid fa-search"></i>
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </nav>
+          <!-- GMB -->
+          <nav class="header__gnb">
+            <h2 class="header__gnb-title aoa11y-hidden">전체 항목</h2>
+            <ul class="header__gnb-list">
+              <li class="header__gnb-item">
+                <h3 class="header__gnb-summary">브랜드소개</h3>
+                <ul class="header__lnb">
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">브랜드스토리</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">커피 스토리</a>
+                    </h4>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__gnb-item">
+                <h3 class="header__gnb-summary">메뉴소개</h3>
+                <ul class="header__lnb">
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">베이커리</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">음료</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">디저트</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">푸드</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">상품</a>
+                    </h4>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__gnb-item">
+                <h3 class="header__gnb-summary">매장안내</h3>
+                <ul class="header__lnb">
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">매장찾기</a>
+                    </h4>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__gnb-item">
+                <h3 class="header__gnb-summary">커뮤니티</h3>
+                <ul class="header__lnb">
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">고객의 소리</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">자주묻는 질문</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">상담톡</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">이벤트</a>
+                    </h4>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__gnb-item">
+                <h3 class="header__gnb-summary">프랜차이즈</h3>
+                <ul class="header__lnb">
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">단체 및 기업</a>
+                    </h4>
+                  </li>
+                  <li class="header__lnb-item">
+                    <h4 class="header__lnb-summary">
+                      <a href="#none" class="header__lnb-link">신규입점 제의</a>
+                    </h4>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
     <!-- MAIN CONTENT -->
     <main class="main">
       <article class="slider"></article>

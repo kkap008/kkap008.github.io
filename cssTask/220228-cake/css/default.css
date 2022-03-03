@@ -1,1 +1,20 @@
 @charset "UTF-8";
+
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.aoa11y-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: -1px;
+  position: absolute;
+  clip: rect(0px, 0px, 0px, 0px);
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+body {
+  background-image: url(../img/background-img/bg01.jpg);
+}
