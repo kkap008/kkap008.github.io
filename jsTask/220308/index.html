@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      .bg {
+      .bgColor {
         background-color: yellow;
       }
-      .text {
+      .textColor {
         color: blue;
       }
     </style>
@@ -33,10 +33,10 @@
       span[1].textContent = name;
 
       span.forEach((element) => {
-        element.classList.add("text");
+        element.classList.add("textColor");
       });
 
-      p.classList.add("bg");
+      p.classList.add("bgColor");
       body.appendChild(p);
     </script>
   </body>
