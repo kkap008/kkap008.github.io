@@ -18,3 +18,9 @@
 body {
   background-image: url(../img/background-img/bg01.jpg);
 }
+
+.fa {
+  width: 48px;
+  height: 48px;
+  font-size: 36px;
+}

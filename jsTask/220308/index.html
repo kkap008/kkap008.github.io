@@ -17,25 +17,19 @@
   <body>
     <script defer>
       const ASK_LOCAL = "당신이 살고 있는 지역은?";
-      const local = prompt(ASK_LOCAL);
       const ASK_NAME = "당신의 이름은?";
-      const name = prompt(ASK_NAME);
-      const body = document.querySelector("body");
+      const local = document.createElement("span");
+      const name = document.createElement("span");
       const p = document.createElement("p");
-      p.append(
-        document.createElement("span"),
-        " 에 살고있는 ",
-        document.createElement("span"),
-        " 입니다."
-      );
-      const span = p.querySelectorAll("span");
-      span[0].textContent = local;
-      span[1].textContent = name;
+      const body = document.querySelector("body");
 
-      span.forEach((element) => {
-        element.classList.add("textColor");
-      });
+      local.textContent = prompt(ASK_LOCAL);
+      name.textContent = prompt(ASK_NAME);
 
+      p.append(local, "에 살고있는 ", name, "입니다.");
+
+      local.classList.add("textColor");
+      name.classList.add("textColor");
       p.classList.add("bgColor");
       body.appendChild(p);
     </script>
