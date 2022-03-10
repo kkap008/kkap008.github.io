@@ -5,16 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      :root {
+        --blue: blue;
+        --red: red;
+      }
       .pass {
-        color: blue;
+        color: var(--blue);
         font-weight: bold;
         font-size: 1.875rem;
       }
       .fail {
-        --color: red;
-        color: var(--color);
+        color: var(--red);
         font-style: italic;
-        text-decoration: underline 1px solid var(--color);
+        text-decoration: underline 1px solid var(--red);
+      }
+      .good {
+        color: var(--blue);
+      }
+      .bad {
+        color: var(--red);
       }
     </style>
     <title>JS - 연산자</title>
@@ -24,6 +33,21 @@
       <button data-check onclick="checkScore()">점수 확인</button>
       <span data-result></span>
     </p>
+    <div data-training="1">
+      <label for="move-costs">교통비</label>
+      <input type="number" id="move-costs" placeholder="0" />
+      <br />
+      <label for="food-costs">식비</label>
+      <input type="number" id="food-costs" placeholder="0" />
+      <br />
+      <label for="drink-costs">음료비</label>
+      <input type="number" id="drink-costs" placeholder="0" />
+      <br />
+      <button type="button" data-costs-submit onclick="checkCosts()">
+        계산
+      </button>
+      <span data-costs-result></span>
+    </div>
     <script>
       "use strict";
       function checkScore() {
@@ -33,6 +57,21 @@
         const resultScore = document.querySelector("[data-result]");
         resultScore.setAttribute("class", score);
         resultScore.textContent = `${resultMessage}입니다.`;
+      }
+
+      function checkCosts() {
+        const moveCosts = Number(document.querySelector("#move-costs").value);
+        const foodCosts = Number(document.querySelector("#food-costs").value);
+        const drinkCosts = Number(document.querySelector("#drink-costs").value);
+        const costsResultTag = document.querySelector("[data-costs-result]");
+        const limitMoney = 10000;
+        let costsResult = moveCosts + foodCosts + drinkCosts;
+        costsResult =
+          costsResult > limitMoney
+            ? { class: "bad", message: `${limitMoney}원 초과` }
+            : { class: "good", message: `안정적인 지출 생활 중` };
+        costsResultTag.setAttribute("class", costsResult.class);
+        costsResultTag.textContent = costsResult.message;
       }
     </script>
   </body>
