@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .pass {
+        color: blue;
+        font-weight: bold;
+        font-size: 1.875rem;
+      }
+      .fail {
+        --color: red;
+        color: var(--color);
+        font-style: italic;
+        text-decoration: underline 1px solid var(--color);
+      }
+    </style>
+    <title>JS - 연산자</title>
+  </head>
+  <body>
+    <p data-score="score">
+      <button data-check="check_score" onclick="checkScore()">점수 확인</button>
+      <span data-result="result_score"></span>
+    </p>
+    <script defer>
+      "use strict";
+      function checkScore() {
+        const message = "점수를 입력하세요.";
+        const score = Number(prompt(message)) >= 60 ? "pass" : "fail";
+        const resultMessage = score.includes("pass") ? "합격" : "불합격";
+        const resultScore = document.querySelector("[data-result]");
+        resultScore.setAttribute("class", score);
+        resultScore.textContent = `${resultMessage}입니다.`;
+      }
+    </script>
+  </body>
+</html>
