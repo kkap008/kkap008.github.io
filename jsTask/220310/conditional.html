@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .pass {
+        color: blue;
+      }
+      .fail {
+        color: red;
+      }
+    </style>
+    <title>js - 조건문</title>
+  </head>
+  <body>
+    <div data-login-form="training-login">
+      <label for="login-id">ID : </label>
+      <input type="text" name="id" id="login-id" />
+      <br />
+      <label for="login-password">PASSWORD : </label>
+      <input type="password" name="password" id="login-password" />
+      <br />
+      <button type="button" data-login>로그인</button>
+    </div>
+    <script>
+      "use strict";
+      const submit = document.querySelector("[data-login]");
+
+      submit.onclick = (event) => {
+        const id = document.querySelector("#login-id");
+        const password = document.querySelector("#login-password");
+
+        if (!id.value || !password.value) {
+          return alert("아이디 또는 비밀번호를 입력해주세요");
+        }
+
+        const idCheck = id.value === "test";
+        const passwordCheck = password.value === "1234";
+
+        if (idCheck && passwordCheck) {
+          alert("로그인 되었습니다");
+        } else if (idCheck && !passwordCheck) {
+          alert("비밀번호가 틀렸습니다");
+        } else if (!idCheck && passwordCheck) {
+          alert("아이디가 틀렸습니다");
+        } else {
+          alert("아이디와 비밀번호가 틀렸습니다");
+        }
+
+        id.value = "";
+        password.value = "";
+      };
+    </script>
+  </body>
+</html>
