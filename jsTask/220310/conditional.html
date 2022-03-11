@@ -11,10 +11,14 @@
       .fail {
         color: red;
       }
+      .switch-img {
+        width: 70%;
+      }
     </style>
     <title>js - 조건문</title>
   </head>
   <body>
+    <h1>if / else if</h1>
     <div data-login-form="training-login">
       <label for="login-id">ID : </label>
       <input type="text" name="id" id="login-id" />
@@ -29,56 +33,127 @@
       <button type="button" data-draw-btn>랜덤 추첨</button>
       <span data-draw-word></span>
     </div>
+    <hr />
+    <h1>switch</h1>
+    <img src="img/switch.png" alt="스위치문 흐름도" class="switch-img" />
+    <div data-switch="training-1">
+      <button type="button" data-switch="randomBtn">랜덤 추첨</button>
+      <span data-switch="randomWords"></span>
+    </div>
+    <div data-switch="training-2">
+      <input type="number" data-input-num="checkNum" />
+      <button type="button" data-input-num="checkNumBtn">홀/짝 판단</button>
+    </div>
     <script>
+      // if / else if
       "use strict";
-      const submit = document.querySelector("[data-login]");
 
-      submit.onclick = () => {
-        const id = document.querySelector("#login-id");
-        const password = document.querySelector("#login-password");
+      (function () {
+        const submit = document.querySelector("[data-login]");
 
-        if (!id.value || !password.value) {
-          return alert("아이디 또는 비밀번호를 입력해주세요");
-        }
+        submit.onclick = () => {
+          const id = document.querySelector("#login-id");
+          const password = document.querySelector("#login-password");
 
-        const idCheck = id.value === "test";
-        const passwordCheck = password.value === "1234";
+          if (!id.value || !password.value) {
+            return alert("아이디 또는 비밀번호를 입력해주세요");
+          }
 
-        if (idCheck && passwordCheck) {
-          alert("로그인 되었습니다");
-        } else if (idCheck && !passwordCheck) {
-          alert("비밀번호가 틀렸습니다");
-        } else if (!idCheck && passwordCheck) {
-          alert("아이디가 틀렸습니다");
-        } else {
-          alert("아이디와 비밀번호가 틀렸습니다");
-        }
+          const idCheck = id.value === "test";
+          const passwordCheck = password.value === "1234";
 
-        id.value = "";
-        password.value = "";
-      };
+          if (idCheck && passwordCheck) {
+            alert("로그인 되었습니다");
+          } else if (idCheck && !passwordCheck) {
+            alert("비밀번호가 틀렸습니다");
+          } else if (!idCheck && passwordCheck) {
+            alert("아이디가 틀렸습니다");
+          } else {
+            alert("아이디와 비밀번호가 틀렸습니다");
+          }
 
-      const drawBtn = document.querySelector("[data-draw-btn]");
-      const drawWrod = document.querySelector("[data-draw-word]");
+          id.value = "";
+          password.value = "";
+        };
 
-      drawBtn.onclick = () => {
-        const min = 1;
-        const max = 5;
-        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        const drawBtn = document.querySelector("[data-draw-btn]");
+        const drawWrod = document.querySelector("[data-draw-word]");
 
-        console.log(randomNumber);
-        if (randomNumber === 1) {
-          drawWrod.textContent = "TV 당첨!!!";
-        } else if (randomNumber === 2) {
-          drawWrod.textContent = "냉장고 당첨!!!";
-        } else if (randomNumber === 3) {
-          drawWrod.textContent = "믹서기 당첨!!!";
-        } else if (randomNumber === 4) {
-          drawWrod.textContent = "5만원 상품권 당첨!!!";
-        } else {
-          drawWrod.textContent = "다음 기회에...";
-        }
-      };
+        drawBtn.onclick = () => {
+          const min = 1;
+          const max = 5;
+          const randomNumber =
+            Math.floor(Math.random() * (max - min + 1)) + min;
+
+          console.log(randomNumber);
+          if (randomNumber === 1) {
+            drawWrod.textContent = "TV 당첨!!!";
+          } else if (randomNumber === 2) {
+            drawWrod.textContent = "냉장고 당첨!!!";
+          } else if (randomNumber === 3) {
+            drawWrod.textContent = "믹서기 당첨!!!";
+          } else if (randomNumber === 4) {
+            drawWrod.textContent = "5만원 상품권 당첨!!!";
+          } else {
+            drawWrod.textContent = "다음 기회에...";
+          }
+        };
+      })();
+    </script>
+    <script>
+      // switch
+      (function () {
+        const randomBtn = document.querySelector("[data-switch='randomBtn']");
+        const randomWords = document.querySelector(
+          "[data-switch='randomWords']"
+        );
+
+        randomBtn.onclick = () => {
+          const max = 3;
+          const min = 0;
+          const random = Math.floor(Math.random() * (max - min + 1)) + min;
+          console.log(random);
+
+          switch (random) {
+            case 1:
+              randomWords.textContent = "해외여행 상품권 당첨!!!";
+              break;
+            case 2:
+              randomWords.textContent = "냉장고 당첨!!!";
+              break;
+            case 3:
+              randomWords.textContent = "5만원 상품권 당첨!!!";
+              break;
+            default:
+              randomWords.textContent = "다음 기회에...";
+              break;
+          }
+        };
+
+        const checkNumBtn = document.querySelector(
+          "[data-input-num='checkNumBtn']"
+        );
+
+        checkNumBtn.onclick = () => {
+          const input = document.querySelector("[data-input-num='checkNum']");
+
+          const check = Number(input.value) % 2;
+
+          switch (check) {
+            case 0:
+              alert("짝수");
+              break;
+            case 1:
+              alert("홀수");
+              break;
+            default:
+              alert("소수는 안됩니다");
+              break;
+          }
+
+          input.value = "";
+        };
+      })();
     </script>
   </body>
 </html>
