@@ -24,11 +24,16 @@
       <br />
       <button type="button" data-login>로그인</button>
     </div>
+    <br />
+    <div data-draw-form="training-draw">
+      <button type="button" data-draw-btn>랜덤 추첨</button>
+      <span data-draw-word></span>
+    </div>
     <script>
       "use strict";
       const submit = document.querySelector("[data-login]");
 
-      submit.onclick = (event) => {
+      submit.onclick = () => {
         const id = document.querySelector("#login-id");
         const password = document.querySelector("#login-password");
 
@@ -51,6 +56,28 @@
 
         id.value = "";
         password.value = "";
+      };
+
+      const drawBtn = document.querySelector("[data-draw-btn]");
+      const drawWrod = document.querySelector("[data-draw-word]");
+
+      drawBtn.onclick = () => {
+        const min = 1;
+        const max = 5;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        console.log(randomNumber);
+        if (randomNumber === 1) {
+          drawWrod.textContent = "TV 당첨!!!";
+        } else if (randomNumber === 2) {
+          drawWrod.textContent = "냉장고 당첨!!!";
+        } else if (randomNumber === 3) {
+          drawWrod.textContent = "믹서기 당첨!!!";
+        } else if (randomNumber === 4) {
+          drawWrod.textContent = "5만원 상품권 당첨!!!";
+        } else {
+          drawWrod.textContent = "다음 기회에...";
+        }
       };
     </script>
   </body>
