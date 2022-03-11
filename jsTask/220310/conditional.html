@@ -138,18 +138,17 @@
         checkNumBtn.onclick = () => {
           const input = document.querySelector("[data-input-num='checkNum']");
 
-          const check =
-            input.value === "" ? undefined : Number(input.value) % 2;
+          const check = input.value === "" ? null : Number(input.value) % 2;
 
           switch (check) {
-            case undefined:
-              alert("값을 입력해주세요");
-              break;
             case 0:
               alert("짝수");
               break;
             case 1:
               alert("홀수");
+              break;
+            case null:
+              alert("값을 입력해주세요");
               break;
             default:
               alert("소수는 안됩니다");
