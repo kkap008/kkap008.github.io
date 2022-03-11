@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .calendar {
+        border-collapse: collapse;
+        text-align: center;
+      }
+      .calendar th {
+        padding: 0 0.5rem;
+        background-color: yellow;
+        color: red;
+      }
+      .calendar tr > * {
+        border: 1px solid black;
+      }
+    </style>
+    <title>js - 반복문</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        const table = document.createElement("table");
+        const caption = table.createCaption();
+        const thead = table.createTHead();
+        const tbody = table.createTBody();
+        const days = ["일", "월", "화", "수", "목", "금", "토"];
+
+        table.setAttribute("class", "calendar");
+
+        caption.textContent = "달력";
+
+        for (const day of days) {
+          if (!thead.firstElementChild) {
+            thead.insertRow(0);
+          }
+          const th = document.createElement("th");
+          th.textContent = day;
+          thead.firstElementChild.append(th);
+        }
+
+        let tr = document.createElement("tr");
+
+        for (let dayNum = 1; dayNum <= 35; dayNum++) {
+          const td = document.createElement("td");
+
+          if (dayNum <= 31) {
+            td.textContent = dayNum;
+          }
+          tr.append(td);
+
+          if (dayNum % 7 === 0) {
+            tbody.append(tr);
+            tr = document.createElement("tr");
+          }
+        }
+
+        document.querySelector("body").prepend(table);
+      })();
+    </script>
+  </body>
+</html>
