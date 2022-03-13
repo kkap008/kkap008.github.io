@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/bde89ee8b8.js"
-      crossorigin="anonymous"
-    ></script>
     <style>
+      .carouselSlider .hidden {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        margin: -1px;
+        clip: rect(0 0 0 0);
+        clip-path: polygon(0 0, 0 0, 0 0);
+      }
       .carouselSlider ul {
         list-style: none;
         padding: 0;
@@ -67,17 +73,6 @@
         margin: 0 0.25em;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 50%;
-      }
-      .carouselSlider .carouselSlider__number {
-        display: inline-block;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        white-space: nowrap;
-        position: absolute;
-        margin: -1px;
-        clip: rect(0 0 0 0);
-        clip-path: polygon(0 0, 0 0, 0 0);
       }
 
       @media only screen and (min-width: 48em) {
@@ -160,26 +155,28 @@
         </li>
       </ul>
       <button type="button" class="carouselSlider__btn carouselSlider__left">
+        <span class="carouselSlider__summary hidden">이전 슬라이드로 이동</span>
         <i class="fa fa-solid fa-angle-left carouselSlider__icon"></i>
       </button>
       <button type="button" class="carouselSlider__btn carouselSlider__right">
+        <span class="carouselSlider__summary hidden">다음 슬라이드로 이동</span>
         <i class="fa fa-solid fa-angle-right carouselSlider__icon"></i>
       </button>
       <ul class="carouselSlider__dots">
         <li class="carouselSlider__dot">
-          <span class="carouselSlider__number">1번 이미지</span>
+          <span class="carouselSlider__number hidden">1번 이미지</span>
         </li>
         <li class="carouselSlider__dot">
-          <span class="carouselSlider__number">2번 이미지</span>
+          <span class="carouselSlider__number hidden">2번 이미지</span>
         </li>
         <li class="carouselSlider__dot">
-          <span class="carouselSlider__number">3번 이미지</span>
+          <span class="carouselSlider__number hidden">3번 이미지</span>
         </li>
         <li class="carouselSlider__dot">
-          <span class="carouselSlider__number">4번 이미지</span>
+          <span class="carouselSlider__number hidden">4번 이미지</span>
         </li>
         <li class="carouselSlider__dot">
-          <span class="carouselSlider__number">5번 이미지</span>
+          <span class="carouselSlider__number hidden">5번 이미지</span>
         </li>
       </ul>
     </div>
