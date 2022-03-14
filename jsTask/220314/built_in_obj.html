@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <base href="/jsTask/220314" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .hidden {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        margin: -1px;
+        clip: rect(0 0 0 0);
+        clip-path: polygon(0 0, 0 0, 0 0);
+      }
+    </style>
+    <title>내장객체</title>
+  </head>
+  <body>
+    <div data-clock>
+      <time datetime="" data-clock="clock"></time>
+      <br />
+      <figure data-cook>
+        <img src=" " alt=" " data-cook="img" />
+        <figcaption data-cook="caption"></figcaption>
+      </figure>
+
+      <br />
+      <span></span>
+    </div>
+    <br />
+    <div data-random>
+      <figure data-random="banner">
+        <img src=" " alt="탭 이동 후 문구 확인" data-random="img" />
+        <figcaption data-random="caption">
+          <span data-random="index"></span>
+          <br />
+          <span data-random="title"></span>
+        </figcaption>
+      </figure>
+      <button type="button" data-random="reload">랜덤 배너</button>
+    </div>
+    <script>
+      "use strict";
+
+      (function () {
+        const $reloadBtn = document.querySelector("[data-random='reload']");
+        const $randomBanner = document.querySelector("[data-random='img']");
+        const $randomCaption = document.querySelector(
+          "[data-random='caption']"
+        );
+        const $randomindex = $randomCaption.firstElementChild;
+        const $randomTitle = $randomCaption.lastElementChild;
+        $randomTitle.style.cssText = `width: 1px;
+        height: 1px;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        margin: -1px;
+        clip: rect(0 0 0 0);
+        clip-path: polygon(0 0, 0 0, 0 0);`;
+
+        const captions = [
+          "하나투어 가족여행 떠나기",
+          "케이뱅크 체크카드 네이버페이 1.2% 적립 혜택",
+          "스토어 경품 - 더 콰이어트 플레이스",
+          "오늘 오후 8시, 샤이니 데뷔 10주년 방송 ",
+          "네이버 쇼핑 - 아트윈도",
+          "서울대공원 - 장미원 축제 5월 26일부터 6월 10일까지",
+          "AOA 컴백 쇼케이스 - 5월 28일 밤 8시 V Live",
+        ];
+
+        function randomBanner() {
+          const min = 1;
+          const max = 7;
+          const randomNumber = Math.floor(Math.random() * max) + min;
+
+          $randomBanner.setAttribute(
+            "src",
+            `${document.baseURI}/img/randomBanner/b${randomNumber}.jpg`
+          );
+          $randomTitle.textContent = captions[randomNumber - 1];
+          $randomindex.textContent = randomNumber;
+        }
+        randomBanner();
+        $reloadBtn.addEventListener("click", randomBanner);
+      })();
+
+      (function () {
+        const SEC = 1000;
+
+        function updateTime() {
+          const date = new Date();
+          const $clock = document.querySelector("[data-clock='clock']");
+          let meridiem = date.toLocaleTimeString().includes("오전")
+            ? "오전"
+            : "오후";
+
+          if (!$clock.textContent) {
+            getCookImg(date.getDay());
+          }
+
+          const datetime = `${date.getFullYear()}-${
+            date.getMonth() + 1
+          }-${date.getDate()}`;
+          $clock.setAttribute("datetime", datetime);
+          $clock.textContent = `${datetime} ${meridiem} ${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초`;
+        }
+
+        function getCookImg(day) {
+          const $cookImg = document.querySelector("[data-cook='img']");
+          const $cookCaption = document.querySelector("[data-cook='caption']");
+          const menu = [
+            {
+              food: "군만두",
+              url: `${document.baseURI}/img/food/food1.jpg`,
+            },
+            {
+              food: "짜장면",
+              url: `${document.baseURI}/img/food/food2.jpg`,
+            },
+            {
+              food: "짬뽕",
+              url: `${document.baseURI}/img/food/food3.jpg`,
+            },
+            {
+              food: "볶음밥",
+              url: `${document.baseURI}/img/food/food4.jpg`,
+            },
+            {
+              food: "삼선짬뽕",
+              url: `${document.baseURI}/img/food/food5.jpg`,
+            },
+            {
+              food: "탕수육",
+              url: `${document.baseURI}/img/food/food6.jpg`,
+            },
+            {
+              food: "깐풍기",
+              url: `${document.baseURI}/img/food/food7.jpg`,
+            },
+          ];
+
+          $cookImg.setAttribute("src", menu[day].url);
+          $cookImg.setAttribute("alt", menu[day].food);
+          $cookCaption.textContent = `오늘의 추천 메뉴 : ${menu[day].food}`;
+        }
+
+        updateTime();
+        const clock = setInterval(updateTime, SEC);
+
+        window.addEventListener("beforeunload", (event) => {
+          clearInterval(clock);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,35 +1,144 @@
-const carouselSlider = document.querySelector(
-  "[data-include='carousel-slider']"
-);
+"use strict";
 
-const xmlhttp = new XMLHttpRequest();
+class GetComponentSlider {
+  constructor() {
+    this.domain = location.origin;
+    this.componentUrl = `${this.domain}/jsTask/220311/carouselSlider/component/carouselSlider/carouselSlider.html`;
+    this.xmlHttp = new XMLHttpRequest();
+  }
 
-xmlhttp.addEventListener("readystatechange", (event) => {
-  const xmlHttp = event.target;
-  const xmlHttpReadyState = event.target.readyState;
-  const xmlHttpStatus = event.target.status;
-
-  if (xmlHttpReadyState === 4 && xmlHttpStatus === 200) {
+  getComponentHtml({ responseText }) {
     const domParser = new DOMParser();
-    const responseText = xmlHttp.responseText;
-    const componentHtml = domParser.parseFromString(responseText, "text/html");
+    return domParser.parseFromString(responseText, "text/html");
+  }
+
+  getComponentFragment(componentHtml) {
+    const fragment = new DocumentFragment();
     const style = componentHtml.querySelector("style");
     const componentElement = componentHtml.body.firstElementChild;
     const textType = 3;
-    const fragment = new DocumentFragment();
-    fragment.appendChild(style);
+
     for (let i = 0; i < componentElement.childNodes.length; ++i) {
       const child = componentElement.childNodes[i];
       if (child.nodeType !== textType) {
-        fragment.appendChild(componentElement.childNodes[i]);
+        fragment.appendChild(child);
       }
     }
-    carouselSlider.appendChild(fragment);
+
+    fragment.prepend(style);
+
+    return fragment;
   }
+
+  appendChildComponent(fragment) {
+    this.$carouselSlider.appendChild(fragment);
+  }
+
+  addXmlLoadEvent(callback) {
+    const thisBindCallback = callback.bind(this);
+    this.xmlHttp.addEventListener("load", thisBindCallback);
+  }
+
+  xmlLoadCallBack(event) {
+    const xmlHttp = event.target;
+    const xmlHttpRequestState = xmlHttp.readyState;
+    const xmlHttpStatus = xmlHttp.status;
+
+    if (xmlHttpRequestState === xmlHttp.DONE && xmlHttpStatus === 200) {
+      const componentHtml = this.getComponentHtml(xmlHttp);
+      const fragment = this.getComponentFragment(componentHtml);
+      this.appendChildComponent(fragment);
+    }
+  }
+
+  async includeComponent() {
+    this.addXmlLoadEvent(this.xmlLoadCallBack);
+    this.xmlHttp.open("GET", this.componentUrl, false);
+    this.xmlHttp.send();
+  }
+}
+
+class ComponentSlider extends GetComponentSlider {
+  constructor() {
+    super();
+    this.$carouselSlider = this.getElement("[data-include='carousel-slider']");
+    this.direction = "flex-start";
+  }
+
+  getElement(selector, all) {
+    if (all) {
+      return document.querySelectorAll(selector);
+    } else {
+      return document.querySelector(selector);
+    }
+  }
+
+  init() {}
+  autoPlay() {}
+}
+
+const componentSlider = new ComponentSlider();
+componentSlider.includeComponent();
+componentSlider.init();
+
+const $carouselSlider = componentSlider.$carouselSlider;
+const $carouselSliderLeftBtn = $carouselSlider.querySelector("[class$='left']");
+const $carouselSliderRightBtn =
+  $carouselSlider.querySelector("[class$='right']");
+
+$carouselSliderLeftBtn.addEventListener("click", () => {
+  const target = getCarouselSliderList();
+  let direction = getDirection(target);
+  if (direction === "flex-end") {
+    target.prepend(target.lastElementChild);
+    target.style.justifyContent = "flex-start";
+    direction = "flex-start";
+  }
+  target.style.transform = "translateX(-100%)";
+  transitionEndEvent(direction, target);
 });
 
-xmlhttp.open(
-  "GET",
-  `${location.origin}/jsTask/220311/carouselSlider/component/carouselSlider/carouselSlider.html`
-);
-xmlhttp.send();
+$carouselSliderRightBtn.addEventListener("click", () => {
+  const target = getCarouselSliderList();
+  let direction = getDirection(target);
+  console.log(direction);
+  if (direction === "flex-start") {
+    target.append(target.firstElementChild);
+    target.style.justifyContent = "flex-end";
+    direction = "flex-end";
+  }
+  target.style.transform = "translateX(100%)";
+  transitionEndEvent(direction, target);
+});
+
+function getCarouselSliderList() {
+  return $carouselSlider.querySelector("[class$='list']");
+}
+
+function getDirection(carouselSliderList) {
+  const direction = getComputedStyle(carouselSliderList).justifyContent;
+  return direction;
+}
+
+function transitionEndEvent(direction, target) {
+  target.addEventListener(
+    "transitionend",
+    () => {
+      switch (direction) {
+        case "flex-start":
+          target.append(target.firstElementChild);
+          break;
+        case "flex-end":
+          target.prepend(target.lastElementChild);
+          break;
+      }
+
+      target.style.transition = "none";
+      target.style.transform = "translateX(0)";
+      setTimeout(() => {
+        target.style.transition = "transform 0.3s ease";
+      }, 0);
+    },
+    { once: true }
+  );
+}
