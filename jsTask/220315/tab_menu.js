@@ -15,7 +15,7 @@ function template() {
             vertical-align: top;
             max-width:100%;
         }
-        [data-tab-menu='list']{
+        [data-gallery='list']{
             display: flex;
             cursor: pointer;
         }
@@ -35,35 +35,35 @@ function template() {
 
   // 엘리먼트 정의
   const element = `
-    <ul data-tab-menu="list">
-        <li data-tab-menu="item">
-            <img src="img/banner00.jpg" alt="" data-tab-menu="img" />
+    <ul data-gallery="list">
+        <li data-gallery="item">
+            <img src="img/banner00.jpg" alt="" data-gallery="img" />
             <span class="hidden">단, 하루의 혜택 패밀리를 하프갤런으로 사이즈업</span>
         </li>
-        <li data-tab-menu="item">
-            <img src="img/banner01.jpg" alt="" data-tab-menu="img" />
+        <li data-gallery="item">
+            <img src="img/banner01.jpg" alt="" data-gallery="img" />
             <span class="hidden">커피 5잔 구매 시, 아메리카노 레귤러 사이즈 1잔 무료</span>
         </li>
-        <li data-tab-menu="item">
-            <img src="img/banner02.jpg" alt="" data-tab-menu="img" />
+        <li data-gallery="item">
+            <img src="img/banner02.jpg" alt="" data-gallery="img" />
             <span class="hidden">커피&아포카토 부드러운 바닐라 아이스크림에 
             진하고 뜨거운 에스프레소를 얹어 내는 이탈리아의 디저트</span>
         </li>
-        <li data-tab-menu="item">
-            <img src="img/banner03.jpg" alt="" data-tab-menu="img" />
+        <li data-gallery="item">
+            <img src="img/banner03.jpg" alt="" data-gallery="img" />
             <span class="hidden">10월 27일부터 11월 16일까지 
             현대카드 1만 9천 500백원 (패밀리) 이상 구매 시 4천원 할인</span>
         </li>
-        <li data-tab-menu="item">
-            <img src="img/banner04.jpg" alt="" data-tab-menu="img" />
+        <li data-gallery="item">
+            <img src="img/banner04.jpg" alt="" data-gallery="img" />
             <span class="hidden">11월 01일부터 11월 06일까지 
             카페브리프 출시 1주년 기념 매일 아메리카노 1잔 제공 (구매 고객 대상 일 50잔 한정)</span>
         </li>
     </ul>
 
-    <figure data-tab-menu="figure" tabindex="-1">
-      <img src="" alt="" data-tab-menu="banner" />
-      <figcaption data-tab-menu="caption" class="hidden">배너 이미지</figcaption>
+    <figure data-gallery="figure" tabindex="-1">
+      <img src="" alt="" data-gallery="banner" />
+      <figcaption data-gallery="caption" class="hidden">배너 이미지</figcaption>
     </figure>
     `;
 
@@ -77,7 +77,7 @@ function template() {
   return template;
 }
 
-// "tab-menu"에 사용할 클래스
+// "gallery"에 사용할 클래스
 class TabMenu extends HTMLElement {
   constructor() {
     // HTMLElement 객체에서 상속 받기
@@ -108,19 +108,19 @@ class TabMenu extends HTMLElement {
     Reflect.set(
       shadowRoot,
       "$tab_menu",
-      shadowRoot.querySelector("[data-tab-menu='list']")
+      shadowRoot.querySelector("[data-gallery='list']")
     );
 
     // 탭 메뉴 객체에 배너 속성 추가
     Reflect.set(
       shadowRoot.$tab_menu,
       "$banner",
-      shadowRoot.querySelector("[data-tab-menu='banner']")
+      shadowRoot.querySelector("[data-gallery='banner']")
     );
 
     // 탭 메뉴 중 첫번째 이미지 "src" 가져오기
     const $firstImageSrc = shadowRoot.$tab_menu
-      .querySelector("[data-tab-menu='img']")
+      .querySelector("[data-gallery='img']")
       .getAttribute("src");
 
     // 쉐도우 루트 객체를 이용한 배너 "src"를 초기값으로 셋팅
@@ -128,11 +128,11 @@ class TabMenu extends HTMLElement {
   }
 }
 
-// "tab-menu로 지정된 커스텀 엘리먼트에 "TabMenu" 클래스 인트턴스화
-customElements.define("tab-menu", TabMenu);
+// "gallery로 지정된 커스텀 엘리먼트에 "TabMenu" 클래스 인트턴스화
+customElements.define("tab-gallery", TabMenu);
 
 // 쉐도우 돔은 캡슐화되어 있어서 "querySelector" 이후 "shadowRoot" 속성 호출
-const $TAB_MENU = document.querySelector("tab-menu").shadowRoot;
+const $TAB_MENU = document.querySelector("tab-gallery").shadowRoot;
 
 $TAB_MENU.$tab_menu.addEventListener("click", (event) => {
   const target = event.target;
