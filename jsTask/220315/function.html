@@ -9,18 +9,22 @@
       div {
         margin: 1rem 0;
       }
+      .bmi {
+        font-weight: bold;
+        color: initial;
+      }
     </style>
     <title>JS - 함수</title>
   </head>
   <body>
-    <h1>이름과 주소를 입력받아 출력하는 함수 작성</h1>
     <div data-prompt>
+      <h1>이름과 주소를 입력받아 출력하는 함수 작성</h1>
       <span data-prompt="print"></span>
       <button type="button" data-prompt="input">입력받기</button>
     </div>
     <hr />
-    <h1>BMI 계산기</h1>
     <div data-bmi>
+      <h1>BMI 계산기</h1>
       <p data-bmi="kg">
         <input
           data-bmi="kg-input"
@@ -64,11 +68,13 @@
 
           this.__proto__.debounce = setTimeout(
             function () {
-              if (this.value > 300) {
+              if (this.valueAsNumber > 300) {
                 alert("300kg 이하로 작성해주세요");
                 this.value = null;
                 delete this.__proto__.debounce;
                 return;
+              } else if (this.valueAsNumber < 1) {
+                this.value = null;
               }
             }.bind(this),
             200
@@ -87,6 +93,8 @@
                 this.value = null;
                 delete this.__proto__.debounce;
                 return;
+              } else if (this.valueAsNumber < 1) {
+                this.value = null;
               }
             }.bind(this),
             200
@@ -105,20 +113,53 @@
           }
 
           const $result = document.querySelector("[data-bmi='result']");
-          const bmi = (kg / cm ** 2).toFixed(2);
+
+          if (!$result.addSpan) {
+            $result.addSpan = true;
+            const bmi = document.createElement("span");
+            const message = document.createElement("span");
+            bmi.setAttribute("class", "bmi");
+            message.setAttribute("class", "bmi");
+            $result.append(
+              '신체질량지수(BMI)는 "',
+              bmi,
+              '"로 "',
+              message,
+              '"입니다.'
+            );
+            $result.bmi = bmi;
+            $result.message = message;
+            const style = document.styleSheets[0].cssRules;
+
+            for (const item of style) {
+              if (item.selectorText == ".bmi") {
+                $result.bmiStyleRule = item.style;
+              }
+            }
+          }
+
+          const bmi_value = (kg / cm ** 2).toFixed(2);
 
           switch (true) {
-            case bmi < 20:
-              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '저체중'입니다`;
+            case bmi_value < 20:
+              $result.bmiStyleRule.color = "orange";
+              $result.bmi.textContent = bmi_value;
+              $result.message.textContent = "저체중";
               break;
-            case bmi <= 24:
-              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '정상'입니다`;
+            case bmi_value <= 24:
+              $result.bmiStyleRule.color = "green";
+              $result.bmi.textContent = bmi_value;
+              $result.message.textContent = "정상";
               break;
-            case bmi <= 29:
-              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '과체중'입니다`;
+            case bmi_value <= 29:
+              $result.bmiStyleRule.color = "blue";
+              $result.bmi.textContent = bmi_value;
+              $result.message.textContent = "과체중";
               break;
             default:
-              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '비만'입니다`;
+              $result.bmiStyleRule.color = "red";
+              $result.bmi.textContent = bmi_value;
+              $result.message.textContent = "비만";
               break;
           }
 
