@@ -10,7 +10,7 @@ class Print {
     target.addEventListener(type, callBack);
   }
 
-  check(local, user) {
+  print(local, user) {
     switch (local && user) {
       case undefined:
       case false:
@@ -64,7 +64,7 @@ class PrintEvent extends Print {
     const local = prompt("사는 지역은?") || undefined;
     const user = prompt("이름은?") || undefined;
 
-    this.check(local, user);
+    this.print(local, user);
   };
 }
 
