@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="tab_menu.js"></script>
     <style>
       div {
         margin: 1rem 0;
+      }
+    </style>
+    <style>
+      .hidden {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        margin: -1px;
+        clip: rect(0 0 0 0);
+        clip-path: polygon(0 0, 0 0, 0 0);
+      }
+      .template {
+        cursor: pointer;
       }
     </style>
     <title>JS - 함수</title>
@@ -41,6 +58,9 @@
       <button type="button" data-bmi="btn">bmi 계산</button>
       <span data-bmi="result"></span>
     </div>
+    <hr />
+    <tab-menu data-tab-menu></tab-menu>
+
     <script>
       "use strict";
 
