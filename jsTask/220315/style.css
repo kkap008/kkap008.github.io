@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+div {
+  margin: 1rem 0;
+}
+.bmi {
+  font-weight: bold;
+  color: initial;
+}

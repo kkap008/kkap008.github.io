@@ -4,16 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="test.css" />
     <script defer src="tab_gallery.js"></script>
-    <style>
-      div {
-        margin: 1rem 0;
-      }
-      .bmi {
-        font-weight: bold;
-        color: initial;
-      }
-    </style>
+    <script defer src="bmi.js"></script>
+    <script defer src="prompt.js"></script>
     <title>JS - 함수</title>
   </head>
   <body>
@@ -39,7 +34,7 @@
           data-bmi="cm-input"
           id="cm"
           type="number"
-          placeholder="3m 이하로 작성"
+          placeholder="250cm 이하로 작성"
         />
         <label for="cm">cm</label>
       </p>
@@ -52,155 +47,5 @@
     <tab-gallery data-gallery>
       <!-- 규칙 1 : "hyphen(-)"을 사용해서 요소 정의 -->
     </tab-gallery>
-
-    <script>
-      "use strict";
-
-      (function () {
-        const $bmi_kg = document.querySelector("[data-bmi='kg-input']");
-        const $bmi_cm = document.querySelector("[data-bmi='cm-input']");
-        const $bmi_btn = document.querySelector("[data-bmi='btn']");
-
-        $bmi_kg.addEventListener("input", function () {
-          if (this.__proto__.debounce) {
-            clearTimeout(this.debounce);
-          }
-
-          this.__proto__.debounce = setTimeout(
-            function () {
-              if (this.valueAsNumber > 300) {
-                alert("300kg 이하로 작성해주세요");
-                this.value = null;
-                delete this.__proto__.debounce;
-                return;
-              } else if (this.valueAsNumber < 1) {
-                this.value = null;
-              }
-            }.bind(this),
-            200
-          );
-        });
-
-        $bmi_cm.addEventListener("input", function () {
-          if (this.__proto__.debounce) {
-            clearTimeout(this.debounce);
-          }
-
-          this.__proto__.debounce = setTimeout(
-            function () {
-              if (this.value > 300) {
-                alert("3m 이하로 작성해주세요");
-                this.value = null;
-                delete this.__proto__.debounce;
-                return;
-              } else if (this.valueAsNumber < 1) {
-                this.value = null;
-              }
-            }.bind(this),
-            200
-          );
-        });
-
-        $bmi_btn.addEventListener("click", () => {
-          const $bmi_kg = document.querySelector("[data-bmi='kg-input']");
-          const $bmi_cm = document.querySelector("[data-bmi='cm-input']");
-          const kg = $bmi_kg.value || undefined;
-          const cm = $bmi_cm.value / 100 || undefined;
-
-          if (!cm && !kg) {
-            alert("kg 또는 cm 값을 입력해주세요");
-            return;
-          }
-
-          const $result = document.querySelector("[data-bmi='result']");
-
-          if (!$result.childSpan) {
-            $result.childSpan = true;
-            const bmi = document.createElement("span");
-            const message = document.createElement("span");
-            bmi.setAttribute("class", "bmi");
-            message.setAttribute("class", "bmi");
-            $result.append(
-              '신체질량지수(BMI)는 "',
-              bmi,
-              '"로 "',
-              message,
-              '"입니다.'
-            );
-            $result.bmi = bmi;
-            $result.message = message;
-            const style = document.styleSheets[0].cssRules;
-
-            for (const item of style) {
-              if (item.selectorText == ".bmi") {
-                $result.bmiStyleRule = item.style;
-              }
-            }
-          }
-
-          const bmi_value = (kg / cm ** 2).toFixed(2);
-
-          switch (true) {
-            case bmi_value < 20:
-              $result.bmiStyleRule.color = "orange";
-              $result.bmi.textContent = bmi_value;
-              $result.message.textContent = "저체중";
-              break;
-            case bmi_value <= 24:
-              $result.bmiStyleRule.color = "green";
-              $result.bmi.textContent = bmi_value;
-              $result.message.textContent = "정상";
-              break;
-            case bmi_value <= 29:
-              $result.bmiStyleRule.color = "blue";
-              $result.bmi.textContent = bmi_value;
-              $result.message.textContent = "과체중";
-              break;
-            default:
-              $result.bmiStyleRule.color = "red";
-              $result.bmi.textContent = bmi_value;
-              $result.message.textContent = "비만";
-              break;
-          }
-
-          $bmi_cm.value = $bmi_kg.value = null;
-        });
-      })();
-
-      (function () {
-        function promptEvent() {
-          const local = prompt("사는 지역은?") || undefined;
-          const user = prompt("이름은?") || undefined;
-          const $print = document.querySelector("[data-prompt='print']");
-
-          switch (local && user) {
-            case undefined:
-            case false:
-              if (!local && !user) {
-                $print.textContent = "이름과 주소를 입력해주세요";
-              } else if (!local) {
-                $print.textContent = "주소를 입력해주세요";
-              } else {
-                $print.textContent = "이름을 입력해주세요";
-              }
-              break;
-            default:
-              if (user.match(/[\d]+/)) {
-                $print.textContent = "이름은 영문,한글로 입력해주세요";
-                return;
-              } else {
-                $print.textContent = `${user
-                  .match(/[a-zA-Z\s가-힣ㄱ-ㅎ]/g)
-                  .join()}가 사는 지역은 ${local}입니다`;
-              }
-
-              break;
-          }
-        }
-
-        const $input = document.querySelector("[data-prompt='input']");
-        $input.addEventListener("click", promptEvent);
-      })();
-    </script>
   </body>
 </html>
