@@ -1,5 +1,14 @@
 "use strict";
 
+class test {
+  constructor() {
+    this.test = this;
+  }
+  static get test() {
+    console.log(this);
+  }
+}
+
 class GetComponentSlider {
   constructor() {
     this.domain = location.origin;
@@ -65,7 +74,7 @@ class ComponentSlider extends GetComponentSlider {
     this.direction = "flex-start";
   }
 
-  getElement(selector, all) {
+  getElement(selector, all = false) {
     if (all) {
       return document.querySelectorAll(selector);
     } else {
@@ -86,7 +95,17 @@ const $carouselSliderLeftBtn = $carouselSlider.querySelector("[class$='left']");
 const $carouselSliderRightBtn =
   $carouselSlider.querySelector("[class$='right']");
 
-$carouselSliderLeftBtn.addEventListener("click", () => {
+$carouselSliderLeftBtn.addEventListener("click", nextSlider);
+
+$carouselSliderRightBtn.addEventListener("click", prevSlider);
+const AUTO_PLAY_MS = 2500;
+const SLIDER_MOVE = 100;
+
+function nextSlider(event) {
+  if (event) {
+    clearInterval(autoPlay);
+    autoPlay = setInterval(nextSlider, AUTO_PLAY_MS);
+  }
   const target = getCarouselSliderList();
   let direction = getDirection(target);
   if (direction === "flex-end") {
@@ -94,22 +113,25 @@ $carouselSliderLeftBtn.addEventListener("click", () => {
     target.style.justifyContent = "flex-start";
     direction = "flex-start";
   }
-  target.style.transform = "translateX(-100%)";
+  target.style.transform = `translateX(${-SLIDER_MOVE}%)`;
   transitionEndEvent(direction, target);
-});
+}
 
-$carouselSliderRightBtn.addEventListener("click", () => {
+function prevSlider(event) {
+  if (event) {
+    clearInterval(autoPlay);
+    autoPlay = setInterval(nextSlider, AUTO_PLAY_MS);
+  }
   const target = getCarouselSliderList();
   let direction = getDirection(target);
-  console.log(direction);
   if (direction === "flex-start") {
     target.append(target.firstElementChild);
     target.style.justifyContent = "flex-end";
     direction = "flex-end";
   }
-  target.style.transform = "translateX(100%)";
+  target.style.transform = `translateX(${SLIDER_MOVE}%)`;
   transitionEndEvent(direction, target);
-});
+}
 
 function getCarouselSliderList() {
   return $carouselSlider.querySelector("[class$='list']");
@@ -142,3 +164,5 @@ function transitionEndEvent(direction, target) {
     { once: true }
   );
 }
+
+let autoPlay = setInterval(nextSlider, AUTO_PLAY_MS);
