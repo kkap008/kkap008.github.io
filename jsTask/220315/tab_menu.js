@@ -58,9 +58,9 @@ function template() {
         </li>
     </ul>
 
-    <figure data-tab-menu="figure">
+    <figure data-tab-menu="figure" tabindex="-1">
       <img src="" alt="" data-tab-menu="banner" />
-      <figcaption data-tab-menu="caption" class="hidden"></figcaption>
+      <figcaption data-tab-menu="caption" class="hidden">배너 이미지</figcaption>
     </figure>
     `;
 
