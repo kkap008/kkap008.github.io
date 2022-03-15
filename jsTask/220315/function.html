@@ -4,14 +4,119 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+        margin: 1rem 0;
+      }
+    </style>
     <title>JS - 함수</title>
   </head>
   <body>
+    <h1>이름과 주소를 입력받아 출력하는 함수 작성</h1>
     <div data-prompt>
       <span data-prompt="print"></span>
       <button type="button" data-prompt="input">입력받기</button>
     </div>
+    <hr />
+    <div data-bmi>
+      <p data-bmi="kg">
+        <input
+          data-bmi="kg-input"
+          id="kg"
+          type="number"
+          placeholder="300kg 이하로 작성"
+        />
+        <label for="kg">kg</label>
+      </p>
+      <p data-bmi="cm">
+        <input
+          data-bmi="cm-input"
+          id="cm"
+          type="number"
+          placeholder="3m 이하로 작성"
+        />
+        <label for="cm">cm</label>
+      </p>
+      <button type="button" data-bmi="btn">bmi 계산</button>
+      <span data-bmi="result"></span>
+    </div>
     <script>
+      "use strict";
+
+      (function () {
+        const $bmi_kg = document.querySelector("[data-bmi='kg-input']");
+        const $bmi_cm = document.querySelector("[data-bmi='cm-input']");
+        const $bmi_btn = document.querySelector("[data-bmi='btn']");
+
+        $bmi_kg.addEventListener("input", function () {
+          if (this.__proto__.debounce) {
+            clearTimeout(this.debounce);
+          }
+
+          this.__proto__.debounce = setTimeout(
+            function () {
+              if (this.value > 200) {
+                alert("300kg 이하로 작성해주세요");
+                this.value = null;
+                delete this.__proto__.debounce;
+                return;
+              }
+            }.bind(this),
+            200
+          );
+        });
+
+        $bmi_cm.addEventListener("input", function () {
+          if (this.__proto__.debounce) {
+            clearTimeout(this.debounce);
+          }
+
+          this.__proto__.debounce = setTimeout(
+            function () {
+              if (this.value > 300) {
+                alert("3m 이하로 작성해주세요");
+                this.value = null;
+                delete this.__proto__.debounce;
+                return;
+              }
+            }.bind(this),
+            200
+          );
+        });
+
+        $bmi_btn.addEventListener("click", () => {
+          const $bmi_kg = document.querySelector("[data-bmi='kg-input']");
+          const $bmi_cm = document.querySelector("[data-bmi='cm-input']");
+          const kg = $bmi_kg.value || undefined;
+          const cm = $bmi_cm.value / 100 || undefined;
+
+          if (!cm && !kg) {
+            alert("kg 또는 cm 값을 입력해주세요");
+            return;
+          }
+
+          const $result = document.querySelector("[data-bmi='result']");
+          const bmi = (kg / cm ** 2).toFixed(2);
+
+          switch (true) {
+            case bmi < 20:
+              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '저체중'입니다`;
+              break;
+            case bmi <= 24:
+              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '정상'입니다`;
+              break;
+            case bmi <= 29:
+              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '과체중'입니다`;
+              break;
+            default:
+              $result.textContent = `신체질량지수(BMI)는 ${bmi}로 '비만'입니다`;
+              break;
+          }
+
+          $bmi_cm.value = $bmi_kg.value = null;
+        });
+      })();
+
       (function () {
         function promptEvent() {
           const local = prompt("사는 지역은?") || undefined;
