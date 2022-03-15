@@ -114,8 +114,8 @@
 
           const $result = document.querySelector("[data-bmi='result']");
 
-          if (!$result.addSpan) {
-            $result.addSpan = true;
+          if (!$result.childSpan) {
+            $result.childSpan = true;
             const bmi = document.createElement("span");
             const message = document.createElement("span");
             bmi.setAttribute("class", "bmi");
