@@ -64,7 +64,7 @@
 
           this.__proto__.debounce = setTimeout(
             function () {
-              if (this.value > 200) {
+              if (this.value > 300) {
                 alert("300kg 이하로 작성해주세요");
                 this.value = null;
                 delete this.__proto__.debounce;
