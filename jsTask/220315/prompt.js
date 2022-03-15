@@ -34,7 +34,7 @@ class Print {
 
   matchName(local, user) {
     if (user.match(/[\d]+/)) {
-      this.$print.textContent = "이름은 영문,한글로 입력해주세요";
+      this.$print.textContent = "이름은 영문 또는 한글로 입력해주세요";
       return;
     } else {
       if (!this.$print.firstChild) {
